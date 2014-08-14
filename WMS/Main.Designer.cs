@@ -29,25 +29,25 @@
         private void InitializeComponent()
         {
             this.radApplicationMenu1 = new Telerik.WinControls.UI.RadApplicationMenu();
-            this.radMenuItem1 = new Telerik.WinControls.UI.RadMenuItem();
-            this.radMenuHeaderItem1 = new Telerik.WinControls.UI.RadMenuHeaderItem();
-            this.radMenuComboItem1 = new Telerik.WinControls.UI.RadMenuComboItem();
-            this.radMenuButtonItem1 = new Telerik.WinControls.UI.RadMenuButtonItem();
-            this.radMenuItem2 = new Telerik.WinControls.UI.RadMenuItem();
-            this.radMenuSeparatorItem1 = new Telerik.WinControls.UI.RadMenuSeparatorItem();
-            this.radMenuComboItem2 = new Telerik.WinControls.UI.RadMenuComboItem();
-            this.radMenuButtonItem2 = new Telerik.WinControls.UI.RadMenuButtonItem();
-            this.radMenuHeaderItem2 = new Telerik.WinControls.UI.RadMenuHeaderItem();
             this.radMenuButtonItem3 = new Telerik.WinControls.UI.RadMenuButtonItem();
             this.radMenuButtonItem4 = new Telerik.WinControls.UI.RadMenuButtonItem();
             this.radMenuButtonItem5 = new Telerik.WinControls.UI.RadMenuButtonItem();
             this.radMenuButtonItem6 = new Telerik.WinControls.UI.RadMenuButtonItem();
             this.radMenuButtonItem7 = new Telerik.WinControls.UI.RadMenuButtonItem();
+            this.radMenuItem2 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuSeparatorItem1 = new Telerik.WinControls.UI.RadMenuSeparatorItem();
+            this.radMenuComboItem2 = new Telerik.WinControls.UI.RadMenuComboItem();
+            this.radMenuButtonItem2 = new Telerik.WinControls.UI.RadMenuButtonItem();
+            this.radMenuHeaderItem2 = new Telerik.WinControls.UI.RadMenuHeaderItem();
+            this.radMenuHeaderItem1 = new Telerik.WinControls.UI.RadMenuHeaderItem();
+            this.radMenuItem1 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuComboItem1 = new Telerik.WinControls.UI.RadMenuComboItem();
+            this.radMenuButtonItem1 = new Telerik.WinControls.UI.RadMenuButtonItem();
             this.radMenu1 = new Telerik.WinControls.UI.RadMenu();
-            this.radMenuItem3 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuComboItem3 = new Telerik.WinControls.UI.RadMenuComboItem();
             this.radMenuButtonItem8 = new Telerik.WinControls.UI.RadMenuButtonItem();
             this.radMenuItem4 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuItem3 = new Telerik.WinControls.UI.RadMenuItem();
             this.breezeTheme1 = new Telerik.WinControls.Themes.BreezeTheme();
             this.aquaTheme1 = new Telerik.WinControls.Themes.AquaTheme();
             this.radButton1 = new Telerik.WinControls.UI.RadButton();
@@ -56,15 +56,18 @@
             this.desertTheme1 = new Telerik.WinControls.Themes.DesertTheme();
             this.radButton4 = new Telerik.WinControls.UI.RadButton();
             this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
+            this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
+            this.radWaitingBar1 = new Telerik.WinControls.UI.RadWaitingBar();
             ((System.ComponentModel.ISupportInitialize)(this.radApplicationMenu1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMenuComboItem1.ComboBoxElement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radMenuComboItem2.ComboBoxElement)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radMenuComboItem1.ComboBoxElement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radMenuComboItem3.ComboBoxElement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radWaitingBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // radApplicationMenu1
@@ -91,79 +94,72 @@
             this.radApplicationMenu1.Size = new System.Drawing.Size(58, 54);
             this.radApplicationMenu1.TabIndex = 0;
             this.radApplicationMenu1.Text = "radApplicationMenu1";
-            this.radApplicationMenu1.ThemeName = "Breeze";
+            this.radApplicationMenu1.ThemeName = "TelerikMetro";
             // 
-            // radMenuItem1
+            // radMenuButtonItem3
             // 
-            this.radMenuItem1.AccessibleDescription = "radMenuItem1";
-            this.radMenuItem1.AccessibleName = "radMenuItem1";
-            this.radMenuItem1.Name = "radMenuItem1";
-            this.radMenuItem1.Text = "radMenuItem1";
-            this.radMenuItem1.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            // 
-            // radMenuHeaderItem1
-            // 
-            this.radMenuHeaderItem1.AccessibleDescription = "radMenuHeaderItem1";
-            this.radMenuHeaderItem1.AccessibleName = "radMenuHeaderItem1";
-            this.radMenuHeaderItem1.Name = "radMenuHeaderItem1";
-            this.radMenuHeaderItem1.Text = "radMenuHeaderItem1";
-            this.radMenuHeaderItem1.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            // 
-            // radMenuComboItem1
-            // 
-            this.radMenuComboItem1.AccessibleDescription = "radMenuComboItem1";
-            this.radMenuComboItem1.AccessibleName = "radMenuComboItem1";
+            this.radMenuButtonItem3.AccessibleDescription = "radMenuButtonItem3";
+            this.radMenuButtonItem3.AccessibleName = "radMenuButtonItem3";
             // 
             // 
             // 
-            this.radMenuComboItem1.ComboBoxElement.ArrowButtonMinWidth = 17;
-            this.radMenuComboItem1.ComboBoxElement.AutoCompleteAppend = null;
-            this.radMenuComboItem1.ComboBoxElement.AutoCompleteDataSource = null;
-            this.radMenuComboItem1.ComboBoxElement.AutoCompleteDisplayMember = null;
-            this.radMenuComboItem1.ComboBoxElement.AutoCompleteSuggest = null;
-            this.radMenuComboItem1.ComboBoxElement.AutoCompleteValueMember = null;
-            this.radMenuComboItem1.ComboBoxElement.DataMember = "";
-            this.radMenuComboItem1.ComboBoxElement.DataSource = null;
-            this.radMenuComboItem1.ComboBoxElement.DefaultItemsCountInDropDown = 6;
-            this.radMenuComboItem1.ComboBoxElement.DefaultValue = null;
-            this.radMenuComboItem1.ComboBoxElement.DisplayMember = "";
-            this.radMenuComboItem1.ComboBoxElement.DropDownAnimationEasing = Telerik.WinControls.RadEasingType.InQuad;
-            this.radMenuComboItem1.ComboBoxElement.DropDownAnimationEnabled = true;
-            this.radMenuComboItem1.ComboBoxElement.EditableElementText = "";
-            this.radMenuComboItem1.ComboBoxElement.EditorElement = this.radMenuComboItem1.ComboBoxElement;
-            this.radMenuComboItem1.ComboBoxElement.EditorManager = null;
-            this.radMenuComboItem1.ComboBoxElement.Filter = null;
-            this.radMenuComboItem1.ComboBoxElement.FilterExpression = "";
-            this.radMenuComboItem1.ComboBoxElement.Focusable = true;
-            this.radMenuComboItem1.ComboBoxElement.FormatString = "";
-            this.radMenuComboItem1.ComboBoxElement.FormattingEnabled = true;
-            this.radMenuComboItem1.ComboBoxElement.ItemHeight = 18;
-            this.radMenuComboItem1.ComboBoxElement.MaxDropDownItems = 0;
-            this.radMenuComboItem1.ComboBoxElement.MaxLength = 32767;
-            this.radMenuComboItem1.ComboBoxElement.MaxValue = null;
-            this.radMenuComboItem1.ComboBoxElement.MinValue = null;
-            this.radMenuComboItem1.ComboBoxElement.NullValue = null;
-            this.radMenuComboItem1.ComboBoxElement.OwnerOffset = 0;
-            this.radMenuComboItem1.ComboBoxElement.ShowImageInEditorArea = true;
-            this.radMenuComboItem1.ComboBoxElement.SortStyle = Telerik.WinControls.Enumerations.SortStyle.None;
-            this.radMenuComboItem1.ComboBoxElement.Value = null;
-            this.radMenuComboItem1.ComboBoxElement.ValueMember = "";
-            this.radMenuComboItem1.Name = "radMenuComboItem1";
-            this.radMenuComboItem1.Text = "radMenuComboItem1";
-            this.radMenuComboItem1.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.radMenuButtonItem3.ButtonElement.AccessibleDescription = "radMenuButtonItem3";
+            this.radMenuButtonItem3.ButtonElement.AccessibleName = "radMenuButtonItem3";
+            this.radMenuButtonItem3.Name = "radMenuButtonItem3";
+            this.radMenuButtonItem3.Text = "radMenuButtonItem3";
+            this.radMenuButtonItem3.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
-            // radMenuButtonItem1
+            // radMenuButtonItem4
             // 
-            this.radMenuButtonItem1.AccessibleDescription = "radMenuButtonItem1";
-            this.radMenuButtonItem1.AccessibleName = "radMenuButtonItem1";
+            this.radMenuButtonItem4.AccessibleDescription = "radMenuButtonItem4";
+            this.radMenuButtonItem4.AccessibleName = "radMenuButtonItem4";
             // 
             // 
             // 
-            this.radMenuButtonItem1.ButtonElement.AccessibleDescription = "radMenuButtonItem1";
-            this.radMenuButtonItem1.ButtonElement.AccessibleName = "radMenuButtonItem1";
-            this.radMenuButtonItem1.Name = "radMenuButtonItem1";
-            this.radMenuButtonItem1.Text = "radMenuButtonItem1";
-            this.radMenuButtonItem1.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.radMenuButtonItem4.ButtonElement.AccessibleDescription = "radMenuButtonItem4";
+            this.radMenuButtonItem4.ButtonElement.AccessibleName = "radMenuButtonItem4";
+            this.radMenuButtonItem4.Name = "radMenuButtonItem4";
+            this.radMenuButtonItem4.Text = "radMenuButtonItem4";
+            this.radMenuButtonItem4.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            // 
+            // radMenuButtonItem5
+            // 
+            this.radMenuButtonItem5.AccessibleDescription = "radMenuButtonItem5";
+            this.radMenuButtonItem5.AccessibleName = "radMenuButtonItem5";
+            // 
+            // 
+            // 
+            this.radMenuButtonItem5.ButtonElement.AccessibleDescription = "radMenuButtonItem5";
+            this.radMenuButtonItem5.ButtonElement.AccessibleName = "radMenuButtonItem5";
+            this.radMenuButtonItem5.Name = "radMenuButtonItem5";
+            this.radMenuButtonItem5.Text = "radMenuButtonItem5";
+            this.radMenuButtonItem5.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            // 
+            // radMenuButtonItem6
+            // 
+            this.radMenuButtonItem6.AccessibleDescription = "radMenuButtonItem6";
+            this.radMenuButtonItem6.AccessibleName = "radMenuButtonItem6";
+            // 
+            // 
+            // 
+            this.radMenuButtonItem6.ButtonElement.AccessibleDescription = "radMenuButtonItem6";
+            this.radMenuButtonItem6.ButtonElement.AccessibleName = "radMenuButtonItem6";
+            this.radMenuButtonItem6.Name = "radMenuButtonItem6";
+            this.radMenuButtonItem6.Text = "radMenuButtonItem6";
+            this.radMenuButtonItem6.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            // 
+            // radMenuButtonItem7
+            // 
+            this.radMenuButtonItem7.AccessibleDescription = "radMenuButtonItem7";
+            this.radMenuButtonItem7.AccessibleName = "radMenuButtonItem7";
+            // 
+            // 
+            // 
+            this.radMenuButtonItem7.ButtonElement.AccessibleDescription = "radMenuButtonItem7";
+            this.radMenuButtonItem7.ButtonElement.AccessibleName = "radMenuButtonItem7";
+            this.radMenuButtonItem7.Name = "radMenuButtonItem7";
+            this.radMenuButtonItem7.Text = "radMenuButtonItem7";
+            this.radMenuButtonItem7.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
             // radMenuItem2
             // 
@@ -245,70 +241,77 @@
             this.radMenuHeaderItem2.Text = "radMenuHeaderItem2";
             this.radMenuHeaderItem2.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
-            // radMenuButtonItem3
+            // radMenuHeaderItem1
             // 
-            this.radMenuButtonItem3.AccessibleDescription = "radMenuButtonItem3";
-            this.radMenuButtonItem3.AccessibleName = "radMenuButtonItem3";
+            this.radMenuHeaderItem1.AccessibleDescription = "radMenuHeaderItem1";
+            this.radMenuHeaderItem1.AccessibleName = "radMenuHeaderItem1";
+            this.radMenuHeaderItem1.Name = "radMenuHeaderItem1";
+            this.radMenuHeaderItem1.Text = "radMenuHeaderItem1";
+            this.radMenuHeaderItem1.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
+            // radMenuItem1
             // 
+            this.radMenuItem1.AccessibleDescription = "radMenuItem1";
+            this.radMenuItem1.AccessibleName = "radMenuItem1";
+            this.radMenuItem1.Name = "radMenuItem1";
+            this.radMenuItem1.Text = "radMenuItem1";
+            this.radMenuItem1.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
-            this.radMenuButtonItem3.ButtonElement.AccessibleDescription = "radMenuButtonItem3";
-            this.radMenuButtonItem3.ButtonElement.AccessibleName = "radMenuButtonItem3";
-            this.radMenuButtonItem3.Name = "radMenuButtonItem3";
-            this.radMenuButtonItem3.Text = "radMenuButtonItem3";
-            this.radMenuButtonItem3.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            // radMenuComboItem1
             // 
-            // radMenuButtonItem4
-            // 
-            this.radMenuButtonItem4.AccessibleDescription = "radMenuButtonItem4";
-            this.radMenuButtonItem4.AccessibleName = "radMenuButtonItem4";
-            // 
-            // 
-            // 
-            this.radMenuButtonItem4.ButtonElement.AccessibleDescription = "radMenuButtonItem4";
-            this.radMenuButtonItem4.ButtonElement.AccessibleName = "radMenuButtonItem4";
-            this.radMenuButtonItem4.Name = "radMenuButtonItem4";
-            this.radMenuButtonItem4.Text = "radMenuButtonItem4";
-            this.radMenuButtonItem4.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            // 
-            // radMenuButtonItem5
-            // 
-            this.radMenuButtonItem5.AccessibleDescription = "radMenuButtonItem5";
-            this.radMenuButtonItem5.AccessibleName = "radMenuButtonItem5";
+            this.radMenuComboItem1.AccessibleDescription = "radMenuComboItem1";
+            this.radMenuComboItem1.AccessibleName = "radMenuComboItem1";
             // 
             // 
             // 
-            this.radMenuButtonItem5.ButtonElement.AccessibleDescription = "radMenuButtonItem5";
-            this.radMenuButtonItem5.ButtonElement.AccessibleName = "radMenuButtonItem5";
-            this.radMenuButtonItem5.Name = "radMenuButtonItem5";
-            this.radMenuButtonItem5.Text = "radMenuButtonItem5";
-            this.radMenuButtonItem5.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.radMenuComboItem1.ComboBoxElement.ArrowButtonMinWidth = 17;
+            this.radMenuComboItem1.ComboBoxElement.AutoCompleteAppend = null;
+            this.radMenuComboItem1.ComboBoxElement.AutoCompleteDataSource = null;
+            this.radMenuComboItem1.ComboBoxElement.AutoCompleteDisplayMember = null;
+            this.radMenuComboItem1.ComboBoxElement.AutoCompleteSuggest = null;
+            this.radMenuComboItem1.ComboBoxElement.AutoCompleteValueMember = null;
+            this.radMenuComboItem1.ComboBoxElement.DataMember = "";
+            this.radMenuComboItem1.ComboBoxElement.DataSource = null;
+            this.radMenuComboItem1.ComboBoxElement.DefaultItemsCountInDropDown = 6;
+            this.radMenuComboItem1.ComboBoxElement.DefaultValue = null;
+            this.radMenuComboItem1.ComboBoxElement.DisplayMember = "";
+            this.radMenuComboItem1.ComboBoxElement.DropDownAnimationEasing = Telerik.WinControls.RadEasingType.InQuad;
+            this.radMenuComboItem1.ComboBoxElement.DropDownAnimationEnabled = true;
+            this.radMenuComboItem1.ComboBoxElement.EditableElementText = "";
+            this.radMenuComboItem1.ComboBoxElement.EditorElement = this.radMenuComboItem1.ComboBoxElement;
+            this.radMenuComboItem1.ComboBoxElement.EditorManager = null;
+            this.radMenuComboItem1.ComboBoxElement.Filter = null;
+            this.radMenuComboItem1.ComboBoxElement.FilterExpression = "";
+            this.radMenuComboItem1.ComboBoxElement.Focusable = true;
+            this.radMenuComboItem1.ComboBoxElement.FormatString = "";
+            this.radMenuComboItem1.ComboBoxElement.FormattingEnabled = true;
+            this.radMenuComboItem1.ComboBoxElement.ItemHeight = 18;
+            this.radMenuComboItem1.ComboBoxElement.MaxDropDownItems = 0;
+            this.radMenuComboItem1.ComboBoxElement.MaxLength = 32767;
+            this.radMenuComboItem1.ComboBoxElement.MaxValue = null;
+            this.radMenuComboItem1.ComboBoxElement.MinValue = null;
+            this.radMenuComboItem1.ComboBoxElement.NullValue = null;
+            this.radMenuComboItem1.ComboBoxElement.OwnerOffset = 0;
+            this.radMenuComboItem1.ComboBoxElement.ShowImageInEditorArea = true;
+            this.radMenuComboItem1.ComboBoxElement.SortStyle = Telerik.WinControls.Enumerations.SortStyle.None;
+            this.radMenuComboItem1.ComboBoxElement.Value = null;
+            this.radMenuComboItem1.ComboBoxElement.ValueMember = "";
+            this.radMenuComboItem1.Name = "radMenuComboItem1";
+            this.radMenuComboItem1.Text = "radMenuComboItem1";
+            this.radMenuComboItem1.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
-            // radMenuButtonItem6
+            // radMenuButtonItem1
             // 
-            this.radMenuButtonItem6.AccessibleDescription = "radMenuButtonItem6";
-            this.radMenuButtonItem6.AccessibleName = "radMenuButtonItem6";
-            // 
-            // 
-            // 
-            this.radMenuButtonItem6.ButtonElement.AccessibleDescription = "radMenuButtonItem6";
-            this.radMenuButtonItem6.ButtonElement.AccessibleName = "radMenuButtonItem6";
-            this.radMenuButtonItem6.Name = "radMenuButtonItem6";
-            this.radMenuButtonItem6.Text = "radMenuButtonItem6";
-            this.radMenuButtonItem6.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            // 
-            // radMenuButtonItem7
-            // 
-            this.radMenuButtonItem7.AccessibleDescription = "radMenuButtonItem7";
-            this.radMenuButtonItem7.AccessibleName = "radMenuButtonItem7";
+            this.radMenuButtonItem1.AccessibleDescription = "radMenuButtonItem1";
+            this.radMenuButtonItem1.AccessibleName = "radMenuButtonItem1";
             // 
             // 
             // 
-            this.radMenuButtonItem7.ButtonElement.AccessibleDescription = "radMenuButtonItem7";
-            this.radMenuButtonItem7.ButtonElement.AccessibleName = "radMenuButtonItem7";
-            this.radMenuButtonItem7.Name = "radMenuButtonItem7";
-            this.radMenuButtonItem7.Text = "radMenuButtonItem7";
-            this.radMenuButtonItem7.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.radMenuButtonItem1.ButtonElement.AccessibleDescription = "radMenuButtonItem1";
+            this.radMenuButtonItem1.ButtonElement.AccessibleName = "radMenuButtonItem1";
+            this.radMenuButtonItem1.Name = "radMenuButtonItem1";
+            this.radMenuButtonItem1.Text = "radMenuButtonItem1";
+            this.radMenuButtonItem1.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
             // radMenu1
             // 
@@ -318,18 +321,11 @@
             this.radMenuItem4});
             this.radMenu1.Location = new System.Drawing.Point(0, 0);
             this.radMenu1.Name = "radMenu1";
-            this.radMenu1.Size = new System.Drawing.Size(714, 22);
+            this.radMenu1.Padding = new System.Windows.Forms.Padding(2, 2, 0, 0);
+            this.radMenu1.Size = new System.Drawing.Size(714, 28);
             this.radMenu1.TabIndex = 0;
             this.radMenu1.Text = "radMenu1";
-            this.radMenu1.ThemeName = "Aqua";
-            // 
-            // radMenuItem3
-            // 
-            this.radMenuItem3.AccessibleDescription = "radMenuItem3";
-            this.radMenuItem3.AccessibleName = "radMenuItem3";
-            this.radMenuItem3.Name = "radMenuItem3";
-            this.radMenuItem3.Text = "radMenuItem3";
-            this.radMenuItem3.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.radMenu1.ThemeName = "TelerikMetro";
             // 
             // radMenuComboItem3
             // 
@@ -394,6 +390,14 @@
             this.radMenuItem4.Text = "radMenuItem4";
             this.radMenuItem4.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
+            // radMenuItem3
+            // 
+            this.radMenuItem3.AccessibleDescription = "radMenuItem3";
+            this.radMenuItem3.AccessibleName = "radMenuItem3";
+            this.radMenuItem3.Name = "radMenuItem3";
+            this.radMenuItem3.Text = "radMenuItem3";
+            this.radMenuItem3.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            // 
             // radButton1
             // 
             this.radButton1.Location = new System.Drawing.Point(433, 177);
@@ -428,13 +432,22 @@
             this.radButton4.Size = new System.Drawing.Size(110, 24);
             this.radButton4.TabIndex = 4;
             this.radButton4.Text = "radButton4";
-            this.radButton4.ThemeName = "Windows8";
+            this.radButton4.ThemeName = "TelerikMetro";
+            // 
+            // radWaitingBar1
+            // 
+            this.radWaitingBar1.Location = new System.Drawing.Point(338, 322);
+            this.radWaitingBar1.Name = "radWaitingBar1";
+            this.radWaitingBar1.Size = new System.Drawing.Size(130, 24);
+            this.radWaitingBar1.TabIndex = 0;
+            this.radWaitingBar1.Text = "radWaitingBar1";
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(714, 405);
+            this.Controls.Add(this.radWaitingBar1);
             this.Controls.Add(this.radButton4);
             this.Controls.Add(this.radButton3);
             this.Controls.Add(this.radButton2);
@@ -445,14 +458,15 @@
             this.Text = "Main";
             this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radApplicationMenu1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMenuComboItem1.ComboBoxElement)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radMenuComboItem2.ComboBoxElement)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radMenuComboItem1.ComboBoxElement)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radMenuComboItem3.ComboBoxElement)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radWaitingBar1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -488,6 +502,8 @@
         private Telerik.WinControls.Themes.DesertTheme desertTheme1;
         private Telerik.WinControls.UI.RadButton radButton4;
         private Telerik.WinControls.Themes.Windows8Theme windows8Theme1;
+        private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
+        private Telerik.WinControls.UI.RadWaitingBar radWaitingBar1;
 
     }
 }
