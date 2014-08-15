@@ -3,25 +3,17 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telerik.WinControls;
 
-namespace WMS
+namespace WMS.WarehouseForms
 {
-    public partial class Main : Form
+    public partial class Item : Telerik.WinControls.UI.RadForm
     {
-        public Main()
+        public Item()
         {
             InitializeComponent();
         }
-
-        private void Main_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-      
     }
 }
