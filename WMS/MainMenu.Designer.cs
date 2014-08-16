@@ -30,16 +30,20 @@
         {
             this.radMenuItem2 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem4 = new Telerik.WinControls.UI.RadMenuItem();
-            this.radMenuItem5 = new Telerik.WinControls.UI.RadMenuItem();
-            this.radMenuItem9 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem1 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem3 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem6 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem7 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem8 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuItem5 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuItem9 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenu1 = new Telerik.WinControls.UI.RadMenu();
-            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
+            this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
+            this.radPanel2 = new Telerik.WinControls.UI.RadPanel();
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radPanel2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // radMenuItem2
@@ -63,22 +67,6 @@
             this.radMenuItem4.Name = "radMenuItem4";
             this.radMenuItem4.Text = "Склад";
             this.radMenuItem4.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            // 
-            // radMenuItem5
-            // 
-            this.radMenuItem5.AccessibleDescription = "Справки";
-            this.radMenuItem5.AccessibleName = "Справки";
-            this.radMenuItem5.Name = "radMenuItem5";
-            this.radMenuItem5.Text = "Справки";
-            this.radMenuItem5.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            // 
-            // radMenuItem9
-            // 
-            this.radMenuItem9.AccessibleDescription = "Настройки";
-            this.radMenuItem9.AccessibleName = "Настройки";
-            this.radMenuItem9.Name = "radMenuItem9";
-            this.radMenuItem9.Text = "Настройки";
-            this.radMenuItem9.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
             // radMenuItem1
             // 
@@ -122,11 +110,21 @@
             this.radMenuItem8.Text = "Складови Места";
             this.radMenuItem8.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
-            // MainMenu
+            // radMenuItem5
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(803, 355);
+            this.radMenuItem5.AccessibleDescription = "Справки";
+            this.radMenuItem5.AccessibleName = "Справки";
+            this.radMenuItem5.Name = "radMenuItem5";
+            this.radMenuItem5.Text = "Справки";
+            this.radMenuItem5.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            // 
+            // radMenuItem9
+            // 
+            this.radMenuItem9.AccessibleDescription = "Настройки";
+            this.radMenuItem9.AccessibleName = "Настройки";
+            this.radMenuItem9.Name = "radMenuItem9";
+            this.radMenuItem9.Text = "Настройки";
+            this.radMenuItem9.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
             // radMenu1
             // 
@@ -138,12 +136,37 @@
             this.radMenu1.Location = new System.Drawing.Point(0, 0);
             this.radMenu1.Name = "radMenu1";
             this.radMenu1.Padding = new System.Windows.Forms.Padding(2, 2, 0, 0);
-            this.radMenu1.Size = new System.Drawing.Size(803, 29);
+            this.radMenu1.Size = new System.Drawing.Size(803, 24);
             this.radMenu1.TabIndex = 2;
             this.radMenu1.Text = "radMenu1";
             this.radMenu1.ThemeName = "TelerikMetro";
+            // 
+            // radPanel1
+            // 
+            this.radPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.radPanel1.Location = new System.Drawing.Point(0, 24);
+            this.radPanel1.Name = "radPanel1";
+            this.radPanel1.Size = new System.Drawing.Size(632, 331);
+            this.radPanel1.TabIndex = 3;
+            // 
+            // radPanel2
+            // 
+            this.radPanel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.radPanel2.Location = new System.Drawing.Point(638, 24);
+            this.radPanel2.Name = "radPanel2";
+            this.radPanel2.Size = new System.Drawing.Size(165, 331);
+            this.radPanel2.TabIndex = 4;
+            // 
+            // MainMenu
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(803, 355);
+            this.Controls.Add(this.radPanel2);
+            this.Controls.Add(this.radPanel1);
             this.Controls.Add(this.radMenu1);
-            this.IsMdiContainer = true;
             this.Name = "MainMenu";
             // 
             // 
@@ -153,6 +176,8 @@
             this.Text = "WMS";
             this.ThemeName = "ControlDefault";
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radPanel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -171,5 +196,7 @@
         private Telerik.WinControls.UI.RadMenuItem radMenuItem7;
         private Telerik.WinControls.UI.RadMenuItem radMenuItem8;
         private Telerik.WinControls.UI.RadMenu radMenu1;
+        private Telerik.WinControls.UI.RadPanel radPanel1;
+        private Telerik.WinControls.UI.RadPanel radPanel2;
     }
 }

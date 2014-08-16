@@ -56,11 +56,6 @@
     <Reference Include="TelerikCommon, Version=2014.2.715.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Library\DB\DbUtil.cs" />
     <Compile Include="Library\DB\Queries.cs" />
     <Compile Include="Library\DB\Tables\Items.cs" />
@@ -77,23 +72,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WarehouseForms\Item.cs">
+    <Compile Include="WarehouseForms\ModelCard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WarehouseForms\Item.Designer.cs">
-      <DependentUpon>Item.cs</DependentUpon>
+    <Compile Include="WarehouseForms\ModelCard.Designer.cs">
+      <DependentUpon>ModelCard.cs</DependentUpon>
     </Compile>
-    <Compile Include="WarehouseForms\Manufacturer.cs">
+    <Compile Include="WarehouseForms\Models.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WarehouseForms\Manufacturer.Designer.cs">
-      <DependentUpon>Manufacturer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="WarehouseForms\Model.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="WarehouseForms\Model.Designer.cs">
-      <DependentUpon>Model.cs</DependentUpon>
+    <Compile Include="WarehouseForms\Models.Designer.cs">
+      <DependentUpon>Models.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
@@ -107,26 +96,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="WarehouseForms\Item.resx">
-      <DependentUpon>Item.cs</DependentUpon>
+    <EmbeddedResource Include="WarehouseForms\ModelCard.resx">
+      <DependentUpon>ModelCard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WarehouseForms\Manufacturer.resx">
-      <DependentUpon>Manufacturer.cs</DependentUpon>
+    <EmbeddedResource Include="WarehouseForms\Models.resx">
+      <DependentUpon>Models.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WarehouseForms\Model.resx">
-      <DependentUpon>Model.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
