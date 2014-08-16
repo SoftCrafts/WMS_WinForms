@@ -17,11 +17,9 @@ namespace WMS
             InitializeComponent();
         }
 
-      
-
-        private void radMenuItem1_Click_1(object sender, EventArgs e)
+        private void menu_Manufacturers_Click(object sender, EventArgs e)
         {
-
+            ShowChildForm(new Manufacturers());
         }
 
         private void radMenuItem3_Click(object sender, EventArgs e)
@@ -40,7 +38,7 @@ namespace WMS
             foreach (Form frm in radPanel1.Controls)
             {
                 if (frm.GetType() == form.GetType()
-                    && frm != form)
+                    && (frm != form))      
                 {
                     frm.Close();
                 }
@@ -52,8 +50,7 @@ namespace WMS
             form.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             radPanel1.Controls.Add(form);
             form.Show();
-  
-        
+          
         }
     }
 }
