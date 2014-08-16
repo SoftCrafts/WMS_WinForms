@@ -37,11 +37,13 @@ namespace WMS
         {
             foreach (Form frm in radPanel1.Controls)
             {
-                if (frm.GetType() == form.GetType()
-                    && (frm != form))      
+
+                if (frm!=null)
                 {
-                    frm.Close();
+                    
                 }
+                    frm.Close();
+             
             }
 
            
