@@ -104,5 +104,25 @@ namespace WMS
             return boolRes;
         }
 
+        /// <summary>
+        /// Проверява дали е нечетно едно число.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static bool IsOdd(this int value)
+        {
+            return value % 2 != 0;
+        }
+
+        /// <summary>
+        /// Проверява дали е четно едно число.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static bool IsEven(this int value)
+        {
+            return value % 2 == 0;
+        }
+
     }
 }

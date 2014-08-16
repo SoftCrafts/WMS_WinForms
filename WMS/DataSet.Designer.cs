@@ -2469,6 +2469,8 @@ namespace WMS {
             
             private global::System.Data.DataColumn columnModified_on;
             
+            private global::System.Data.DataColumn columnManufacturer_Name;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ModelDataTable() {
@@ -2568,6 +2570,14 @@ namespace WMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Manufacturer_NameColumn {
+                get {
+                    return this.columnManufacturer_Name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2603,7 +2613,7 @@ namespace WMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ModelRow AddModelRow(long Manufacturer_ID, string Name, System.DateTime Production_Date, long Inserted_by, System.DateTime Inserted_on, long Modified_by, System.DateTime Modified_on) {
+            public ModelRow AddModelRow(long Manufacturer_ID, string Name, System.DateTime Production_Date, long Inserted_by, System.DateTime Inserted_on, long Modified_by, System.DateTime Modified_on, string Manufacturer_Name) {
                 ModelRow rowModelRow = ((ModelRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2613,7 +2623,8 @@ namespace WMS {
                         Inserted_by,
                         Inserted_on,
                         Modified_by,
-                        Modified_on};
+                        Modified_on,
+                        Manufacturer_Name};
                 rowModelRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowModelRow);
                 return rowModelRow;
@@ -2651,6 +2662,7 @@ namespace WMS {
                 this.columnInserted_on = base.Columns["Inserted_on"];
                 this.columnModified_by = base.Columns["Modified_by"];
                 this.columnModified_on = base.Columns["Modified_on"];
+                this.columnManufacturer_Name = base.Columns["Manufacturer_Name"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2672,6 +2684,8 @@ namespace WMS {
                 base.Columns.Add(this.columnModified_by);
                 this.columnModified_on = new global::System.Data.DataColumn("Modified_on", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnModified_on);
+                this.columnManufacturer_Name = new global::System.Data.DataColumn("Manufacturer_Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnManufacturer_Name);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnModel_ID}, true));
                 this.columnModel_ID.AutoIncrement = true;
@@ -2681,6 +2695,8 @@ namespace WMS {
                 this.columnModel_ID.ReadOnly = true;
                 this.columnModel_ID.Unique = true;
                 this.columnName.MaxLength = 50;
+                this.columnManufacturer_Name.ReadOnly = true;
+                this.columnManufacturer_Name.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4364,6 +4380,22 @@ namespace WMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Manufacturer_Name {
+                get {
+                    try {
+                        return ((string)(this[this.tableModel.Manufacturer_NameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Manufacturer_Name\' in table \'Model\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableModel.Manufacturer_NameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsManufacturer_IDNull() {
                 return this.IsNull(this.tableModel.Manufacturer_IDColumn);
             }
@@ -4444,6 +4476,18 @@ namespace WMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetModified_onNull() {
                 this[this.tableModel.Modified_onColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsManufacturer_NameNull() {
+                return this.IsNull(this.tableModel.Manufacturer_NameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetManufacturer_NameNull() {
+                this[this.tableModel.Manufacturer_NameColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -7197,16 +7241,17 @@ SELECT Manufacturer_ID, Name FROM Manufacturer WHERE (Manufacturer_ID = @Manufac
             tableMapping.ColumnMappings.Add("Inserted_on", "Inserted_on");
             tableMapping.ColumnMappings.Add("Modified_by", "Modified_by");
             tableMapping.ColumnMappings.Add("Modified_on", "Modified_on");
+            tableMapping.ColumnMappings.Add("Manufacturer_Name", "Manufacturer_Name");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Model] WHERE (([Model_ID] = @Original_Model_ID) AND ((@IsNull_Manufacturer_ID = 1 AND [Manufacturer_ID] IS NULL) OR ([Manufacturer_ID] = @Original_Manufacturer_ID)) AND ((@IsNull_Name = 1 AND [Name] IS NULL) OR ([Name] = @Original_Name)) AND ((@IsNull_Production_Date = 1 AND [Production_Date] IS NULL) OR ([Production_Date] = @Original_Production_Date)) AND ((@IsNull_Inserted_by = 1 AND [Inserted_by] IS NULL) OR ([Inserted_by] = @Original_Inserted_by)) AND ((@IsNull_Inserted_on = 1 AND [Inserted_on] IS NULL) OR ([Inserted_on] = @Original_Inserted_on)) AND ((@IsNull_Modified_by = 1 AND [Modified_by] IS NULL) OR ([Modified_by] = @Original_Modified_by)) AND ((@IsNull_Modified_on = 1 AND [Modified_on] IS NULL) OR ([Modified_on] = @Original_Modified_on)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Model] WHERE (([Model_ID] = @Original_Model_ID) AND ((@IsNull_Manufacturer_ID = 1 AND [Manufacturer_ID] IS NULL) OR ([Manufacturer_ID] = @Original_Manufacturer_ID)) AND ((@IsNull_Name = 1 AND [Name] IS NULL) OR ([Name] = @Original_Name)) AND ((@IsNull_Production_Date = 1 AND [Production_Date] IS NULL) OR ([Production_Date] = @Original_Production_Date)) AND ((@IsNull_Inserted_by = 1 AND [Inserted_by] IS NULL) OR ([Inserted_by] = @Original_Inserted_by)) AND ((@IsNull_Inserted_on = 1 AND [Inserted_on] IS NULL) OR ([Inserted_on] = @Original_Inserted_on)) AND ((@IsNull_Modified_by = 1 AND [Modified_by] IS NULL) OR ([Modified_by] = @Original_Modified_by)) AND ((@IsNull_Modified_on = 1 AND [Modified_on] IS NULL) OR ([Modified_on] = @Original_Modified_on)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Model_ID", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Model_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Manufacturer_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Manufacturer_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Manufacturer_ID", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Manufacturer_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Production_Date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Production_Date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Production_Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Production_Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Inserted_by", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inserted_by", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -7219,11 +7264,11 @@ SELECT Manufacturer_ID, Name FROM Manufacturer WHERE (Manufacturer_ID = @Manufac
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Modified_on", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Modified_on", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Model] ([Manufacturer_ID], [Name], [Production_Date], [Inserted_by], [Inserted_on], [Modified_by], [Modified_on]) VALUES (@Manufacturer_ID, @Name, @Production_Date, @Inserted_by, @Inserted_on, @Modified_by, @Modified_on);
-SELECT Model_ID, Manufacturer_ID, Name, Production_Date, Inserted_by, Inserted_on, Modified_by, Modified_on FROM Model WHERE (Model_ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Model] ([Manufacturer_ID], [Name], [Production_Date], [Inserted_by], [Inserted_on], [Modified_by], [Modified_on]) VALUES (@Manufacturer_ID, @Name, @Production_Date, @Inserted_by, @Inserted_on, @Modified_by, @Modified_on);
+SELECT Model_ID, Manufacturer_ID, (SELECT Name FROM Manufacturer WHERE (Manufacturer_ID = Model.Manufacturer_ID)) AS Manufacturer_Name, Name, Production_Date, Inserted_by, Inserted_on, Modified_by, Modified_on FROM Model WHERE (Model_ID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Manufacturer_ID", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Manufacturer_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Production_Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Production_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Inserted_by", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inserted_by", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Inserted_on", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inserted_on", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -7231,11 +7276,11 @@ SELECT Model_ID, Manufacturer_ID, Name, Production_Date, Inserted_by, Inserted_o
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Modified_on", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Modified_on", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Model] SET [Manufacturer_ID] = @Manufacturer_ID, [Name] = @Name, [Production_Date] = @Production_Date, [Inserted_by] = @Inserted_by, [Inserted_on] = @Inserted_on, [Modified_by] = @Modified_by, [Modified_on] = @Modified_on WHERE (([Model_ID] = @Original_Model_ID) AND ((@IsNull_Manufacturer_ID = 1 AND [Manufacturer_ID] IS NULL) OR ([Manufacturer_ID] = @Original_Manufacturer_ID)) AND ((@IsNull_Name = 1 AND [Name] IS NULL) OR ([Name] = @Original_Name)) AND ((@IsNull_Production_Date = 1 AND [Production_Date] IS NULL) OR ([Production_Date] = @Original_Production_Date)) AND ((@IsNull_Inserted_by = 1 AND [Inserted_by] IS NULL) OR ([Inserted_by] = @Original_Inserted_by)) AND ((@IsNull_Inserted_on = 1 AND [Inserted_on] IS NULL) OR ([Inserted_on] = @Original_Inserted_on)) AND ((@IsNull_Modified_by = 1 AND [Modified_by] IS NULL) OR ([Modified_by] = @Original_Modified_by)) AND ((@IsNull_Modified_on = 1 AND [Modified_on] IS NULL) OR ([Modified_on] = @Original_Modified_on)));
-SELECT Model_ID, Manufacturer_ID, Name, Production_Date, Inserted_by, Inserted_on, Modified_by, Modified_on FROM Model WHERE (Model_ID = @Model_ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Model] SET [Manufacturer_ID] = @Manufacturer_ID, [Name] = @Name, [Production_Date] = @Production_Date, [Inserted_by] = @Inserted_by, [Inserted_on] = @Inserted_on, [Modified_by] = @Modified_by, [Modified_on] = @Modified_on WHERE (([Model_ID] = @Original_Model_ID) AND ((@IsNull_Manufacturer_ID = 1 AND [Manufacturer_ID] IS NULL) OR ([Manufacturer_ID] = @Original_Manufacturer_ID)) AND ((@IsNull_Name = 1 AND [Name] IS NULL) OR ([Name] = @Original_Name)) AND ((@IsNull_Production_Date = 1 AND [Production_Date] IS NULL) OR ([Production_Date] = @Original_Production_Date)) AND ((@IsNull_Inserted_by = 1 AND [Inserted_by] IS NULL) OR ([Inserted_by] = @Original_Inserted_by)) AND ((@IsNull_Inserted_on = 1 AND [Inserted_on] IS NULL) OR ([Inserted_on] = @Original_Inserted_on)) AND ((@IsNull_Modified_by = 1 AND [Modified_by] IS NULL) OR ([Modified_by] = @Original_Modified_by)) AND ((@IsNull_Modified_on = 1 AND [Modified_on] IS NULL) OR ([Modified_on] = @Original_Modified_on)));
+SELECT Model_ID, Manufacturer_ID, (SELECT Name FROM Manufacturer WHERE (Manufacturer_ID = Model.Manufacturer_ID)) AS Manufacturer_Name, Name, Production_Date, Inserted_by, Inserted_on, Modified_by, Modified_on FROM Model WHERE (Model_ID = @Model_ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Manufacturer_ID", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Manufacturer_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Production_Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Production_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Inserted_by", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inserted_by", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Inserted_on", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inserted_on", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -7245,7 +7290,7 @@ SELECT Model_ID, Manufacturer_ID, Name, Production_Date, Inserted_by, Inserted_o
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Manufacturer_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Manufacturer_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Manufacturer_ID", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Manufacturer_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Production_Date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Production_Date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Production_Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Production_Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Inserted_by", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inserted_by", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -7272,8 +7317,11 @@ SELECT Model_ID, Manufacturer_ID, Name, Production_Date, Inserted_by, Inserted_o
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Model_ID, Manufacturer_ID, Name, Production_Date, Inserted_by, Inserted_on" +
-                ", Modified_by, Modified_on FROM dbo.Model";
+            this._commandCollection[0].CommandText = @"SELECT        Model_ID, Manufacturer_ID,
+                             (SELECT        Name
+                               FROM            Manufacturer
+                               WHERE        (Manufacturer_ID = Model.Manufacturer_ID)) AS Manufacturer_Name, Name, Production_Date, Inserted_by, Inserted_on, Modified_by, Modified_on
+FROM            Model";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

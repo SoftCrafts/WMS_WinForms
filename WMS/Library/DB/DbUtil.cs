@@ -25,7 +25,7 @@ namespace WMS
             get
             {
                 if (string.IsNullOrEmpty(connstring))
-                    connstring = ConfigurationManager.ConnectionStrings["DigiBrd"].ConnectionString;
+                    connstring = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
                 connstring = GetFilePathFromConnectionString(connstring);
                 return connstring;
@@ -390,10 +390,10 @@ namespace WMS
                         using (var adapter = new SqlDataAdapter(command))
                         {
                             DataSet ds = new DataSet();
-                            adapter.Fill(ds);
+                            adapter.Fill(ds, "DbUtilTable");
                             if (ds.Tables.Count > 0)
                             {
-                                resultDT = ds.Tables[0];
+                                resultDT = ds.Tables["DbUtilTable"];
                             }
                         }
 

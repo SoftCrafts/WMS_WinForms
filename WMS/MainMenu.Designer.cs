@@ -42,8 +42,8 @@
             this.radMenu1 = new Telerik.WinControls.UI.RadMenu();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // radMenuItem2
@@ -131,24 +131,19 @@
             this.radPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.radPanel1.Location = new System.Drawing.Point(0, 24);
+            this.radPanel1.Location = new System.Drawing.Point(5, 44);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(632, 331);
+            this.radPanel1.Size = new System.Drawing.Size(627, 290);
             this.radPanel1.TabIndex = 3;
             // 
             // radPanel2
             // 
-            this.radPanel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.radPanel2.Location = new System.Drawing.Point(638, 24);
+            this.radPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.radPanel2.Location = new System.Drawing.Point(638, 44);
             this.radPanel2.Name = "radPanel2";
-            this.radPanel2.Size = new System.Drawing.Size(165, 331);
+            this.radPanel2.Size = new System.Drawing.Size(165, 290);
             this.radPanel2.TabIndex = 4;
-            // 
-            // MainMenu
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(803, 355);
             // 
             // radMenu1
             // 
@@ -164,6 +159,12 @@
             this.radMenu1.TabIndex = 2;
             this.radMenu1.Text = "radMenu1";
             this.radMenu1.ThemeName = "TelerikMetro";
+            // 
+            // MainMenu
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(803, 355);
             this.Controls.Add(this.radPanel2);
             this.Controls.Add(this.radPanel1);
             this.Controls.Add(this.radMenu1);

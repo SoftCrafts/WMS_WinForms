@@ -8,8 +8,9 @@ namespace WMS
     public static class Queries
     {
         /// <summary>
-        /// Заявка за листа на моделите
+        /// Списък с марките
         /// </summary>
-        public const string models_Select_List= "SELECT [ID] ,[MarkID]  ,(SELECT m.MarkName FROM Marks m WHERE models.MarkID=m.ID) as [MarkName]  ,[ModelName] FROM [dbo].[Models] models";
+        public const string ManufacturerList= "SELECT [Manufacturer_ID]  ,[Name] FROM [Manufacturer] ";
+    
     }
 }

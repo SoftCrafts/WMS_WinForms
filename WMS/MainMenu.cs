@@ -15,6 +15,7 @@ namespace WMS
         public MainMenu()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void menu_Manufacturers_Click(object sender, EventArgs e)
@@ -49,6 +50,7 @@ namespace WMS
            
             form.TopLevel = false;
             form.Dock = DockStyle.Fill;
+            form.Parent = this;
             form.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             radPanel1.Controls.Add(form);
             form.Show();

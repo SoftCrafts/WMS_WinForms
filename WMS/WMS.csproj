@@ -65,10 +65,11 @@
     <Compile Include="Library\DB\Queries.cs" />
     <Compile Include="Library\DB\Tables\Items.cs" />
     <Compile Include="Library\DB\Tables\Marks_table.cs" />
-    <Compile Include="Library\DB\Tables\Models_table.cs" />
+    <Compile Include="Library\DB\Tables\Model_table.cs" />
     <Compile Include="Library\DB\WhereClause.cs" />
     <Compile Include="Library\Tools\Get.cs" />
     <Compile Include="Library\Tools\Globals.cs" />
+    <Compile Include="Library\Tools\NavBar.cs" />
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
