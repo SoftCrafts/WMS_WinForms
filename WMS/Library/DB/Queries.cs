@@ -26,7 +26,7 @@ namespace WMS
         public const string ItemTypes = "SELECT [Item_Type_ID],[Description] FROM [Item_Type]";
 
         // Списък модели
-        public const string Models = "SELECT [Model_ID],[Name] FROM [Model] WHERE [Manufacturer_ID] = ?";        
+        public const string Models = "SELECT [Model_ID],[Name] FROM [Model] WHERE [Manufacturer_ID] = ? ";        
 
         // Списък мерни единици
         public const string UnitsOfMeasure = "SELECT [Code],[Description] FROM [Unit_of_Measure]";
