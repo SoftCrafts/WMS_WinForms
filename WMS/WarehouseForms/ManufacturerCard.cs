@@ -134,8 +134,7 @@ namespace WMS.WarehouseForms
         }
 
         private void btn_Back_Click(object sender, EventArgs e)
-        {            
-            /*
+        {                        
             if (CheckDataModified(initialData, closingData) == true)
             {
                 DialogResult dialogResult = MessageBox.Show("Записът е бил променен. Сигурни ли сте, че искате да запазите промените?", "Съобщение", MessageBoxButtons.YesNo);
@@ -161,13 +160,7 @@ namespace WMS.WarehouseForms
             {
                 NavBar.Navigate(new Manufacturers(), this.Parent);
                 this.Close();
-            }
-            */
-
-            NavBar.Navigate(new Manufacturers(), this.Parent);
-            this.Close();
-
-            //this.Close();
+            }            
         }
 
     }
