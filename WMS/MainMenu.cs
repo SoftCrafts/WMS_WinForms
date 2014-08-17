@@ -30,6 +30,10 @@ namespace WMS
             ShowChildForm(new Models());
         }
 
+        private void menu_Items_Click(object sender, EventArgs e)
+        {
+            ShowChildForm(new Items());
+        }
 
        /// <summary>
        /// Показва подчинени прозорци
