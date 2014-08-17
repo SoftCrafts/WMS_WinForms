@@ -48,7 +48,7 @@ namespace WMS.WarehouseForms
                     txt_Country_Code.Text = dr[Manufacturer_table.Country_Code].MakeString();
                     txt_Website.Text = dr[Manufacturer_table.Website].MakeString();
                     
-                    initialData = FillDictionary();
+                    initialData = Test.FillDictionary(this.radPanel1);
                 }
                     
             }
@@ -129,7 +129,7 @@ namespace WMS.WarehouseForms
 
         private void btn_Back_Click(object sender, EventArgs e)
         {
-            closingData = FillDictionary();
+            closingData = Test.FillDictionary(this.radPanel1);
 
             if (CheckDataModified(initialData, closingData) == true)
             {
