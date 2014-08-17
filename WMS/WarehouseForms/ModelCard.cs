@@ -24,7 +24,7 @@ namespace WMS.WarehouseForms
        
         private void ModelCard_Load(object sender, EventArgs e)
         {
-            LoadComboBoxes(cmb_Manufacturer, Queries.ManufacturerList);
+            Build.LoadComboBoxes(ref cmb_Manufacturer, Queries.ManufacturerList);
             LoadData();
          
         }
@@ -39,24 +39,7 @@ namespace WMS.WarehouseForms
             e.Graphics.DrawRectangle(Pens.GreenYellow, Globals.CreateBorderRect(lbl_Title));
         }
 
-        /// <summary>
-        /// Зарежда combo_box с дадена заявка
-        /// </summary>
-        /// <param name="combo_Box"></param>
-        /// <param name="query"></param>
-        /// <param name="parameter"></param>
-        private void LoadComboBoxes(RadDropDownList combo_Box, string query, params Object[] parameter)
-        {
-
-            DataTable dt = DbUtil.getDataTable(query, parameter);
-
-            combo_Box.ValueMember = dt.Columns[0].MakeString();
-            combo_Box.DisplayMember = dt.Columns[1].MakeString();
-            combo_Box.Width = 200;
-            combo_Box.DataSource = dt;
-           // combo_Box.Rebind();
-
-        }
+     
 
         /// <summary>
         /// Зарежда данните

@@ -68,6 +68,7 @@
     <Compile Include="Library\DB\Tables\Marks_table.cs" />
     <Compile Include="Library\DB\Tables\Model_table.cs" />
     <Compile Include="Library\DB\WhereClause.cs" />
+    <Compile Include="Library\Tools\Build.cs" />
     <Compile Include="Library\Tools\Get.cs" />
     <Compile Include="Library\Tools\Globals.cs" />
     <Compile Include="Library\Tools\NavBar.cs" />
