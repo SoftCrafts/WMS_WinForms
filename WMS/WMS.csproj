@@ -74,7 +74,6 @@
     <Compile Include="Library\Tools\Get.cs" />
     <Compile Include="Library\Tools\Globals.cs" />
     <Compile Include="Library\Tools\NavBar.cs" />
-    <Compile Include="Library\Tools\Test.cs" />
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
