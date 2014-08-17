@@ -7,14 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telerik.WinControls.UI;
 
 namespace WMS.WarehouseForms
 {
     public partial class ManufacturerCard : Form
     {
-        public string Manufacturer_ID;
-        private object[] initialData;
-        private object[] closingData;        
+        public string Manufacturer_ID;        
+        private Dictionary<string, string> initialData = new Dictionary<string,string>();
+        private Dictionary<string, string> closingData = new Dictionary<string,string>();
 
         public ManufacturerCard()
         {
@@ -46,14 +47,14 @@ namespace WMS.WarehouseForms
                     txt_Name.Text = dr[Manufacturer_table.Name].MakeString();
                     txt_Country_Code.Text = dr[Manufacturer_table.Country_Code].MakeString();
                     txt_Website.Text = dr[Manufacturer_table.Website].MakeString();
-
-                    initialData = dr.ItemArray; //Записват се стойностите на реда при отваряне на формата.              
+                    
+                    initialData = FillDictionary();
                 }
                     
             }
         }
 
-        private void Save(object sender, EventArgs e)
+        private void Save()
         {
             DataTable dt = new DataTable();
             WhereClause where = new WhereClause();
@@ -84,22 +85,16 @@ namespace WMS.WarehouseForms
                 dt.Rows.Add(row);
             }
 
-            DbUtil.saveChanges(Manufacturer_table.db_name, dt);
-
-            if (dt.Rows.Count > 0)
-            {
-                DataRow dr = dt.Rows[0];
-                closingData = dr.ItemArray;  //Записват се стойностите на реда при всяка промяна.
-            }
+            DbUtil.saveChanges(Manufacturer_table.db_name, dt);            
         }
 
-        private bool CheckDataModified(object[] initial, object[] closing)
+        private bool CheckDataModified(Dictionary<string, string> initial, Dictionary<string, string> closing)
         {
             bool dataIsChanged = false;
 
-            for (int i = 0; i < initial.Length; i++)
+            for (int i = 0; i < initial.Count; i++)
             {
-                if (initial[i].ToString() != closing[i].ToString())
+                if (initial.ElementAt(i).ToString() != closing.ElementAt(i).ToString())
                 {
                     dataIsChanged = true;
                     return (dataIsChanged);
@@ -109,37 +104,39 @@ namespace WMS.WarehouseForms
             return(dataIsChanged);
         }
 
-        private void RollbackChanges()
+        private Dictionary<string, string> FillDictionary()
         {
-            WhereClause where = new WhereClause();
-            DataTable dt = new DataTable();            
+             Dictionary<string, string> dict = new Dictionary<string,string>();
 
-            if (Manufacturer_ID == "-1")
-            {
-                where.Add(Manufacturer_table.Manufacturer_ID, -1);
-            }
-            else
-            {
-                where.Add(Manufacturer_table.Manufacturer_ID, Manufacturer_ID);
-            }
+             foreach (Control c in radPanel1.Controls)
+                    {
+                        if (c is RadTextBox || c is TextBox)
+                        {
+                            dict.Add(c.Name, c.Text);
+                        }
 
-            dt = DbUtil.getDataTableForTableName(Manufacturer_table.db_name, null, 0, where);
-            DataRow dr = dt.Rows[0];
-            dr.ItemArray = initialData;                                        
-            //for (int i = 1; i <= closingData.Length; i++)
-            //{
-            //    dr.ItemArray[i] = closingData[i];                
-            //}                            
-            DbUtil.saveChanges(Manufacturer_table.db_name, dt);
-        }
+                        if (c is ComboBox)
+                        {
+                        }
+
+                        if (c is RadioButton)
+                        {
+
+                        }
+                    }
+            return(dict);
+        }        
 
         private void btn_Back_Click(object sender, EventArgs e)
-        {                        
+        {
+            closingData = FillDictionary();
+
             if (CheckDataModified(initialData, closingData) == true)
             {
                 DialogResult dialogResult = MessageBox.Show("Записът е бил променен. Сигурни ли сте, че искате да запазите промените?", "Съобщение", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
+                    Save();
                     MessageBox.Show("Записът беше запаметен!");
 
                     NavBar.Navigate(new Manufacturers(), this.Parent);
@@ -147,9 +144,7 @@ namespace WMS.WarehouseForms
                     
                 }
                 else
-                {
-                    RollbackChanges();
-
+                {                    
                     MessageBox.Show("Записът не беше запаметен!");
 
                     NavBar.Navigate(new Manufacturers(), this.Parent);

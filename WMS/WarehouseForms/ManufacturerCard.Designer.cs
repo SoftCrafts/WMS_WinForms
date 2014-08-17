@@ -65,7 +65,6 @@
             this.txt_Name.Name = "txt_Name";
             this.txt_Name.Size = new System.Drawing.Size(173, 20);
             this.txt_Name.TabIndex = 2;
-            this.txt_Name.TextChanged += new System.EventHandler(this.Save);
             // 
             // btn_Delete
             // 
@@ -119,7 +118,6 @@
             this.txt_Website.Name = "txt_Website";
             this.txt_Website.Size = new System.Drawing.Size(173, 20);
             this.txt_Website.TabIndex = 6;
-            this.txt_Website.TextChanged += new System.EventHandler(this.Save);
             // 
             // lbl_Country_Code
             // 
@@ -135,7 +133,6 @@
             this.txt_Country_Code.Name = "txt_Country_Code";
             this.txt_Country_Code.Size = new System.Drawing.Size(173, 20);
             this.txt_Country_Code.TabIndex = 4;
-            this.txt_Country_Code.TextChanged += new System.EventHandler(this.Save);
             // 
             // ManufacturerCard
             // 
