@@ -16,16 +16,32 @@ namespace WMS.WarehouseForms
         {
             InitializeComponent();
         }
+        private void Manufacturers_Load(object sender, EventArgs e)
+        {
+
+            this.manufacturerTableAdapter.Fill(this.dataSet.Manufacturer);
+            // TODO: This line of code loads data into the 'dataSet1.Model' table. You can move, or remove it, as needed.
+        }
 
         private void btn_Card_Click(object sender, EventArgs e)
         {
+            if (radGridView2.SelectedRows.Count < 1)
+            {
+                MessageBox.Show("Изберете ред!");
+                return;
+            }
             ManufacturerCard mc = new ManufacturerCard();
-            mc.TopLevel = false;
-            mc.Dock = DockStyle.Fill;
-            mc.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            mc.Parent = this;
-            mc.WindowState = FormWindowState.Maximized;
-            mc.Show();
+
+            mc.Manufacturer_ID = radGridView2.SelectedRows[0].Cells[Manufacturer_table.Manufacturer_ID].Value.MakeString();
+
+            NavBar.Navigate(mc, Test.GetParent(this.Parent));
+            Close();            
+        }        
+
+        private void Manufacturers_Load_1(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'dataSet.Manufacturer' table. You can move, or remove it, as needed.
+            this.manufacturerTableAdapter.Fill(this.dataSet.Manufacturer);
         }
     }
 }
