@@ -222,6 +222,7 @@ namespace WMS
 
 
                         processedCount = command.ExecuteScalar().MakeInt();
+                        return 1;
                     }
                     catch (Exception ex)
                     {

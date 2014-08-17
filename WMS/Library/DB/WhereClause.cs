@@ -12,6 +12,7 @@ using System.Web;
 /// 
 namespace WMS
 {
+
     public class WhereClause : IDictionary<String, Object>
     {
         Dictionary<String, Object> whereCollection = new Dictionary<string, object>();
