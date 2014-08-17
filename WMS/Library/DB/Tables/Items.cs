@@ -6,7 +6,7 @@ using System.Web;
 namespace WMS
 {
     /// <summary>
-    /// Table Users
+    /// Table Da se iztrie
     /// </summary>
     public  class Items
     {
