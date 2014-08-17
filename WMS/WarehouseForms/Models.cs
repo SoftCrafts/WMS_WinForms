@@ -16,15 +16,19 @@ namespace WMS.WarehouseForms
         public Models()
         {
             InitializeComponent();
+
         }
+
+
+
 
         private void Models_Load(object sender, EventArgs e)
         {
-
+            
             this.modelTableAdapter.Fill(this.dataSet.Model);
             // TODO: This line of code loads data into the 'dataSet1.Model' table. You can move, or remove it, as needed.
 
-
+            
         }
 
 
@@ -102,6 +106,16 @@ namespace WMS.WarehouseForms
             }
            
            
+           
+        }
+
+        protected override void OnPaintBackground(PaintEventArgs e)
+        {
+            base.OnPaintBackground(e);
+
+
+            e.Graphics.DrawRectangle(Pens.GreenYellow, Globals.CreateBorderRect(radPanel1));
+            e.Graphics.DrawRectangle(Pens.GreenYellow, Globals.CreateBorderRect(lbl_Title));
            
         }
     }

@@ -30,6 +30,15 @@ namespace WMS.WarehouseForms
         }
 
 
+        protected override void OnPaintBackground(PaintEventArgs e)
+        {
+            base.OnPaintBackground(e);
+
+
+            e.Graphics.DrawRectangle(Pens.GreenYellow, Globals.CreateBorderRect(radPanel1));
+            e.Graphics.DrawRectangle(Pens.GreenYellow, Globals.CreateBorderRect(lbl_Title));
+        }
+
         /// <summary>
         /// Зарежда combo_box с дадена заявка
         /// </summary>

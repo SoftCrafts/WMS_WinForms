@@ -16,6 +16,7 @@ namespace WMS
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
+            
         }
 
         private void menu_Manufacturers_Click(object sender, EventArgs e)
@@ -56,5 +57,17 @@ namespace WMS
             form.Show();
           
         }
+
+
+        protected override void OnPaintBackground(PaintEventArgs e)
+        {
+            base.OnPaintBackground(e);
+
+            e.Graphics.DrawRectangle(Pens.GreenYellow, Globals.CreateBorderRect(radPanel1));
+            e.Graphics.DrawRectangle(Pens.GreenYellow, Globals.CreateBorderRect(radPanel2));
+
+        }
+
+        
     }
 }
