@@ -106,6 +106,7 @@
             this.radMenuItem7.Name = "radMenuItem7";
             this.radMenuItem7.Text = "Складове";
             this.radMenuItem7.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.radMenuItem7.Click += new System.EventHandler(this.radMenuItem7_Click);
             // 
             // radMenuItem8
             // 
@@ -166,7 +167,7 @@
             this.radMenu1.Location = new System.Drawing.Point(0, 0);
             this.radMenu1.Name = "radMenu1";
             this.radMenu1.Padding = new System.Windows.Forms.Padding(2, 2, 0, 0);
-            this.radMenu1.Size = new System.Drawing.Size(803, 33);
+            this.radMenu1.Size = new System.Drawing.Size(803, 35);
             this.radMenu1.TabIndex = 2;
             this.radMenu1.Text = "radMenu1";
             this.radMenu1.ThemeName = "TelerikMetro";

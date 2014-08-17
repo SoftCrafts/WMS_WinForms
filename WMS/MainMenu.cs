@@ -68,6 +68,11 @@ namespace WMS
 
         }
 
+        private void radMenuItem7_Click(object sender, EventArgs e)
+        {
+            ShowChildForm(new Location());
+        }
+
         
     }
 }
