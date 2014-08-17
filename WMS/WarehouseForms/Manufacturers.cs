@@ -27,7 +27,7 @@ namespace WMS.WarehouseForms
         {
             if (radGridView2.SelectedRows.Count < 1)
             {
-                MessageBox.Show("Изберете ред!");
+                MessageBox.Show("Изберете ред!!");
                 return;
             }
             ManufacturerCard mc = new ManufacturerCard();
