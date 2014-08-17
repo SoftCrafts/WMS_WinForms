@@ -501,6 +501,10 @@ namespace WMS {
             
             private global::System.Data.DataColumn columnMax_Weight;
             
+            private global::System.Data.DataColumn columnLocation_ID;
+            
+            private global::System.Data.DataColumn columnLocation_Name;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public BinDataTable() {
@@ -584,6 +588,22 @@ namespace WMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Location_IDColumn {
+                get {
+                    return this.columnLocation_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Location_NameColumn {
+                get {
+                    return this.columnLocation_Name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -619,7 +639,7 @@ namespace WMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BinRow AddBinRow(string Description, double Length, double Width, double Height, double Max_Weight) {
+            public BinRow AddBinRow(string Description, double Length, double Width, double Height, double Max_Weight, long Location_ID, string Location_Name) {
                 BinRow rowBinRow = ((BinRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -627,7 +647,9 @@ namespace WMS {
                         Length,
                         Width,
                         Height,
-                        Max_Weight};
+                        Max_Weight,
+                        Location_ID,
+                        Location_Name};
                 rowBinRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowBinRow);
                 return rowBinRow;
@@ -656,6 +678,8 @@ namespace WMS {
                 this.columnWidth = base.Columns["Width"];
                 this.columnHeight = base.Columns["Height"];
                 this.columnMax_Weight = base.Columns["Max_Weight"];
+                this.columnLocation_ID = base.Columns["Location_ID"];
+                this.columnLocation_Name = base.Columns["Location_Name"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -673,12 +697,18 @@ namespace WMS {
                 base.Columns.Add(this.columnHeight);
                 this.columnMax_Weight = new global::System.Data.DataColumn("Max_Weight", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMax_Weight);
+                this.columnLocation_ID = new global::System.Data.DataColumn("Location_ID", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLocation_ID);
+                this.columnLocation_Name = new global::System.Data.DataColumn("Location_Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLocation_Name);
                 this.columnBin_ID.AutoIncrement = true;
                 this.columnBin_ID.AutoIncrementSeed = -1;
                 this.columnBin_ID.AutoIncrementStep = -1;
                 this.columnBin_ID.AllowDBNull = false;
                 this.columnBin_ID.ReadOnly = true;
                 this.columnDescription.MaxLength = 50;
+                this.columnLocation_Name.ReadOnly = true;
+                this.columnLocation_Name.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3427,6 +3457,38 @@ namespace WMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public long Location_ID {
+                get {
+                    try {
+                        return ((long)(this[this.tableBin.Location_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Location_ID\' in table \'Bin\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBin.Location_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Location_Name {
+                get {
+                    try {
+                        return ((string)(this[this.tableBin.Location_NameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Location_Name\' in table \'Bin\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBin.Location_NameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsDescriptionNull() {
                 return this.IsNull(this.tableBin.DescriptionColumn);
             }
@@ -3483,6 +3545,30 @@ namespace WMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetMax_WeightNull() {
                 this[this.tableBin.Max_WeightColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsLocation_IDNull() {
+                return this.IsNull(this.tableBin.Location_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetLocation_IDNull() {
+                this[this.tableBin.Location_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsLocation_NameNull() {
+                return this.IsNull(this.tableBin.Location_NameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetLocation_NameNull() {
+                this[this.tableBin.Location_NameColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -5775,13 +5861,17 @@ namespace WMS.DataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Width", "Width");
             tableMapping.ColumnMappings.Add("Height", "Height");
             tableMapping.ColumnMappings.Add("Max_Weight", "Max_Weight");
+            tableMapping.ColumnMappings.Add("Location_ID", "Location_ID");
+            tableMapping.ColumnMappings.Add("Location_Name", "Location_Name");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Bin] ([Description], [Length], [Width], [Height], [Max_Weight]" +
-                ") VALUES (@Description, @Length, @Width, @Height, @Max_Weight)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Bin] ([Location_ID], [Description], [Length], [Width], [Height], [Ma" +
+                "x_Weight]) VALUES (@Location_ID, @Description, @Length, @Width, @Height, @Max_We" +
+                "ight)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Location_ID", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Location_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Length", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Length", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Width", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Width", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Height", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Height", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -5801,7 +5891,9 @@ namespace WMS.DataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Bin_ID, Description, Length, Width, Height, Max_Weight FROM dbo.Bin";
+            this._commandCollection[0].CommandText = "SELECT Bin_ID, Location_ID,(SELECT Name FROM Location WHERE Location_ID=Bin.Locat" +
+                "ion_ID)  as Location_Name,Description, Length, Width, Height, Max_Weight FROM Bi" +
+                "n";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -5862,36 +5954,42 @@ namespace WMS.DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Description, global::System.Nullable<double> Length, global::System.Nullable<double> Width, global::System.Nullable<double> Height, global::System.Nullable<double> Max_Weight) {
-            if ((Description == null)) {
+        public virtual int Insert(global::System.Nullable<long> Location_ID, string Description, global::System.Nullable<double> Length, global::System.Nullable<double> Width, global::System.Nullable<double> Height, global::System.Nullable<double> Max_Weight) {
+            if ((Location_ID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((long)(Location_ID.Value));
+            }
+            else {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Description));
-            }
-            if ((Length.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((double)(Length.Value));
-            }
-            else {
+            if ((Description == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((Width.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((double)(Width.Value));
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Description));
+            }
+            if ((Length.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((double)(Length.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Height.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((double)(Height.Value));
+            if ((Width.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((double)(Width.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((Max_Weight.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((double)(Max_Weight.Value));
+            if ((Height.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((double)(Height.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Max_Weight.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((double)(Max_Weight.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 

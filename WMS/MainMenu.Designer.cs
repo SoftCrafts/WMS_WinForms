@@ -116,6 +116,7 @@
             this.radMenuItem8.Name = "radMenuItem8";
             this.radMenuItem8.Text = "Складови Места";
             this.radMenuItem8.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.radMenuItem8.Click += new System.EventHandler(this.radMenuItem8_Click);
             // 
             // radMenuItem5
             // 

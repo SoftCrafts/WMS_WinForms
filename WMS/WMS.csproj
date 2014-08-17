@@ -63,6 +63,7 @@
     </Compile>
     <Compile Include="Library\DB\DbUtil.cs" />
     <Compile Include="Library\DB\Queries.cs" />
+    <Compile Include="Library\DB\Tables\Bin_table.cs" />
     <Compile Include="Library\DB\Tables\Items.cs" />
     <Compile Include="Library\DB\Tables\Location_table.cs" />
     <Compile Include="Library\DB\Tables\Marks_table.cs" />
@@ -85,6 +86,12 @@
     </Compile>
     <Compile Include="WarehouseForms\Bin.Designer.cs">
       <DependentUpon>Bin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WarehouseForms\BinCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WarehouseForms\BinCard.Designer.cs">
+      <DependentUpon>BinCard.cs</DependentUpon>
     </Compile>
     <Compile Include="WarehouseForms\Location.cs">
       <SubType>Form</SubType>
@@ -134,6 +141,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="WarehouseForms\Bin.resx">
+      <DependentUpon>Bin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WarehouseForms\BinCard.resx">
+      <DependentUpon>BinCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WarehouseForms\Location.resx">
       <DependentUpon>Location.cs</DependentUpon>
     </EmbeddedResource>
