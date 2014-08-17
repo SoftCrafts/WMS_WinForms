@@ -34,7 +34,7 @@ namespace WMS.WarehouseForms
 
             mc.Manufacturer_ID = radGridView2.SelectedRows[0].Cells[Manufacturer_table.Manufacturer_ID].Value.MakeString();
 
-            NavBar.Navigate(mc, Test.GetParent(this.Parent));
+            NavBar.Navigate(mc, Globals.GetParent(this.Parent));
             Close();            
         }        
 

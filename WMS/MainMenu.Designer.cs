@@ -32,7 +32,7 @@
             this.radMenuItem4 = new Telerik.WinControls.UI.RadMenuItem();
             this.menu_Manufacturers = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem3 = new Telerik.WinControls.UI.RadMenuItem();
-            this.radMenuItem6 = new Telerik.WinControls.UI.RadMenuItem();
+            this.menu_Items = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem7 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem8 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem5 = new Telerik.WinControls.UI.RadMenuItem();
@@ -62,7 +62,7 @@
             this.radMenuItem4.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.menu_Manufacturers,
             this.radMenuItem3,
-            this.radMenuItem6,
+            this.menu_Items,
             this.radMenuItem7,
             this.radMenuItem8});
             this.radMenuItem4.Name = "radMenuItem4";
@@ -89,14 +89,15 @@
             this.radMenuItem3.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.radMenuItem3.Click += new System.EventHandler(this.radMenuItem3_Click);
             // 
-            // radMenuItem6
+            // menu_Items
             // 
-            this.radMenuItem6.AccessibleDescription = "Артикули";
-            this.radMenuItem6.AccessibleName = "Артикули";
-            this.radMenuItem6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radMenuItem6.Name = "radMenuItem6";
-            this.radMenuItem6.Text = "Артикули";
-            this.radMenuItem6.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.menu_Items.AccessibleDescription = "Артикули";
+            this.menu_Items.AccessibleName = "Артикули";
+            this.menu_Items.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menu_Items.Name = "menu_Items";
+            this.menu_Items.Text = "Артикули";
+            this.menu_Items.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.menu_Items.Click += new System.EventHandler(this.menu_Items_Click);
             // 
             // radMenuItem7
             // 
@@ -208,7 +209,7 @@
         private Telerik.WinControls.UI.RadMenuItem radMenuItem9;
         private Telerik.WinControls.UI.RadMenuItem menu_Manufacturers;
         private Telerik.WinControls.UI.RadMenuItem radMenuItem3;
-        private Telerik.WinControls.UI.RadMenuItem radMenuItem6;
+        private Telerik.WinControls.UI.RadMenuItem menu_Items;
         private Telerik.WinControls.UI.RadMenuItem radMenuItem7;
         private Telerik.WinControls.UI.RadMenuItem radMenuItem8;
         private Telerik.WinControls.UI.RadPanel radPanel1;
