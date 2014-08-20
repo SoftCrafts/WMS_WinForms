@@ -3357,6 +3357,8 @@ namespace WMS {
             
             private global::System.Data.DataColumn columnModified_on;
             
+            private global::System.Data.DataColumn columnManufacturer_Name;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public modelDataTable() {
@@ -3456,6 +3458,14 @@ namespace WMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Manufacturer_NameColumn {
+                get {
+                    return this.columnManufacturer_Name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3491,7 +3501,7 @@ namespace WMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public modelRow AddmodelRow(long Manufacturer_ID, string Name, System.DateTime Production_Date, long Inserted_by, System.DateTime Inserted_on, long Modified_by, System.DateTime Modified_on) {
+            public modelRow AddmodelRow(long Manufacturer_ID, string Name, System.DateTime Production_Date, long Inserted_by, System.DateTime Inserted_on, long Modified_by, System.DateTime Modified_on, string Manufacturer_Name) {
                 modelRow rowmodelRow = ((modelRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -3501,7 +3511,8 @@ namespace WMS {
                         Inserted_by,
                         Inserted_on,
                         Modified_by,
-                        Modified_on};
+                        Modified_on,
+                        Manufacturer_Name};
                 rowmodelRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowmodelRow);
                 return rowmodelRow;
@@ -3539,6 +3550,7 @@ namespace WMS {
                 this.columnInserted_on = base.Columns["Inserted_on"];
                 this.columnModified_by = base.Columns["Modified_by"];
                 this.columnModified_on = base.Columns["Modified_on"];
+                this.columnManufacturer_Name = base.Columns["Manufacturer_Name"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3560,6 +3572,8 @@ namespace WMS {
                 base.Columns.Add(this.columnModified_by);
                 this.columnModified_on = new global::System.Data.DataColumn("Modified_on", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnModified_on);
+                this.columnManufacturer_Name = new global::System.Data.DataColumn("Manufacturer_Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnManufacturer_Name);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnModel_ID}, true));
                 this.columnModel_ID.AutoIncrement = true;
@@ -3567,6 +3581,7 @@ namespace WMS {
                 this.columnModel_ID.AutoIncrementStep = -1;
                 this.columnModel_ID.AllowDBNull = false;
                 this.columnModel_ID.Unique = true;
+                this.columnManufacturer_Name.Caption = "EXPR2";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6263,6 +6278,22 @@ namespace WMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Manufacturer_Name {
+                get {
+                    try {
+                        return ((string)(this[this.tablemodel.Manufacturer_NameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Manufacturer_Name\' in table \'model\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablemodel.Manufacturer_NameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsManufacturer_IDNull() {
                 return this.IsNull(this.tablemodel.Manufacturer_IDColumn);
             }
@@ -6343,6 +6374,18 @@ namespace WMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetModified_onNull() {
                 this[this.tablemodel.Modified_onColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsManufacturer_NameNull() {
+                return this.IsNull(this.tablemodel.Manufacturer_NameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetManufacturer_NameNull() {
+                this[this.tablemodel.Manufacturer_NameColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -14307,335 +14350,8 @@ namespace WMS.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("Inserted_on", "Inserted_on");
             tableMapping.ColumnMappings.Add("Modified_by", "Modified_by");
             tableMapping.ColumnMappings.Add("Modified_on", "Modified_on");
+            tableMapping.ColumnMappings.Add("EXPR2", "Manufacturer_Name");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::Devart.Data.Universal.UniCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM beroebo_wms`.model` WHERE ((Model_ID` = :Original_Model_ID) AND ((:IsNull_Manufacturer_ID = 1 AND Manufacturer_ID` IS NULL) OR (Manufacturer_ID` = :Original_Manufacturer_ID)) AND ((:IsNull_Name = 1 AND Name` IS NULL) OR (Name` = :Original_Name)) AND ((:IsNull_Production_Date = 1 AND Production_Date` IS NULL) OR (Production_Date` = :Original_Production_Date)) AND ((:IsNull_Inserted_by = 1 AND Inserted_by` IS NULL) OR (Inserted_by` = :Original_Inserted_by)) AND ((:IsNull_Inserted_on = 1 AND Inserted_on` IS NULL) OR (Inserted_on` = :Original_Inserted_on)) AND ((:IsNull_Modified_by = 1 AND Modified_by` IS NULL) OR (Modified_by` = :Original_Modified_by)) AND ((:IsNull_Modified_on = 1 AND Modified_on` IS NULL) OR (Modified_on` = :Original_Modified_on)))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            global::Devart.Data.Universal.UniParameter param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Original_Model_ID";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
-            param.SourceColumn = "Model_ID";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "IsNull_Manufacturer_ID";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
-            param.SourceColumn = "Manufacturer_ID";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Original_Manufacturer_ID";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
-            param.SourceColumn = "Manufacturer_ID";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "IsNull_Name";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
-            param.SourceColumn = "Name";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Original_Name";
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.VarChar;
-            param.SourceColumn = "Name";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "IsNull_Production_Date";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
-            param.SourceColumn = "Production_Date";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Original_Production_Date";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.DateTime;
-            param.SourceColumn = "Production_Date";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "IsNull_Inserted_by";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
-            param.SourceColumn = "Inserted_by";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Original_Inserted_by";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
-            param.SourceColumn = "Inserted_by";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "IsNull_Inserted_on";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
-            param.SourceColumn = "Inserted_on";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Original_Inserted_on";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.DateTime;
-            param.SourceColumn = "Inserted_on";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "IsNull_Modified_by";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
-            param.SourceColumn = "Modified_by";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Original_Modified_by";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
-            param.SourceColumn = "Modified_by";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "IsNull_Modified_on";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
-            param.SourceColumn = "Modified_on";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Original_Modified_on";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.DateTime;
-            param.SourceColumn = "Modified_on";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            this._adapter.InsertCommand = new global::Devart.Data.Universal.UniCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO beroebo_wms`.model` (Model_ID`, Manufacturer_ID`, Name`, Production_Date`, Inserted_by`, Inserted_on`, Modified_by`, Modified_on`) VALUES (:Model_ID, :Manufacturer_ID, :Name, :Production_Date, :Inserted_by, :Inserted_on, :Modified_by, :Modified_on)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Model_ID";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
-            param.SourceColumn = "Model_ID";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Manufacturer_ID";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
-            param.SourceColumn = "Manufacturer_ID";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Name";
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.VarChar;
-            param.SourceColumn = "Name";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Production_Date";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.DateTime;
-            param.SourceColumn = "Production_Date";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Inserted_by";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
-            param.SourceColumn = "Inserted_by";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Inserted_on";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.DateTime;
-            param.SourceColumn = "Inserted_on";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Modified_by";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
-            param.SourceColumn = "Modified_by";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Modified_on";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.DateTime;
-            param.SourceColumn = "Modified_on";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            this._adapter.UpdateCommand = new global::Devart.Data.Universal.UniCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE beroebo_wms`.model` SET Model_ID` = :Model_ID, Manufacturer_ID` = :Manufacturer_ID, Name` = :Name, Production_Date` = :Production_Date, Inserted_by` = :Inserted_by, Inserted_on` = :Inserted_on, Modified_by` = :Modified_by, Modified_on` = :Modified_on WHERE ((Model_ID` = :Original_Model_ID) AND ((:IsNull_Manufacturer_ID = 1 AND Manufacturer_ID` IS NULL) OR (Manufacturer_ID` = :Original_Manufacturer_ID)) AND ((:IsNull_Name = 1 AND Name` IS NULL) OR (Name` = :Original_Name)) AND ((:IsNull_Production_Date = 1 AND Production_Date` IS NULL) OR (Production_Date` = :Original_Production_Date)) AND ((:IsNull_Inserted_by = 1 AND Inserted_by` IS NULL) OR (Inserted_by` = :Original_Inserted_by)) AND ((:IsNull_Inserted_on = 1 AND Inserted_on` IS NULL) OR (Inserted_on` = :Original_Inserted_on)) AND ((:IsNull_Modified_by = 1 AND Modified_by` IS NULL) OR (Modified_by` = :Original_Modified_by)) AND ((:IsNull_Modified_on = 1 AND Modified_on` IS NULL) OR (Modified_on` = :Original_Modified_on)))";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Model_ID";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
-            param.SourceColumn = "Model_ID";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Manufacturer_ID";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
-            param.SourceColumn = "Manufacturer_ID";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Name";
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.VarChar;
-            param.SourceColumn = "Name";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Production_Date";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.DateTime;
-            param.SourceColumn = "Production_Date";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Inserted_by";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
-            param.SourceColumn = "Inserted_by";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Inserted_on";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.DateTime;
-            param.SourceColumn = "Inserted_on";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Modified_by";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
-            param.SourceColumn = "Modified_by";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Modified_on";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.DateTime;
-            param.SourceColumn = "Modified_on";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Original_Model_ID";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
-            param.SourceColumn = "Model_ID";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "IsNull_Manufacturer_ID";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
-            param.SourceColumn = "Manufacturer_ID";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Original_Manufacturer_ID";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
-            param.SourceColumn = "Manufacturer_ID";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "IsNull_Name";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
-            param.SourceColumn = "Name";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Original_Name";
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.VarChar;
-            param.SourceColumn = "Name";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "IsNull_Production_Date";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
-            param.SourceColumn = "Production_Date";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Original_Production_Date";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.DateTime;
-            param.SourceColumn = "Production_Date";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "IsNull_Inserted_by";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
-            param.SourceColumn = "Inserted_by";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Original_Inserted_by";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
-            param.SourceColumn = "Inserted_by";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "IsNull_Inserted_on";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
-            param.SourceColumn = "Inserted_on";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Original_Inserted_on";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.DateTime;
-            param.SourceColumn = "Inserted_on";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "IsNull_Modified_by";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
-            param.SourceColumn = "Modified_by";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Original_Modified_by";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
-            param.SourceColumn = "Modified_by";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "IsNull_Modified_on";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
-            param.SourceColumn = "Modified_on";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Original_Modified_on";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.DateTime;
-            param.SourceColumn = "Modified_on";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14651,7 +14367,9 @@ namespace WMS.DataSet1TableAdapters {
             this._commandCollection = new global::Devart.Data.Universal.UniCommand[1];
             this._commandCollection[0] = new global::Devart.Data.Universal.UniCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        model.*\r\nFROM            model";
+            this._commandCollection[0].CommandText = @"SELECT        model.Model_ID, model.Manufacturer_ID, model.Name, model.Production_Date, model.Inserted_by, model.Inserted_on, model.Modified_by, model.Modified_on, manufacturer.Name AS EXPR2
+FROM            model INNER JOIN
+                         manufacturer ON model.Manufacturer_ID = manufacturer.Manufacturer_ID";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -14677,322 +14395,6 @@ namespace WMS.DataSet1TableAdapters {
             DataSet1.modelDataTable dataTable = new DataSet1.modelDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet1.modelDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet1 dataSet) {
-            return this.Adapter.Update(dataSet, "model");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_Model_ID, global::System.Nullable<long> Original_Manufacturer_ID, string Original_Name, global::System.Nullable<global::System.DateTime> Original_Production_Date, global::System.Nullable<long> Original_Inserted_by, global::System.Nullable<global::System.DateTime> Original_Inserted_on, global::System.Nullable<long> Original_Modified_by, global::System.Nullable<global::System.DateTime> Original_Modified_on) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_Model_ID));
-            if ((Original_Manufacturer_ID.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((long)(Original_Manufacturer_ID.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Name == null)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Name));
-            }
-            if ((Original_Production_Date.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_Production_Date.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Inserted_by.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((long)(Original_Inserted_by.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Inserted_on.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((System.DateTime)(Original_Inserted_on.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Modified_by.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((long)(Original_Modified_by.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Modified_on.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((System.DateTime)(Original_Modified_on.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(long Model_ID, global::System.Nullable<long> Manufacturer_ID, string Name, global::System.Nullable<global::System.DateTime> Production_Date, global::System.Nullable<long> Inserted_by, global::System.Nullable<global::System.DateTime> Inserted_on, global::System.Nullable<long> Modified_by, global::System.Nullable<global::System.DateTime> Modified_on) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((long)(Model_ID));
-            if ((Manufacturer_ID.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((long)(Manufacturer_ID.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((Name == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Name));
-            }
-            if ((Production_Date.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(Production_Date.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((Inserted_by.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((long)(Inserted_by.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((Inserted_on.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(Inserted_on.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((Modified_by.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((long)(Modified_by.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((Modified_on.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((System.DateTime)(Modified_on.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    long Model_ID, 
-                    global::System.Nullable<long> Manufacturer_ID, 
-                    string Name, 
-                    global::System.Nullable<global::System.DateTime> Production_Date, 
-                    global::System.Nullable<long> Inserted_by, 
-                    global::System.Nullable<global::System.DateTime> Inserted_on, 
-                    global::System.Nullable<long> Modified_by, 
-                    global::System.Nullable<global::System.DateTime> Modified_on, 
-                    long Original_Model_ID, 
-                    global::System.Nullable<long> Original_Manufacturer_ID, 
-                    string Original_Name, 
-                    global::System.Nullable<global::System.DateTime> Original_Production_Date, 
-                    global::System.Nullable<long> Original_Inserted_by, 
-                    global::System.Nullable<global::System.DateTime> Original_Inserted_on, 
-                    global::System.Nullable<long> Original_Modified_by, 
-                    global::System.Nullable<global::System.DateTime> Original_Modified_on) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((long)(Model_ID));
-            if ((Manufacturer_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((long)(Manufacturer_ID.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((Name == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Name));
-            }
-            if ((Production_Date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(Production_Date.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((Inserted_by.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((long)(Inserted_by.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((Inserted_on.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(Inserted_on.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((Modified_by.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((long)(Modified_by.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((Modified_on.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Modified_on.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((long)(Original_Model_ID));
-            if ((Original_Manufacturer_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((long)(Original_Manufacturer_ID.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Name == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Name));
-            }
-            if ((Original_Production_Date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(Original_Production_Date.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Inserted_by.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((long)(Original_Inserted_by.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Inserted_on.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((System.DateTime)(Original_Inserted_on.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Modified_by.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((long)(Original_Modified_by.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Modified_on.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((System.DateTime)(Original_Modified_on.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<long> Manufacturer_ID, string Name, global::System.Nullable<global::System.DateTime> Production_Date, global::System.Nullable<long> Inserted_by, global::System.Nullable<global::System.DateTime> Inserted_on, global::System.Nullable<long> Modified_by, global::System.Nullable<global::System.DateTime> Modified_on, long Original_Model_ID, global::System.Nullable<long> Original_Manufacturer_ID, string Original_Name, global::System.Nullable<global::System.DateTime> Original_Production_Date, global::System.Nullable<long> Original_Inserted_by, global::System.Nullable<global::System.DateTime> Original_Inserted_on, global::System.Nullable<long> Original_Modified_by, global::System.Nullable<global::System.DateTime> Original_Modified_on) {
-            return this.Update(Original_Model_ID, Manufacturer_ID, Name, Production_Date, Inserted_by, Inserted_on, Modified_by, Modified_on, Original_Model_ID, Original_Manufacturer_ID, Original_Name, Original_Production_Date, Original_Inserted_by, Original_Inserted_on, Original_Modified_by, Original_Modified_on);
         }
     }
     
@@ -15905,8 +15307,6 @@ namespace WMS.DataSet1TableAdapters {
         
         private manufacturerTableAdapter _manufacturerTableAdapter;
         
-        private modelTableAdapter _modelTableAdapter;
-        
         private userTableAdapter _userTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
@@ -16027,20 +15427,6 @@ namespace WMS.DataSet1TableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public modelTableAdapter modelTableAdapter {
-            get {
-                return this._modelTableAdapter;
-            }
-            set {
-                this._modelTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
         public userTableAdapter userTableAdapter {
             get {
                 return this._userTableAdapter;
@@ -16097,10 +15483,6 @@ namespace WMS.DataSet1TableAdapters {
                             && (this._manufacturerTableAdapter.Connection != null))) {
                     return this._manufacturerTableAdapter.Connection;
                 }
-                if (((this._modelTableAdapter != null) 
-                            && (this._modelTableAdapter.Connection != null))) {
-                    return this._modelTableAdapter.Connection;
-                }
                 if (((this._userTableAdapter != null) 
                             && (this._userTableAdapter.Connection != null))) {
                     return this._userTableAdapter.Connection;
@@ -16137,9 +15519,6 @@ namespace WMS.DataSet1TableAdapters {
                     count = (count + 1);
                 }
                 if ((this._manufacturerTableAdapter != null)) {
-                    count = (count + 1);
-                }
-                if ((this._modelTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._userTableAdapter != null)) {
@@ -16219,15 +15598,6 @@ namespace WMS.DataSet1TableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._modelTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.model.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._modelTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._userTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.user.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -16303,14 +15673,6 @@ namespace WMS.DataSet1TableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._modelTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.model.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._modelTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._userTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.user.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -16334,14 +15696,6 @@ namespace WMS.DataSet1TableAdapters {
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._userTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._modelTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.model.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._modelTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -16475,11 +15829,6 @@ namespace WMS.DataSet1TableAdapters {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._modelTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._modelTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
-            }
             if (((this._userTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._userTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
@@ -16580,15 +15929,6 @@ namespace WMS.DataSet1TableAdapters {
                         adaptersWithAcceptChangesDuringUpdate.Add(this._manufacturerTableAdapter.Adapter);
                     }
                 }
-                if ((this._modelTableAdapter != null)) {
-                    revertConnections.Add(this._modelTableAdapter, this._modelTableAdapter.Connection);
-                    this._modelTableAdapter.Connection = ((global::Devart.Data.Universal.UniConnection)(workConnection));
-                    this._modelTableAdapter.Transaction = ((global::System.Data.Common.DbTransaction)(workTransaction));
-                    if (this._modelTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._modelTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._modelTableAdapter.Adapter);
-                    }
-                }
                 if ((this._userTableAdapter != null)) {
                     revertConnections.Add(this._userTableAdapter, this._userTableAdapter.Connection);
                     this._userTableAdapter.Connection = ((global::Devart.Data.Universal.UniConnection)(workConnection));
@@ -16683,10 +16023,6 @@ namespace WMS.DataSet1TableAdapters {
                 if ((this._manufacturerTableAdapter != null)) {
                     this._manufacturerTableAdapter.Connection = ((global::Devart.Data.Universal.UniConnection)(revertConnections[this._manufacturerTableAdapter]));
                     this._manufacturerTableAdapter.Transaction = null;
-                }
-                if ((this._modelTableAdapter != null)) {
-                    this._modelTableAdapter.Connection = ((global::Devart.Data.Universal.UniConnection)(revertConnections[this._modelTableAdapter]));
-                    this._modelTableAdapter.Transaction = null;
                 }
                 if ((this._userTableAdapter != null)) {
                     this._userTableAdapter.Connection = ((global::Devart.Data.Universal.UniConnection)(revertConnections[this._userTableAdapter]));
