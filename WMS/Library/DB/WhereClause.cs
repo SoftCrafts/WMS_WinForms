@@ -1,32 +1,69 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 
 
-
-/// <summary>
-/// Summary description for WhereClause
-/// </summary>
-/// 
 namespace WMS
 {
-
-    public class WhereClause : IDictionary<String, Object>
+    /// <summary>
+    /// Summary description for WhereClause
+    /// </summary>
+    ///    
+    public enum Operation
     {
-        Dictionary<String, Object> whereCollection = new Dictionary<string, object>();
-        public WhereClause()
+        EQUAL,
+        GREATER_THAN,
+        GREATER_OR_EQUAL,
+        LESS,
+        LESS_OR_EQUAL
+    }
+
+    public class valueObject
+    {
+        internal object inValue;
+        internal Operation operation;
+        public string getOperationString()
         {
+            switch (operation)
+            {
+                case Operation.EQUAL:
+                    return "=";
+                case Operation.GREATER_THAN:
+                    return ">";
+                case Operation.GREATER_OR_EQUAL:
+                    return ">=";
+                case Operation.LESS:
+                    return "<";
+                case Operation.LESS_OR_EQUAL:
+                    return "<=";
+                default:
+                    return "=";
+            }
 
         }
+    }
+    public class WhereClause : IDictionary<String, valueObject>
+    {
 
 
+        Dictionary<String, valueObject> whereCollection = new Dictionary<string, valueObject>();
 
+        public void Add(string key, valueObject value)
+        {
+            Add(key, value.inValue, value.operation);
+        }
 
         public void Add(string key, object value)
         {
-            whereCollection.Add(key, value);
+            Add(key, value, Operation.EQUAL);
+        }
+
+
+        public void Add(string key, object value, Operation op = Operation.EQUAL)
+        {
+
+            whereCollection.Add(key, new valueObject() { inValue = value, operation = op });
         }
 
         public bool ContainsKey(string key)
@@ -44,17 +81,20 @@ namespace WMS
             return whereCollection.Remove(key);
         }
 
-        public bool TryGetValue(string key, out object value)
+        public bool TryGetValue(string key, out valueObject value)
         {
+
             return whereCollection.TryGetValue(key, out value);
+
         }
 
-        public ICollection<object> Values
+        public ICollection<valueObject> Values
         {
             get { return whereCollection.Values; }
+
         }
 
-        public object this[string key]
+        public valueObject this[string key]
         {
             get
             {
@@ -66,7 +106,7 @@ namespace WMS
             }
         }
 
-        public void Add(KeyValuePair<string, object> item)
+        public void Add(KeyValuePair<string, valueObject> item)
         {
             throw new NotImplementedException();
         }
@@ -76,12 +116,12 @@ namespace WMS
             whereCollection.Clear();
         }
 
-        public bool Contains(KeyValuePair<string, object> item)
+        public bool Contains(KeyValuePair<string, valueObject> item)
         {
             throw new NotImplementedException();
         }
 
-        public void CopyTo(KeyValuePair<string, object>[] array, int arrayIndex)
+        public void CopyTo(KeyValuePair<string, valueObject>[] array, int arrayIndex)
         {
             throw new NotImplementedException();
         }
@@ -96,13 +136,14 @@ namespace WMS
             get { return false; }
         }
 
-        public bool Remove(KeyValuePair<string, object> item)
+        public bool Remove(KeyValuePair<string, valueObject> item)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerator<KeyValuePair<string, object>> GetEnumerator()
+        public IEnumerator<KeyValuePair<string, valueObject>> GetEnumerator()
         {
+
             return whereCollection.GetEnumerator();
         }
 
@@ -110,5 +151,7 @@ namespace WMS
         {
             return whereCollection.GetEnumerator();
         }
+
+
     }
 }

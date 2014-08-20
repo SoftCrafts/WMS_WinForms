@@ -19,8 +19,9 @@ namespace WMS.WarehouseForms
 
         private void Location_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dataSet.Location' table. You can move, or remove it, as needed.
-            this.locationTableAdapter.Fill(this.dataSet.Location);
+            // TODO: This line of code loads data into the 'dataSet11.location' table. You can move, or remove it, as needed.
+            this.locationTableAdapter.Fill(this.dataSet1.location);
+
 
         }
 
@@ -75,7 +76,7 @@ namespace WMS.WarehouseForms
                 if (res > 0)
                 {
                     MessageBox.Show("Записът беше изтрит!");
-                    this.locationTableAdapter.Fill(this.dataSet.Location);
+                    this.locationTableAdapter.Fill(this.dataSet1.location);
                 }
             }
 

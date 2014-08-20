@@ -38,22 +38,22 @@
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn5 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
-            this.binBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet = new WMS.DataSet();
             this.lbl_Title = new System.Windows.Forms.Label();
             this.btn_Delete = new Telerik.WinControls.UI.RadButton();
             this.btn_New = new Telerik.WinControls.UI.RadButton();
             this.btn_Card = new Telerik.WinControls.UI.RadButton();
-            this.binTableAdapter = new WMS.DataSetTableAdapters.BinTableAdapter();
+            this.dataSet1 = new WMS.DataSet1();
+            this.binBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.binTableAdapter = new WMS.DataSet1TableAdapters.binTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.binBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Delete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_New)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Card)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.binBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // radPanel1
@@ -143,16 +143,6 @@
             this.radGridView1.Text = "radGridView1";
             this.radGridView1.ThemeName = "TelerikMetro";
             // 
-            // binBindingSource
-            // 
-            this.binBindingSource.DataMember = "Bin";
-            this.binBindingSource.DataSource = this.dataSet;
-            // 
-            // dataSet
-            // 
-            this.dataSet.DataSetName = "DataSet";
-            this.dataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // lbl_Title
             // 
             this.lbl_Title.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -198,6 +188,16 @@
             this.btn_Card.ThemeName = "TelerikMetro";
             this.btn_Card.Click += new System.EventHandler(this.btn_Card_Click);
             // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // binBindingSource
+            // 
+            this.binBindingSource.DataMember = "bin";
+            this.binBindingSource.DataSource = this.dataSet1;
+            // 
             // binTableAdapter
             // 
             this.binTableAdapter.ClearBeforeFill = true;
@@ -222,11 +222,11 @@
             this.radPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.binBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Delete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_New)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Card)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.binBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -239,9 +239,10 @@
         private Telerik.WinControls.UI.RadButton btn_Delete;
         private Telerik.WinControls.UI.RadButton btn_New;
         private Telerik.WinControls.UI.RadButton btn_Card;
-        private DataSet dataSet;
-        private System.Windows.Forms.BindingSource binBindingSource;
-        private DataSetTableAdapters.BinTableAdapter binTableAdapter;
+
         private Telerik.WinControls.UI.RadGridView radGridView1;
+        private DataSet1 dataSet1;
+        private System.Windows.Forms.BindingSource binBindingSource;
+        private DataSet1TableAdapters.binTableAdapter binTableAdapter;
     }
 }

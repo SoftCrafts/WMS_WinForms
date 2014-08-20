@@ -33,5 +33,37 @@ namespace WMS.Properties {
                 return ((string)(this["ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        public string DevCon_app_settings {
+            get {
+                return ((string)(this["DevCon_app_settings"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("provider=MySQL;User Id=beroe_WMS;Password=ffN5r1#9;\n          Host=91.215.216.74;" +
+            "Database=beroebo_wms;Unicode=True;Persist Security Info=True; Use Procedure Bodi" +
+            "es=false;")]
+        public string DevConn {
+            get {
+                return ((string)(this["DevConn"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("provider=MySQL;User Id=beroe_WMS;Password=ffN5r1#9;Host=91.215.216.74;Database=be" +
+            "roebo_wms;Persist Security Info=True;")]
+        public string beroebo_wmsConnectionString {
+            get {
+                return ((string)(this["beroebo_wmsConnectionString"]));
+            }
+        }
     }
 }

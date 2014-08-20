@@ -19,8 +19,9 @@ namespace WMS.WarehouseForms
 
         private void Bin_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dataSet.Bin' table. You can move, or remove it, as needed.
-            this.binTableAdapter.Fill(this.dataSet.Bin);
+            // TODO: This line of code loads data into the 'dataSet1.bin' table. You can move, or remove it, as needed.
+            this.binTableAdapter.Fill(this.dataSet1.bin);
+         
 
         }
 
@@ -75,7 +76,7 @@ namespace WMS.WarehouseForms
                 if (res > 0)
                 {
                     MessageBox.Show("Записът беше изтрит!");
-                    this.binTableAdapter.Fill(this.dataSet.Bin);
+                    this.binTableAdapter.Fill(this.dataSet1.bin);
                 }
             }
 

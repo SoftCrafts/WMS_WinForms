@@ -127,7 +127,11 @@ namespace WMS.WarehouseForms
             {
                 DataRow row = dt.Rows[0];
 
-                row[Location_table.User_ID] = cmb_Responsible_Person.SelectedValue;
+                if (cmb_Responsible_Person.SelectedValue != null)
+                {
+                    row[Location_table.User_ID] = cmb_Responsible_Person.SelectedValue;
+                }
+              
                 row[Location_table.Address] = txt_Address.Text;
                 row[Location_table.Name] = txt_Name.Text;
                 row[Location_table.Require_Bin] = chk_Req_Bin.Checked == true ? 1 : 0;
@@ -136,7 +140,11 @@ namespace WMS.WarehouseForms
             {
                 DataRow row = dt.NewRow();
 
-                row[Location_table.User_ID] = cmb_Responsible_Person.SelectedValue;
+                if (cmb_Responsible_Person.SelectedValue != null)
+                {
+                      row[Location_table.User_ID] = cmb_Responsible_Person.SelectedValue;
+                }
+              
                 row[Location_table.Address] = txt_Address.Text;
                 row[Location_table.Name] = txt_Name.Text;
                 row[Location_table.Require_Bin] = chk_Req_Bin.Checked == true ? 1 : 0;

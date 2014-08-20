@@ -19,8 +19,9 @@ namespace WMS.WarehouseForms
 
         private void Items_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dataSet.Item' table. You can move, or remove it, as needed.
-            this.itemTableAdapter.Fill(this.dataSet.Item);
+            // TODO: This line of code loads data into the 'dataSet1.item' table. You can move, or remove it, as needed.
+            this.itemTableAdapter.Fill(this.dataSet1.item);
+
         }
 
         private void btn_Card_Click(object sender, EventArgs e)

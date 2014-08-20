@@ -129,7 +129,10 @@ namespace WMS.WarehouseForms
                 DataRow row = dt.Rows[0];
 
 
-                row[Model_table.Manufacturer_ID] = cmb_Manufacturer.SelectedValue;
+                if (cmb_Manufacturer.SelectedValue != null)
+                {
+                    row[Model_table.Manufacturer_ID] = cmb_Manufacturer.SelectedValue;
+                }
                 row[Model_table.Name] = txt_Model_Name.Text;
                 row[Model_table.Production_Date] = date_picker_Prod_Date.Value;
 
@@ -138,7 +141,12 @@ namespace WMS.WarehouseForms
             else
             {
                 DataRow row = dt.NewRow();
-                row[Model_table.Manufacturer_ID] = cmb_Manufacturer.SelectedValue;
+
+
+                if (cmb_Manufacturer.SelectedValue != null)
+                {
+                    row[Model_table.Manufacturer_ID] = cmb_Manufacturer.SelectedValue;
+                }
                 row[Model_table.Name] = txt_Model_Name.Text;
                 row[Model_table.Production_Date] = date_picker_Prod_Date.Value;
                 dt.Rows.Add(row);

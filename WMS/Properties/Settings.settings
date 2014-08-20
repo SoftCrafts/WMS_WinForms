@@ -10,5 +10,27 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=91.215.216.74;Persist Security Info=True;User ID=beroe_admin;Password=3oKun8&amp;7</Value>
     </Setting>
+    <Setting Name="DevCon_app_settings" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)" />
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="DevConn" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;provider=MySQL;User Id=beroe_WMS;Password=ffN5r1#9;
+          Host=91.215.216.74;Database=beroebo_wms;Unicode=True;Persist Security Info=True; Use Procedure Bodies=false;&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;Devart.Data.Universal&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">provider=MySQL;User Id=beroe_WMS;Password=ffN5r1#9;
+          Host=91.215.216.74;Database=beroebo_wms;Unicode=True;Persist Security Info=True; Use Procedure Bodies=false;</Value>
+    </Setting>
+    <Setting Name="beroebo_wmsConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;provider=MySQL;User Id=beroe_WMS;Password=ffN5r1#9;Host=91.215.216.74;Database=beroebo_wms;Persist Security Info=True;&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;Devart.Data.Universal&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">provider=MySQL;User Id=beroe_WMS;Password=ffN5r1#9;Host=91.215.216.74;Database=beroebo_wms;Persist Security Info=True;</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

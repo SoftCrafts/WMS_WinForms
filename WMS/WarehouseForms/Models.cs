@@ -24,9 +24,10 @@ namespace WMS.WarehouseForms
 
         private void Models_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dataSet1.model' table. You can move, or remove it, as needed.
+            this.modelTableAdapter.Fill(this.dataSet1.model);
             
-            this.modelTableAdapter.Fill(this.dataSet.Model);
-            // TODO: This line of code loads data into the 'dataSet1.Model' table. You can move, or remove it, as needed.
+          
 
             
         }
@@ -83,7 +84,7 @@ namespace WMS.WarehouseForms
                 if (res>0)
                 {
                     MessageBox.Show("Записът беше изтрит!");
-                    this.modelTableAdapter.Fill(this.dataSet.Model);
+                    this.modelTableAdapter.Fill(this.dataSet1.model);
                 }
             }
            

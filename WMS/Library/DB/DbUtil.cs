@@ -1,22 +1,21 @@
-﻿
+﻿using Devart.Data.Universal;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
-using System.Data.Common;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using System.Web;
 
 
-
-/// <summary>
-/// Клас за объщение към базата
-/// </summary>
-/// 
 namespace WMS
 {
-    public static class DbUtil
+
+
+    /// <summary>
+    /// Summary description for DbUtil
+    /// </summary>
+    public class DbUtil
     {
 
         private static string connstring = String.Empty;
@@ -25,20 +24,11 @@ namespace WMS
             get
             {
                 if (string.IsNullOrEmpty(connstring))
-                    connstring = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+                    connstring = ConfigurationManager.ConnectionStrings["WMS.Properties.Settings.beroebo_wmsConnectionString"].ConnectionString;
 
-                connstring = GetFilePathFromConnectionString(connstring);
                 return connstring;
             }
         }
-
-        public static string GetFilePathFromConnectionString(string connectionString)
-        {
-            string attachDbFileName = connectionString;
-            string path = System.AppDomain.CurrentDomain.BaseDirectory;
-            return attachDbFileName.Replace("|DataDirectory|", path);
-        }
-
         /// <summary>
         /// Execute sql statement. 
         /// Unnamed parameters are used
@@ -58,7 +48,7 @@ namespace WMS
         /// <returns></returns>
         public static DataRow getFirstRowForTable(String Tablename, WhereClause where = null)
         {
-            string sqlStatement = createSqlStatement(Tablename, null, 0, null, where);
+            string sqlStatement = createSqlStatement(Tablename, null, 1, null, where);
             return getFirstRow(sqlStatement, where);
         }
         /// <summary>
@@ -97,7 +87,7 @@ namespace WMS
         public static Object getValue(String commandText, WhereClause where = null)
         {
             DataRow dRow = getFirstRow(commandText, where);
-            if (dRow.ItemArray.Rank > 0)
+            if (dRow.ItemArray.Length > 0)
                 return dRow[0];
             return null;
         }
@@ -131,48 +121,166 @@ namespace WMS
         public static int saveChanges(String tableName, DataTable dtable)
         {
             int result = 0;
-            string sqlStatement = createSqlStatement(tableName, null, 0, null);
-            //   string sqlStLastInsertID = "SELECT LAST_INSERT_ID()";
+            string sqlStatement = createSqlStatement(tableName, null, 1, null);
+            string sqlStLastInsertID = "SELECT LAST_INSERT_ID()";
 
-            using (var conn = new SqlConnection(ConnectionString))
+            using (var conn = new UniConnection(ConnectionString))
             {
-                using (var command = new SqlCommand(sqlStatement, conn))
+                using (var command = new UniCommand(sqlStatement, conn))
                 {
                     //try to execute
                     try
                     {
                         conn.Open();
-                        //     conn.BeginTransaction();
+                        command.Transaction = conn.BeginTransaction();
 
                         //fill dataset and take its first datatable
-                        using (var adapter = new SqlDataAdapter(command))
+                        using (var adapter = new UniDataAdapter(command))
                         {
-                            SqlCommandBuilder bld = new SqlCommandBuilder(adapter);
+                            UniCommandBuilder bld = new UniCommandBuilder(adapter);
+
+                            adapter.UpdateCommand = bld.GetUpdateCommand();
+                            adapter.InsertCommand = bld.GetInsertCommand();
+                            adapter.DeleteCommand = bld.GetDeleteCommand();
+
+                            result = adapter.Update(dtable);
+
+                        }
+                        conn.Commit();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        conn.Rollback();
+                        //Log.writeError(ex);
+                        if ("Concurrency violation: the UpdateCommand affected 0 of the expected 1 records." != ex.Message)
+                        {
+                            return -1;
+                        }
+                    }
+                }
+            }
+
+            string res = execute(sqlStLastInsertID).MakeString();
+            return result;
+        }
+
+        /// <summary>
+        /// make insert/update for specific table
+        /// </summary>
+        /// <param name="tableName">table name</param>
+        /// <param name="dtable">datatable with values </param>
+        /// <returns></returns>
+        public static int saveChanges(String tableName, DataTable dtable, ref long resID)
+        {
+            int result = 0;
+            string sqlStatement = createSqlStatement(tableName, null, 1, null);
+            string sqlStLastInsertID = "SELECT LAST_INSERT_ID()";
+
+            using (var conn = new UniConnection(ConnectionString))
+            {
+                using (var command = new UniCommand(sqlStatement, conn))
+                {
+                    //try to execute
+                    try
+                    {
+                        conn.Open();
+                        command.Transaction = conn.BeginTransaction();
+
+                        //fill dataset and take its first datatable
+                        using (var adapter = new UniDataAdapter(command))
+                        {
+                            UniCommandBuilder bld = new UniCommandBuilder(adapter);
                             adapter.UpdateCommand = bld.GetUpdateCommand();
                             adapter.InsertCommand = bld.GetInsertCommand();
                             result = adapter.Update(dtable);
 
                         }
 
+                        //Взима ID-то на въведеният запис
+                        using (var commandLAST_ID = new UniCommand(sqlStLastInsertID, conn))
+                        {
+
+
+                            ///Log.Trace(sqlStLastInsertID); IFD DD
+
+
+
+                            resID = commandLAST_ID.ExecuteScalar().MakeLong();
+
+                        }
+
+                        conn.Commit();
 
                     }
                     catch (Exception ex)
                     {
-                        System.IO.StreamWriter stringWriter = new System.IO.StreamWriter(System.AppDomain.CurrentDomain.BaseDirectory + "ErrorLog.txt");
-
-
-                        stringWriter.WriteLine("saveChangesException: " + ex); // Write text to textfile. 
-
-                        stringWriter.Close();
-                        // throw ex);
-                        return 0;
+                        conn.Rollback();
+                        //Log.writeError(ex);
+                        if ("Concurrency violation: the UpdateCommand affected 0 of the expected 1 records." != ex.Message)
+                        {
+                            return -1;
+                        }
+                    }
+                    finally
+                    {
+                        if (conn.State == ConnectionState.Open)
+                        {
+                            conn.Close();
+                            conn.Dispose();
+                        }
                     }
                 }
             }
 
-            //  string res = execute(sqlStLastInsertID).MakeString();
             return result;
         }
+
+        public static int saveChangesNoTran(String tableName, DataTable dtable)
+        {
+            int result = 0;
+            string sqlStatement = "SELECT * FROM " + tableName;
+            string sqlStLastInsertID = "SELECT LAST_INSERT_ID()";
+
+            using (var conn = new UniConnection(ConnectionString))
+            {
+                using (var command = new UniCommand(sqlStatement, conn))
+                {
+                    //try to execute
+                    try
+                    {
+                        conn.Open();
+                        using (var adapter = new UniDataAdapter(command))
+                        {
+                            UniCommandBuilder bld = new UniCommandBuilder(adapter);
+
+                            adapter.UpdateCommand = bld.GetUpdateCommand();
+                            adapter.InsertCommand = bld.GetInsertCommand();
+                            adapter.DeleteCommand = bld.GetDeleteCommand();
+
+                            result = adapter.Update(dtable);
+                            string res = execute(sqlStLastInsertID).MakeString();
+
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        //Log.writeError(ex);
+                        return 0;
+                    }
+                    finally
+                    {
+                        if (conn.State == ConnectionState.Open)
+                        {
+                            conn.Close();
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
+
         /// <summary>
         /// delete from specific table 
         /// </summary>
@@ -182,7 +290,7 @@ namespace WMS
         public static int delete(String tableName, WhereClause where = null)
         {
             string sqlStatement = createDeleteStatement(tableName, where);
-            return execute(sqlStatement);
+            return execute(sqlStatement, where);
         }
 
         /// <summary>
@@ -208,30 +316,24 @@ namespace WMS
         public static int execute(String commandText, WhereClause whereClause = null)
         {
             int processedCount = 0;
-            using (var conn = new SqlConnection(ConnectionString))
+            using (var conn = new UniConnection(ConnectionString))
             {
-                using (var command = new SqlCommand(commandText, conn))
+                using (var command = new UniCommand(commandText, conn))
                 {
                     //try to execute
                     try
                     {
                         conn.Open();
-
+                        //  Log.Trace(commandText); IFD DD
                         if (whereClause != null)
                             command.Parameters.AddRange(p_createParamList(whereClause).ToArray());
 
 
                         processedCount = command.ExecuteScalar().MakeInt();
-                        return 1;
                     }
                     catch (Exception ex)
                     {
-                        System.IO.StreamWriter stringWriter = new System.IO.StreamWriter(System.AppDomain.CurrentDomain.BaseDirectory+"ErrorLog.txt");
-
-
-                        stringWriter.WriteLine("execute Exception: " + ex); // Write text to textfile. 
-
-                        stringWriter.Close();
+                        //Log.writeError(ex);
 
                     }
                 }
@@ -249,6 +351,7 @@ namespace WMS
         {
             return getDataTable(commandText, p_convertToWhereClause(inParams));
         }
+
         /// <summary>
         /// get all records for specific table
         /// </summary>
@@ -259,10 +362,19 @@ namespace WMS
         /// <returns>DataTable</returns>
         public static DataTable getDataTableForTableName(String TableName, String[] columns, int rowLimit, WhereClause whereClause = null)
         {
+
+
             String statement = createSqlStatement(TableName, columns, rowLimit, null, whereClause);
 
             return getDataTable(statement, whereClause);
         }
+
+
+
+
+     
+
+
         /// <summary>
         /// get all records for specific table
         /// </summary>
@@ -291,21 +403,16 @@ namespace WMS
         {
             StringBuilder sqlStatement = new StringBuilder("SELECT ");
 
-            //add all required columns to sql statement
-            if (columns != null)
-            {
-                sqlStatement.Append(appendColumns(columns));
-            }
-            else
+            if (null == columns)
             {
                 //ако колоните не са подадени отвън, четем ги от базата
-                DataTable dt = getDataTable("SELECT * FROM " + TableName);
+                DataTable dt = getTableSchema(TableName);
 
                 columns = new String[dt.Columns.Count];
                 int idc = 0;
                 foreach (DataColumn item in dt.Columns)
                 {
-                    columns[idc++] = item.ColumnName;
+                    columns[idc++] = "`" + item.ColumnName + "`";
                 }
             }
             //добавяме колоните към statement
@@ -317,7 +424,7 @@ namespace WMS
             sqlStatement.Append(p_generateWhereClause(whereClause));
 
             //добавяме orderBy клаузата
-            if (String.IsNullOrEmpty(orderBy))
+            if (!String.IsNullOrEmpty(orderBy))
             {
                 sqlStatement.Append(orderBy);
             }
@@ -351,17 +458,12 @@ namespace WMS
 
         private static string appendColumns(string[] dtColumns)
         {
-            StringBuilder stBuild = new StringBuilder();
+            string columns = string.Empty;
             if (dtColumns != null && dtColumns.Count() > 0)
             {
-                foreach (String columnName in dtColumns)
-                {
-                    stBuild.AppendFormat(" {0},", columnName);
-                }
-                //remove last comma
-                stBuild = stBuild.Remove(stBuild.Length - 1, 1);
+                columns = String.Join(",", dtColumns);
             }
-            return stBuild.ToString();
+            return columns;
         }
 
         /// <summary>
@@ -374,21 +476,21 @@ namespace WMS
         {
             DataTable resultDT = new DataTable();
 
-            using (var conn = new SqlConnection(ConnectionString))
+            using (var conn = new UniConnection(ConnectionString))
             {
-                using (var command = new SqlCommand(commandText.ToString(), conn))
+                using (var command = new UniCommand(commandText.ToString(), conn))
                 {
                     //try to execute
                     try
                     {
-                        // Log.Trace(String.Format("DataTable:{0}", commandText));
+                        // Log.Trace(String.Format("DataTable:{0}", commandText)); IFD DD
                         if (whereClause != null)
                             command.Parameters.AddRange(p_createParamList(whereClause).ToArray());
 
                         conn.Open();
 
                         //fill dataset and take its first datatable
-                        using (var adapter = new SqlDataAdapter(command))
+                        using (UniDataAdapter adapter = new UniDataAdapter(command))
                         {
                             DataSet ds = new DataSet();
                             adapter.Fill(ds, "DbUtilTable");
@@ -401,15 +503,15 @@ namespace WMS
                     }
                     catch (Exception ex)
                     {
-                        throw ex;
-
-                        System.IO.StreamWriter stringWriter = new System.IO.StreamWriter(System.AppDomain.CurrentDomain.BaseDirectory + "ErrorLog.txt");
-
-
-                        stringWriter.WriteLine("getDataTable Exception: " + ex); // Write text to textfile. 
-
-                        stringWriter.Close();
                         //Log.writeError(ex);
+                    }
+                    finally
+                    {
+                        if (conn.State == ConnectionState.Open)
+                        {
+                            conn.Close();
+                            conn.Dispose();
+                        }
                     }
                 }
             }
@@ -423,36 +525,40 @@ namespace WMS
         /// <returns> data schema</returns>
         public static DataTable getTableSchema(String TableName)
         {
-            DataTable schemaDT = new DataTable();
+            DataSet schemaDS = new DataSet();
 
-            String statement = createSqlStatement(TableName, null, 0, null);
+            String statement = "SELECT * FROM " + TableName;
 
 
-            using (var conn = new SqlConnection(ConnectionString))
+            using (var conn = new UniConnection(ConnectionString))
             {
-                using (var command = new SqlCommand(statement.ToString(), conn))
+                using (var command = new UniCommand(statement.ToString(), conn))
                 {
                     //try to execute
                     try
                     {
-                        //  Log.Trace(String.Format("Table schema:{0}", statement));
-                        conn.Open();
+                        //  Log.Trace(String.Format("Table schema:{0}", statement)); IFD DD
 
-                        schemaDT = command.ExecuteReader().GetSchemaTable();
+                        conn.Open();
+                        //fill dataset and take its first datatable
+                        using (UniDataAdapter adapter = new UniDataAdapter(command))
+                        {
+                            adapter.Fill(schemaDS, 0, 1, TableName);
+
+                        }
                     }
                     catch (Exception ex)
                     {
-                        System.IO.StreamWriter stringWriter = new System.IO.StreamWriter(System.AppDomain.CurrentDomain.BaseDirectory + "ErrorLog.txt");
-
-
-                        stringWriter.WriteLine("Exception: " + ex); // Write text to textfile. 
-
-                        stringWriter.Close();
                         //Log.writeError(ex);
                     }
                 }
             }
-            return schemaDT;
+            if (schemaDS.Tables.Count == 0)
+            {
+                // throw new Exception("check");
+            }
+
+            return schemaDS.Tables[0];
         }
         /// <summary>
         /// execute stored procedure
@@ -463,16 +569,16 @@ namespace WMS
         public static DataTable execStoredProc(String stProcName, WhereClause whereClause = null)
         {
             DataTable resultDT = new DataTable();
-            using (var conn = new SqlConnection(ConnectionString))
+            using (var conn = new UniConnection(ConnectionString))
             {
-                using (var command = new SqlCommand())
+                using (var command = new UniCommand())
                 {
                     //try to execute
                     try
                     {
                         command.Connection = conn;
                         command.CommandText = stProcName;
-                        // Log.Trace(String.Format("Stored Procedure:{0} ", stProcName));
+                        //  Log.Trace(String.Format("Stored Procedure:{0} ", stProcName)); IFD DD
                         command.CommandType = CommandType.StoredProcedure;
 
                         if (whereClause != null)
@@ -480,7 +586,7 @@ namespace WMS
 
                         conn.Open();
 
-                        SqlDataReader reader = command.ExecuteReader();
+                        UniDataReader reader = command.ExecuteReader();
                         if (reader.HasRows)
                         {
                             resultDT.Load(reader);
@@ -488,15 +594,12 @@ namespace WMS
                     }
                     catch (Exception ex)
                     {
-                        throw ex;
                         //Log.writeError(ex);
                     }
                 }
             }
             return resultDT;
         }
-
-
 
 
         #region HelpFunctions
@@ -527,21 +630,40 @@ namespace WMS
         /// </summary>
         /// <param name="whereClause"></param>
         /// <returns></returns>
-        private static List<SqlParameter> p_createParamList(WhereClause whereClause)
+        private static List<UniParameter> p_createParamList(WhereClause whereClause)
         {
-            List<SqlParameter> paramCol = null;
+            List<UniParameter> paramCol = null;
             //add all parameters to current command
             if (whereClause != null)
             {
-                paramCol = new List<SqlParameter>();
+                paramCol = new List<UniParameter>();
                 for (int i = 0; i < whereClause.Count; i++)
                 {
 
                     String Key = whereClause.ElementAt(i).Key;
-                    Object Value = whereClause.ElementAt(i).Value;
-                    SqlParameter parameter = new SqlParameter(Key, Value);
-                    paramCol.Add(parameter);
-                    //Log.Trace(String.Format("{0}. {1} = {2}", i, Key, Value));
+                    valueObject Value = whereClause.ElementAt(i).Value as valueObject;
+
+
+                    //if currnt value is string array , add parameters
+                    if (Value.inValue.GetType().Name == (typeof(System.String[]).Name))
+                    {
+                        String[] columns = Value.inValue as String[];
+                        for (int j = 0; j < columns.Length; j++)
+                        {
+                            //add parameters to command in format IN (:COLUMNNAME1,:COLUMNAME2....)
+                            UniParameter parameter = new UniParameter(String.Format("{0}{1}", Key, j), columns[j]);
+                            paramCol.Add(parameter);
+                        }
+
+                    }
+                    //else add regular parameter
+                    else
+                    {
+
+                        UniParameter parameter = new UniParameter(Key, Value.inValue);
+                        paramCol.Add(parameter);
+                    }
+                    //  Log.Trace(String.Format("{0}. {1} = {2}", i, Key, Value)); IFD DD
                 }
 
             }
@@ -570,14 +692,17 @@ namespace WMS
 
                 //if current paramater is a string array , then we have IN clause.
                 //example : columnName IN ( value1, value2)...
-                if (whereClause.ElementAt(i).Value.GetType().Name == (typeof(System.String[]).Name))
+                if (((valueObject)whereClause.ElementAt(i).Value).inValue.GetType().Name == (typeof(System.String[]).Name))
                 {
                     whereBuilder.Append(createINString(whereClause.ElementAt(i)));
                 }
                 //regular parameter
                 else
                 {
-                    whereBuilder.AppendFormat(" {0} = @{0} ", whereClause.ElementAt(i).Key);
+                    valueObject whereValue = whereClause.ElementAt(i).Value as valueObject;
+
+                    //create where clause : [ColumnName] [operator] @[parameter]
+                    whereBuilder.AppendFormat(" {0} {1} @{0} ", whereClause.ElementAt(i).Key, whereValue.getOperationString());
                 }
                 whereBuilder.Append(" AND ");
             }
@@ -592,29 +717,41 @@ namespace WMS
         /// </summary>
         /// <param name="keyValuePair"></param>
         /// <returns> complete IN string clause</returns>
-        private static string createINString(KeyValuePair<string, object> keyValuePair)
+        private static string createINString(KeyValuePair<string, valueObject> keyValuePair)
         {
             StringBuilder inString = new StringBuilder();
-            String[] columnInParams = keyValuePair.Value as String[];
+            String[] columnInParams = keyValuePair.Value.inValue as String[];
+
+            //if in values array is empty - return
+            if (columnInParams.Length == 0)
+            {
+                return string.Empty;
+            }
+
+
             String columnName = keyValuePair.Key;
             //if column name starts with ! then we want to create NOT  IN clause
             if (columnName.StartsWith("!"))
             {
                 //remove ! and add the columnName
-                inString.AppendFormat(" {0} IN ( ", columnName.Remove(0, 1));
+                inString.AppendFormat(" {0} NOT IN ( ", columnName.Remove(0, 1));
             }
             else
             {
                 inString.AppendFormat(" {0} IN ( ", columnName);
             }
 
-
+            //inString.Append(String.Join(",",columnInParams));
+            //create param List informat COLUMN IN ( :COLUMN1, :COLUMN2...)
             for (int j = 0; j < columnInParams.Length; j++)
             {
-                inString.AppendFormat(" {0},", columnInParams[j]);
+                inString.AppendFormat(" @{0}{1},", columnName, j);
             }
-            //replace last comma with ')'
-            inString.Replace(',', ')', inString.Length - 1, 1);
+
+            //remove last  "AND "(4 characters)
+
+            inString.Remove(inString.Length - 1, 1).Append(")");
+
             return inString.ToString();
         }
 
@@ -631,5 +768,4 @@ namespace WMS
         #endregion
 
     }
-
 }
