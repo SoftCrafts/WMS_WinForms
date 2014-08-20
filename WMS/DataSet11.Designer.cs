@@ -573,6 +573,8 @@ namespace WMS {
             
             private global::System.Data.DataColumn columnMax_Weight;
             
+            private global::System.Data.DataColumn columnName;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public binDataTable() {
@@ -664,6 +666,14 @@ namespace WMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NameColumn {
+                get {
+                    return this.columnName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -699,7 +709,7 @@ namespace WMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public binRow AddbinRow(long Location_ID, string Description, float Length, float Width, float Height, float Max_Weight) {
+            public binRow AddbinRow(long Location_ID, string Description, float Length, float Width, float Height, float Max_Weight, string Name) {
                 binRow rowbinRow = ((binRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -708,7 +718,8 @@ namespace WMS {
                         Length,
                         Width,
                         Height,
-                        Max_Weight};
+                        Max_Weight,
+                        Name};
                 rowbinRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowbinRow);
                 return rowbinRow;
@@ -745,6 +756,7 @@ namespace WMS {
                 this.columnWidth = base.Columns["Width"];
                 this.columnHeight = base.Columns["Height"];
                 this.columnMax_Weight = base.Columns["Max_Weight"];
+                this.columnName = base.Columns["Name"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -764,6 +776,8 @@ namespace WMS {
                 base.Columns.Add(this.columnHeight);
                 this.columnMax_Weight = new global::System.Data.DataColumn("Max_Weight", typeof(float), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMax_Weight);
+                this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnName);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnBin_ID}, true));
                 this.columnBin_ID.AutoIncrement = true;
@@ -4204,6 +4218,22 @@ namespace WMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Name {
+                get {
+                    try {
+                        return ((string)(this[this.tablebin.NameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Name\' in table \'bin\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablebin.NameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsLocation_IDNull() {
                 return this.IsNull(this.tablebin.Location_IDColumn);
             }
@@ -4272,6 +4302,18 @@ namespace WMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetMax_WeightNull() {
                 this[this.tablebin.Max_WeightColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNameNull() {
+                return this.IsNull(this.tablebin.NameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNameNull() {
+                this[this.tablebin.NameColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -7077,295 +7119,8 @@ namespace WMS.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("Width", "Width");
             tableMapping.ColumnMappings.Add("Height", "Height");
             tableMapping.ColumnMappings.Add("Max_Weight", "Max_Weight");
+            tableMapping.ColumnMappings.Add("Name", "Name");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::Devart.Data.Universal.UniCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM beroebo_wms`.bin` WHERE ((Bin_ID` = :Original_Bin_ID) AND ((:IsNull_Location_ID = 1 AND Location_ID` IS NULL) OR (Location_ID` = :Original_Location_ID)) AND ((:IsNull_Description = 1 AND Description` IS NULL) OR (Description` = :Original_Description)) AND ((:IsNull_Length = 1 AND Length` IS NULL) OR (Length` = :Original_Length)) AND ((:IsNull_Width = 1 AND Width` IS NULL) OR (Width` = :Original_Width)) AND ((:IsNull_Height = 1 AND Height` IS NULL) OR (Height` = :Original_Height)) AND ((:IsNull_Max_Weight = 1 AND Max_Weight` IS NULL) OR (Max_Weight` = :Original_Max_Weight)))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            global::Devart.Data.Universal.UniParameter param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Original_Bin_ID";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
-            param.SourceColumn = "Bin_ID";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "IsNull_Location_ID";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
-            param.SourceColumn = "Location_ID";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Original_Location_ID";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
-            param.SourceColumn = "Location_ID";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "IsNull_Description";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
-            param.SourceColumn = "Description";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Original_Description";
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.VarChar;
-            param.SourceColumn = "Description";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "IsNull_Length";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
-            param.SourceColumn = "Length";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Original_Length";
-            param.DbType = global::System.Data.DbType.Binary;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.Single;
-            param.SourceColumn = "Length";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "IsNull_Width";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
-            param.SourceColumn = "Width";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Original_Width";
-            param.DbType = global::System.Data.DbType.Binary;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.Single;
-            param.SourceColumn = "Width";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "IsNull_Height";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
-            param.SourceColumn = "Height";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Original_Height";
-            param.DbType = global::System.Data.DbType.Binary;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.Single;
-            param.SourceColumn = "Height";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "IsNull_Max_Weight";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
-            param.SourceColumn = "Max_Weight";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Original_Max_Weight";
-            param.DbType = global::System.Data.DbType.Binary;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.Single;
-            param.SourceColumn = "Max_Weight";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            this._adapter.InsertCommand = new global::Devart.Data.Universal.UniCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO beroebo_wms`.bin` (Bin_ID`, Location_ID`, Description`, Length`, Widt" +
-                "h`, Height`, Max_Weight`) VALUES (:Bin_ID, :Location_ID, :Description, :Length, " +
-                ":Width, :Height, :Max_Weight)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Bin_ID";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
-            param.SourceColumn = "Bin_ID";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Location_ID";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
-            param.SourceColumn = "Location_ID";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Description";
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.VarChar;
-            param.SourceColumn = "Description";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Length";
-            param.DbType = global::System.Data.DbType.Binary;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.Single;
-            param.SourceColumn = "Length";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Width";
-            param.DbType = global::System.Data.DbType.Binary;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.Single;
-            param.SourceColumn = "Width";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Height";
-            param.DbType = global::System.Data.DbType.Binary;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.Single;
-            param.SourceColumn = "Height";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Max_Weight";
-            param.DbType = global::System.Data.DbType.Binary;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.Single;
-            param.SourceColumn = "Max_Weight";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            this._adapter.UpdateCommand = new global::Devart.Data.Universal.UniCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE beroebo_wms`.bin` SET Bin_ID` = :Bin_ID, Location_ID` = :Location_ID, Description` = :Description, Length` = :Length, Width` = :Width, Height` = :Height, Max_Weight` = :Max_Weight WHERE ((Bin_ID` = :Original_Bin_ID) AND ((:IsNull_Location_ID = 1 AND Location_ID` IS NULL) OR (Location_ID` = :Original_Location_ID)) AND ((:IsNull_Description = 1 AND Description` IS NULL) OR (Description` = :Original_Description)) AND ((:IsNull_Length = 1 AND Length` IS NULL) OR (Length` = :Original_Length)) AND ((:IsNull_Width = 1 AND Width` IS NULL) OR (Width` = :Original_Width)) AND ((:IsNull_Height = 1 AND Height` IS NULL) OR (Height` = :Original_Height)) AND ((:IsNull_Max_Weight = 1 AND Max_Weight` IS NULL) OR (Max_Weight` = :Original_Max_Weight)))";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Bin_ID";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
-            param.SourceColumn = "Bin_ID";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Location_ID";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
-            param.SourceColumn = "Location_ID";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Description";
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.VarChar;
-            param.SourceColumn = "Description";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Length";
-            param.DbType = global::System.Data.DbType.Binary;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.Single;
-            param.SourceColumn = "Length";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Width";
-            param.DbType = global::System.Data.DbType.Binary;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.Single;
-            param.SourceColumn = "Width";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Height";
-            param.DbType = global::System.Data.DbType.Binary;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.Single;
-            param.SourceColumn = "Height";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Max_Weight";
-            param.DbType = global::System.Data.DbType.Binary;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.Single;
-            param.SourceColumn = "Max_Weight";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Original_Bin_ID";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
-            param.SourceColumn = "Bin_ID";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "IsNull_Location_ID";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
-            param.SourceColumn = "Location_ID";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Original_Location_ID";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
-            param.SourceColumn = "Location_ID";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "IsNull_Description";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
-            param.SourceColumn = "Description";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Original_Description";
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.VarChar;
-            param.SourceColumn = "Description";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "IsNull_Length";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
-            param.SourceColumn = "Length";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Original_Length";
-            param.DbType = global::System.Data.DbType.Binary;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.Single;
-            param.SourceColumn = "Length";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "IsNull_Width";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
-            param.SourceColumn = "Width";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Original_Width";
-            param.DbType = global::System.Data.DbType.Binary;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.Single;
-            param.SourceColumn = "Width";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "IsNull_Height";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
-            param.SourceColumn = "Height";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Original_Height";
-            param.DbType = global::System.Data.DbType.Binary;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.Single;
-            param.SourceColumn = "Height";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "IsNull_Max_Weight";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
-            param.SourceColumn = "Max_Weight";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.Universal.UniParameter();
-            param.ParameterName = "Original_Max_Weight";
-            param.DbType = global::System.Data.DbType.Binary;
-            param.UniDbType = global::Devart.Data.Universal.UniDbType.Single;
-            param.SourceColumn = "Max_Weight";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7381,7 +7136,9 @@ namespace WMS.DataSet1TableAdapters {
             this._commandCollection = new global::Devart.Data.Universal.UniCommand[1];
             this._commandCollection[0] = new global::Devart.Data.Universal.UniCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        bin.*\r\nFROM            bin";
+            this._commandCollection[0].CommandText = "SELECT        bin.Bin_ID, bin.Location_ID, bin.Description, bin.Length, bin.Width" +
+                ", bin.Height, bin.Max_Weight, location.Name\r\nFROM            bin INNER JOIN\r\n   " +
+                "                      location ON bin.Location_ID = location.Location_ID";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -7407,278 +7164,6 @@ namespace WMS.DataSet1TableAdapters {
             DataSet1.binDataTable dataTable = new DataSet1.binDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet1.binDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet1 dataSet) {
-            return this.Adapter.Update(dataSet, "bin");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_Bin_ID, global::System.Nullable<long> Original_Location_ID, string Original_Description, byte[] Original_Length, byte[] Original_Width, byte[] Original_Height, byte[] Original_Max_Weight) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_Bin_ID));
-            if ((Original_Location_ID.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((long)(Original_Location_ID.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Description == null)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Description));
-            }
-            if ((Original_Length == null)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((byte[])(Original_Length));
-            }
-            if ((Original_Width == null)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((byte[])(Original_Width));
-            }
-            if ((Original_Height == null)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((byte[])(Original_Height));
-            }
-            if ((Original_Max_Weight == null)) {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((byte[])(Original_Max_Weight));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(long Bin_ID, global::System.Nullable<long> Location_ID, string Description, byte[] Length, byte[] Width, byte[] Height, byte[] Max_Weight) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((long)(Bin_ID));
-            if ((Location_ID.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((long)(Location_ID.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((Description == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Description));
-            }
-            if ((Length == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((byte[])(Length));
-            }
-            if ((Width == null)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((byte[])(Width));
-            }
-            if ((Height == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((byte[])(Height));
-            }
-            if ((Max_Weight == null)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((byte[])(Max_Weight));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(long Bin_ID, global::System.Nullable<long> Location_ID, string Description, byte[] Length, byte[] Width, byte[] Height, byte[] Max_Weight, long Original_Bin_ID, global::System.Nullable<long> Original_Location_ID, string Original_Description, byte[] Original_Length, byte[] Original_Width, byte[] Original_Height, byte[] Original_Max_Weight) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((long)(Bin_ID));
-            if ((Location_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((long)(Location_ID.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((Description == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Description));
-            }
-            if ((Length == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((byte[])(Length));
-            }
-            if ((Width == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((byte[])(Width));
-            }
-            if ((Height == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((byte[])(Height));
-            }
-            if ((Max_Weight == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((byte[])(Max_Weight));
-            }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((long)(Original_Bin_ID));
-            if ((Original_Location_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((long)(Original_Location_ID.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Description == null)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Description));
-            }
-            if ((Original_Length == null)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((byte[])(Original_Length));
-            }
-            if ((Original_Width == null)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((byte[])(Original_Width));
-            }
-            if ((Original_Height == null)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((byte[])(Original_Height));
-            }
-            if ((Original_Max_Weight == null)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((byte[])(Original_Max_Weight));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<long> Location_ID, string Description, byte[] Length, byte[] Width, byte[] Height, byte[] Max_Weight, long Original_Bin_ID, global::System.Nullable<long> Original_Location_ID, string Original_Description, byte[] Original_Length, byte[] Original_Width, byte[] Original_Height, byte[] Original_Max_Weight) {
-            return this.Update(Original_Bin_ID, Location_ID, Description, Length, Width, Height, Max_Weight, Original_Bin_ID, Original_Location_ID, Original_Description, Original_Length, Original_Width, Original_Height, Original_Max_Weight);
         }
     }
     
@@ -15293,8 +14778,6 @@ FROM            model INNER JOIN
         
         private UpdateOrderOption _updateOrder;
         
-        private binTableAdapter _binTableAdapter;
-        
         private locationTableAdapter _locationTableAdapter;
         
         private currencyTableAdapter _currencyTableAdapter;
@@ -15321,20 +14804,6 @@ FROM            model INNER JOIN
             }
             set {
                 this._updateOrder = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public binTableAdapter binTableAdapter {
-            get {
-                return this._binTableAdapter;
-            }
-            set {
-                this._binTableAdapter = value;
             }
         }
         
@@ -15455,10 +14924,6 @@ FROM            model INNER JOIN
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._binTableAdapter != null) 
-                            && (this._binTableAdapter.Connection != null))) {
-                    return this._binTableAdapter.Connection;
-                }
                 if (((this._locationTableAdapter != null) 
                             && (this._locationTableAdapter.Connection != null))) {
                     return this._locationTableAdapter.Connection;
@@ -15500,9 +14965,6 @@ FROM            model INNER JOIN
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._binTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 if ((this._locationTableAdapter != null)) {
                     count = (count + 1);
                 }
@@ -15535,15 +14997,6 @@ FROM            model INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateUpdatedRows(DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._binTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.bin.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._binTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._locationTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.location.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -15617,14 +15070,6 @@ FROM            model INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateInsertedRows(DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._binTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.bin.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._binTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._locationTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.location.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -15747,14 +15192,6 @@ FROM            model INNER JOIN
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._binTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.bin.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._binTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             return result;
         }
         
@@ -15793,11 +15230,6 @@ FROM            model INNER JOIN
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
-            }
-            if (((this._binTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._binTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
             }
             if (((this._locationTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._locationTableAdapter.Connection) == false))) {
@@ -15866,15 +15298,6 @@ FROM            model INNER JOIN
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._binTableAdapter != null)) {
-                    revertConnections.Add(this._binTableAdapter, this._binTableAdapter.Connection);
-                    this._binTableAdapter.Connection = ((global::Devart.Data.Universal.UniConnection)(workConnection));
-                    this._binTableAdapter.Transaction = ((global::System.Data.Common.DbTransaction)(workTransaction));
-                    if (this._binTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._binTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._binTableAdapter.Adapter);
-                    }
-                }
                 if ((this._locationTableAdapter != null)) {
                     revertConnections.Add(this._locationTableAdapter, this._locationTableAdapter.Connection);
                     this._locationTableAdapter.Connection = ((global::Devart.Data.Universal.UniConnection)(workConnection));
@@ -15995,10 +15418,6 @@ FROM            model INNER JOIN
             finally {
                 if (workConnOpened) {
                     workConnection.Close();
-                }
-                if ((this._binTableAdapter != null)) {
-                    this._binTableAdapter.Connection = ((global::Devart.Data.Universal.UniConnection)(revertConnections[this._binTableAdapter]));
-                    this._binTableAdapter.Transaction = null;
                 }
                 if ((this._locationTableAdapter != null)) {
                     this._locationTableAdapter.Connection = ((global::Devart.Data.Universal.UniConnection)(revertConnections[this._locationTableAdapter]));

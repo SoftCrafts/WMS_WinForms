@@ -38,21 +38,21 @@
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn5 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
+            this.dataSet1 = new WMS.DataSet1();
             this.lbl_Title = new System.Windows.Forms.Label();
             this.btn_Delete = new Telerik.WinControls.UI.RadButton();
             this.btn_New = new Telerik.WinControls.UI.RadButton();
             this.btn_Card = new Telerik.WinControls.UI.RadButton();
-            this.dataSet1 = new WMS.DataSet1();
-            this.binBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.binTableAdapter = new WMS.DataSet1TableAdapters.binTableAdapter();
+            this.binBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Delete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_New)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Card)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.binBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,7 +91,7 @@
             gridViewDecimalColumn1.Name = "Bin_ID";
             gridViewDecimalColumn1.Width = 153;
             gridViewTextBoxColumn1.EnableExpressionEditor = false;
-            gridViewTextBoxColumn1.FieldName = "Location_Name";
+            gridViewTextBoxColumn1.FieldName = "Name";
             gridViewTextBoxColumn1.HeaderText = "Склад";
             gridViewTextBoxColumn1.Name = "Location_Name";
             gridViewTextBoxColumn1.Width = 70;
@@ -100,25 +100,25 @@
             gridViewTextBoxColumn2.HeaderText = "Описание";
             gridViewTextBoxColumn2.Name = "Description";
             gridViewTextBoxColumn2.Width = 209;
-            gridViewDecimalColumn2.DataType = typeof(double);
+            gridViewDecimalColumn2.DataType = typeof(float);
             gridViewDecimalColumn2.EnableExpressionEditor = false;
             gridViewDecimalColumn2.FieldName = "Length";
             gridViewDecimalColumn2.HeaderText = "Дължина";
             gridViewDecimalColumn2.Name = "Length";
             gridViewDecimalColumn2.Width = 126;
-            gridViewDecimalColumn3.DataType = typeof(double);
+            gridViewDecimalColumn3.DataType = typeof(float);
             gridViewDecimalColumn3.EnableExpressionEditor = false;
             gridViewDecimalColumn3.FieldName = "Height";
             gridViewDecimalColumn3.HeaderText = "Височина";
             gridViewDecimalColumn3.Name = "Height";
             gridViewDecimalColumn3.Width = 119;
-            gridViewDecimalColumn4.DataType = typeof(double);
+            gridViewDecimalColumn4.DataType = typeof(float);
             gridViewDecimalColumn4.EnableExpressionEditor = false;
             gridViewDecimalColumn4.FieldName = "Width";
             gridViewDecimalColumn4.HeaderText = "Ширина";
             gridViewDecimalColumn4.Name = "Width";
             gridViewDecimalColumn4.Width = 96;
-            gridViewDecimalColumn5.DataType = typeof(double);
+            gridViewDecimalColumn5.DataType = typeof(float);
             gridViewDecimalColumn5.EnableExpressionEditor = false;
             gridViewDecimalColumn5.FieldName = "Max_Weight";
             gridViewDecimalColumn5.HeaderText = "Макс Тежест";
@@ -142,6 +142,11 @@
             this.radGridView1.TabIndex = 8;
             this.radGridView1.Text = "radGridView1";
             this.radGridView1.ThemeName = "TelerikMetro";
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lbl_Title
             // 
@@ -188,19 +193,14 @@
             this.btn_Card.ThemeName = "TelerikMetro";
             this.btn_Card.Click += new System.EventHandler(this.btn_Card_Click);
             // 
-            // dataSet1
+            // binTableAdapter
             // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.binTableAdapter.ClearBeforeFill = true;
             // 
             // binBindingSource
             // 
             this.binBindingSource.DataMember = "bin";
             this.binBindingSource.DataSource = this.dataSet1;
-            // 
-            // binTableAdapter
-            // 
-            this.binTableAdapter.ClearBeforeFill = true;
             // 
             // Bin
             // 
@@ -222,10 +222,10 @@
             this.radPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Delete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_New)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Card)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.binBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -242,7 +242,7 @@
 
         private Telerik.WinControls.UI.RadGridView radGridView1;
         private DataSet1 dataSet1;
-        private System.Windows.Forms.BindingSource binBindingSource;
         private DataSet1TableAdapters.binTableAdapter binTableAdapter;
+        private System.Windows.Forms.BindingSource binBindingSource;
     }
 }
