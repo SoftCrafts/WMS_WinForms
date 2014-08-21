@@ -42,6 +42,10 @@ namespace WMS {
         
         private userDataTable tableuser;
         
+        private item_journal_headerDataTable tableitem_journal_header;
+        
+        private item_journal_lineDataTable tableitem_journal_line;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -96,6 +100,12 @@ namespace WMS {
                 }
                 if ((ds.Tables["user"] != null)) {
                     base.Tables.Add(new userDataTable(ds.Tables["user"]));
+                }
+                if ((ds.Tables["item_journal_header"] != null)) {
+                    base.Tables.Add(new item_journal_headerDataTable(ds.Tables["item_journal_header"]));
+                }
+                if ((ds.Tables["item_journal_line"] != null)) {
+                    base.Tables.Add(new item_journal_lineDataTable(ds.Tables["item_journal_line"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -207,6 +217,26 @@ namespace WMS {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public item_journal_headerDataTable item_journal_header {
+            get {
+                return this.tableitem_journal_header;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public item_journal_lineDataTable item_journal_line {
+            get {
+                return this.tableitem_journal_line;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -299,6 +329,12 @@ namespace WMS {
                 if ((ds.Tables["user"] != null)) {
                     base.Tables.Add(new userDataTable(ds.Tables["user"]));
                 }
+                if ((ds.Tables["item_journal_header"] != null)) {
+                    base.Tables.Add(new item_journal_headerDataTable(ds.Tables["item_journal_header"]));
+                }
+                if ((ds.Tables["item_journal_line"] != null)) {
+                    base.Tables.Add(new item_journal_lineDataTable(ds.Tables["item_journal_line"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -386,6 +422,18 @@ namespace WMS {
                     this.tableuser.InitVars();
                 }
             }
+            this.tableitem_journal_header = ((item_journal_headerDataTable)(base.Tables["item_journal_header"]));
+            if ((initTable == true)) {
+                if ((this.tableitem_journal_header != null)) {
+                    this.tableitem_journal_header.InitVars();
+                }
+            }
+            this.tableitem_journal_line = ((item_journal_lineDataTable)(base.Tables["item_journal_line"]));
+            if ((initTable == true)) {
+                if ((this.tableitem_journal_line != null)) {
+                    this.tableitem_journal_line.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -414,6 +462,10 @@ namespace WMS {
             base.Tables.Add(this.tablemodel);
             this.tableuser = new userDataTable();
             base.Tables.Add(this.tableuser);
+            this.tableitem_journal_header = new item_journal_headerDataTable();
+            base.Tables.Add(this.tableitem_journal_header);
+            this.tableitem_journal_line = new item_journal_lineDataTable();
+            base.Tables.Add(this.tableitem_journal_line);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -467,6 +519,18 @@ namespace WMS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeuser() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeitem_journal_header() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeitem_journal_line() {
             return false;
         }
         
@@ -551,6 +615,12 @@ namespace WMS {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void userRowChangeEventHandler(object sender, userRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void item_journal_headerRowChangeEventHandler(object sender, item_journal_headerRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void item_journal_lineRowChangeEventHandler(object sender, item_journal_lineRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -4096,6 +4166,752 @@ namespace WMS {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class item_journal_headerDataTable : global::System.Data.TypedTableBase<item_journal_headerRow> {
+            
+            private global::System.Data.DataColumn columnItem_Journal_Header_ID;
+            
+            private global::System.Data.DataColumn columnItem_Journal_Header_Name;
+            
+            private global::System.Data.DataColumn columnUser_ID;
+            
+            private global::System.Data.DataColumn columnDate;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public item_journal_headerDataTable() {
+                this.TableName = "item_journal_header";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal item_journal_headerDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected item_journal_headerDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Item_Journal_Header_IDColumn {
+                get {
+                    return this.columnItem_Journal_Header_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Item_Journal_Header_NameColumn {
+                get {
+                    return this.columnItem_Journal_Header_Name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn User_IDColumn {
+                get {
+                    return this.columnUser_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DateColumn {
+                get {
+                    return this.columnDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public item_journal_headerRow this[int index] {
+                get {
+                    return ((item_journal_headerRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event item_journal_headerRowChangeEventHandler item_journal_headerRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event item_journal_headerRowChangeEventHandler item_journal_headerRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event item_journal_headerRowChangeEventHandler item_journal_headerRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event item_journal_headerRowChangeEventHandler item_journal_headerRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Additem_journal_headerRow(item_journal_headerRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public item_journal_headerRow Additem_journal_headerRow(string Item_Journal_Header_Name, long User_ID, System.DateTime Date) {
+                item_journal_headerRow rowitem_journal_headerRow = ((item_journal_headerRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        Item_Journal_Header_Name,
+                        User_ID,
+                        Date};
+                rowitem_journal_headerRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowitem_journal_headerRow);
+                return rowitem_journal_headerRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public item_journal_headerRow FindByItem_Journal_Header_ID(long Item_Journal_Header_ID) {
+                return ((item_journal_headerRow)(this.Rows.Find(new object[] {
+                            Item_Journal_Header_ID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                item_journal_headerDataTable cln = ((item_journal_headerDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new item_journal_headerDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnItem_Journal_Header_ID = base.Columns["Item_Journal_Header_ID"];
+                this.columnItem_Journal_Header_Name = base.Columns["Item_Journal_Header_Name"];
+                this.columnUser_ID = base.Columns["User_ID"];
+                this.columnDate = base.Columns["Date"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnItem_Journal_Header_ID = new global::System.Data.DataColumn("Item_Journal_Header_ID", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnItem_Journal_Header_ID);
+                this.columnItem_Journal_Header_Name = new global::System.Data.DataColumn("Item_Journal_Header_Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnItem_Journal_Header_Name);
+                this.columnUser_ID = new global::System.Data.DataColumn("User_ID", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUser_ID);
+                this.columnDate = new global::System.Data.DataColumn("Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDate);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnItem_Journal_Header_ID}, true));
+                this.columnItem_Journal_Header_ID.AutoIncrement = true;
+                this.columnItem_Journal_Header_ID.AutoIncrementSeed = -1;
+                this.columnItem_Journal_Header_ID.AutoIncrementStep = -1;
+                this.columnItem_Journal_Header_ID.AllowDBNull = false;
+                this.columnItem_Journal_Header_ID.Unique = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public item_journal_headerRow Newitem_journal_headerRow() {
+                return ((item_journal_headerRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new item_journal_headerRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(item_journal_headerRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.item_journal_headerRowChanged != null)) {
+                    this.item_journal_headerRowChanged(this, new item_journal_headerRowChangeEvent(((item_journal_headerRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.item_journal_headerRowChanging != null)) {
+                    this.item_journal_headerRowChanging(this, new item_journal_headerRowChangeEvent(((item_journal_headerRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.item_journal_headerRowDeleted != null)) {
+                    this.item_journal_headerRowDeleted(this, new item_journal_headerRowChangeEvent(((item_journal_headerRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.item_journal_headerRowDeleting != null)) {
+                    this.item_journal_headerRowDeleting(this, new item_journal_headerRowChangeEvent(((item_journal_headerRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Removeitem_journal_headerRow(item_journal_headerRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSet1 ds = new DataSet1();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "item_journal_headerDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class item_journal_lineDataTable : global::System.Data.TypedTableBase<item_journal_lineRow> {
+            
+            private global::System.Data.DataColumn columnItem_Journal_Line_ID;
+            
+            private global::System.Data.DataColumn columnItem_Entry_Type_ID;
+            
+            private global::System.Data.DataColumn columnItem_ID;
+            
+            private global::System.Data.DataColumn columnLocation_ID;
+            
+            private global::System.Data.DataColumn columnQuantity;
+            
+            private global::System.Data.DataColumn columnBin_ID;
+            
+            private global::System.Data.DataColumn columnUnit_of_Measure;
+            
+            private global::System.Data.DataColumn columnPrice;
+            
+            private global::System.Data.DataColumn columnAmount;
+            
+            private global::System.Data.DataColumn columnDocument_No;
+            
+            private global::System.Data.DataColumn columnEntry_Date;
+            
+            private global::System.Data.DataColumn columnUser_ID;
+            
+            private global::System.Data.DataColumn columnPartner_ID;
+            
+            private global::System.Data.DataColumn columnPartner_Type;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public item_journal_lineDataTable() {
+                this.TableName = "item_journal_line";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal item_journal_lineDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected item_journal_lineDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Item_Journal_Line_IDColumn {
+                get {
+                    return this.columnItem_Journal_Line_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Item_Entry_Type_IDColumn {
+                get {
+                    return this.columnItem_Entry_Type_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Item_IDColumn {
+                get {
+                    return this.columnItem_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Location_IDColumn {
+                get {
+                    return this.columnLocation_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn QuantityColumn {
+                get {
+                    return this.columnQuantity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Bin_IDColumn {
+                get {
+                    return this.columnBin_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Unit_of_MeasureColumn {
+                get {
+                    return this.columnUnit_of_Measure;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PriceColumn {
+                get {
+                    return this.columnPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AmountColumn {
+                get {
+                    return this.columnAmount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Document_NoColumn {
+                get {
+                    return this.columnDocument_No;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Entry_DateColumn {
+                get {
+                    return this.columnEntry_Date;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn User_IDColumn {
+                get {
+                    return this.columnUser_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Partner_IDColumn {
+                get {
+                    return this.columnPartner_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Partner_TypeColumn {
+                get {
+                    return this.columnPartner_Type;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public item_journal_lineRow this[int index] {
+                get {
+                    return ((item_journal_lineRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event item_journal_lineRowChangeEventHandler item_journal_lineRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event item_journal_lineRowChangeEventHandler item_journal_lineRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event item_journal_lineRowChangeEventHandler item_journal_lineRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event item_journal_lineRowChangeEventHandler item_journal_lineRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Additem_journal_lineRow(item_journal_lineRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public item_journal_lineRow Additem_journal_lineRow(long Item_Entry_Type_ID, long Item_ID, long Location_ID, float Quantity, long Bin_ID, string Unit_of_Measure, float Price, float Amount, string Document_No, System.DateTime Entry_Date, long User_ID, long Partner_ID, long Partner_Type) {
+                item_journal_lineRow rowitem_journal_lineRow = ((item_journal_lineRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        Item_Entry_Type_ID,
+                        Item_ID,
+                        Location_ID,
+                        Quantity,
+                        Bin_ID,
+                        Unit_of_Measure,
+                        Price,
+                        Amount,
+                        Document_No,
+                        Entry_Date,
+                        User_ID,
+                        Partner_ID,
+                        Partner_Type};
+                rowitem_journal_lineRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowitem_journal_lineRow);
+                return rowitem_journal_lineRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public item_journal_lineRow FindByItem_Journal_Line_ID(long Item_Journal_Line_ID) {
+                return ((item_journal_lineRow)(this.Rows.Find(new object[] {
+                            Item_Journal_Line_ID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                item_journal_lineDataTable cln = ((item_journal_lineDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new item_journal_lineDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnItem_Journal_Line_ID = base.Columns["Item_Journal_Line_ID"];
+                this.columnItem_Entry_Type_ID = base.Columns["Item_Entry_Type_ID"];
+                this.columnItem_ID = base.Columns["Item_ID"];
+                this.columnLocation_ID = base.Columns["Location_ID"];
+                this.columnQuantity = base.Columns["Quantity"];
+                this.columnBin_ID = base.Columns["Bin_ID"];
+                this.columnUnit_of_Measure = base.Columns["Unit_of_Measure"];
+                this.columnPrice = base.Columns["Price"];
+                this.columnAmount = base.Columns["Amount"];
+                this.columnDocument_No = base.Columns["Document_No"];
+                this.columnEntry_Date = base.Columns["Entry_Date"];
+                this.columnUser_ID = base.Columns["User_ID"];
+                this.columnPartner_ID = base.Columns["Partner_ID"];
+                this.columnPartner_Type = base.Columns["Partner_Type"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnItem_Journal_Line_ID = new global::System.Data.DataColumn("Item_Journal_Line_ID", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnItem_Journal_Line_ID);
+                this.columnItem_Entry_Type_ID = new global::System.Data.DataColumn("Item_Entry_Type_ID", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnItem_Entry_Type_ID);
+                this.columnItem_ID = new global::System.Data.DataColumn("Item_ID", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnItem_ID);
+                this.columnLocation_ID = new global::System.Data.DataColumn("Location_ID", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLocation_ID);
+                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(float), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuantity);
+                this.columnBin_ID = new global::System.Data.DataColumn("Bin_ID", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBin_ID);
+                this.columnUnit_of_Measure = new global::System.Data.DataColumn("Unit_of_Measure", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUnit_of_Measure);
+                this.columnPrice = new global::System.Data.DataColumn("Price", typeof(float), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrice);
+                this.columnAmount = new global::System.Data.DataColumn("Amount", typeof(float), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAmount);
+                this.columnDocument_No = new global::System.Data.DataColumn("Document_No", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDocument_No);
+                this.columnEntry_Date = new global::System.Data.DataColumn("Entry_Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEntry_Date);
+                this.columnUser_ID = new global::System.Data.DataColumn("User_ID", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUser_ID);
+                this.columnPartner_ID = new global::System.Data.DataColumn("Partner_ID", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPartner_ID);
+                this.columnPartner_Type = new global::System.Data.DataColumn("Partner_Type", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPartner_Type);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnItem_Journal_Line_ID}, true));
+                this.columnItem_Journal_Line_ID.AutoIncrement = true;
+                this.columnItem_Journal_Line_ID.AutoIncrementSeed = -1;
+                this.columnItem_Journal_Line_ID.AutoIncrementStep = -1;
+                this.columnItem_Journal_Line_ID.AllowDBNull = false;
+                this.columnItem_Journal_Line_ID.Unique = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public item_journal_lineRow Newitem_journal_lineRow() {
+                return ((item_journal_lineRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new item_journal_lineRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(item_journal_lineRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.item_journal_lineRowChanged != null)) {
+                    this.item_journal_lineRowChanged(this, new item_journal_lineRowChangeEvent(((item_journal_lineRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.item_journal_lineRowChanging != null)) {
+                    this.item_journal_lineRowChanging(this, new item_journal_lineRowChangeEvent(((item_journal_lineRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.item_journal_lineRowDeleted != null)) {
+                    this.item_journal_lineRowDeleted(this, new item_journal_lineRowChangeEvent(((item_journal_lineRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.item_journal_lineRowDeleting != null)) {
+                    this.item_journal_lineRowDeleting(this, new item_journal_lineRowChangeEvent(((item_journal_lineRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Removeitem_journal_lineRow(item_journal_lineRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSet1 ds = new DataSet1();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "item_journal_lineDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class binRow : global::System.Data.DataRow {
@@ -6682,6 +7498,508 @@ namespace WMS {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class item_journal_headerRow : global::System.Data.DataRow {
+            
+            private item_journal_headerDataTable tableitem_journal_header;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal item_journal_headerRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableitem_journal_header = ((item_journal_headerDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public long Item_Journal_Header_ID {
+                get {
+                    return ((long)(this[this.tableitem_journal_header.Item_Journal_Header_IDColumn]));
+                }
+                set {
+                    this[this.tableitem_journal_header.Item_Journal_Header_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Item_Journal_Header_Name {
+                get {
+                    try {
+                        return ((string)(this[this.tableitem_journal_header.Item_Journal_Header_NameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Item_Journal_Header_Name\' in table \'item_journal_header\' is" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableitem_journal_header.Item_Journal_Header_NameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public long User_ID {
+                get {
+                    try {
+                        return ((long)(this[this.tableitem_journal_header.User_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'User_ID\' in table \'item_journal_header\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableitem_journal_header.User_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime Date {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableitem_journal_header.DateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Date\' in table \'item_journal_header\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableitem_journal_header.DateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsItem_Journal_Header_NameNull() {
+                return this.IsNull(this.tableitem_journal_header.Item_Journal_Header_NameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetItem_Journal_Header_NameNull() {
+                this[this.tableitem_journal_header.Item_Journal_Header_NameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsUser_IDNull() {
+                return this.IsNull(this.tableitem_journal_header.User_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetUser_IDNull() {
+                this[this.tableitem_journal_header.User_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDateNull() {
+                return this.IsNull(this.tableitem_journal_header.DateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDateNull() {
+                this[this.tableitem_journal_header.DateColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class item_journal_lineRow : global::System.Data.DataRow {
+            
+            private item_journal_lineDataTable tableitem_journal_line;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal item_journal_lineRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableitem_journal_line = ((item_journal_lineDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public long Item_Journal_Line_ID {
+                get {
+                    return ((long)(this[this.tableitem_journal_line.Item_Journal_Line_IDColumn]));
+                }
+                set {
+                    this[this.tableitem_journal_line.Item_Journal_Line_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public long Item_Entry_Type_ID {
+                get {
+                    try {
+                        return ((long)(this[this.tableitem_journal_line.Item_Entry_Type_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Item_Entry_Type_ID\' in table \'item_journal_line\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableitem_journal_line.Item_Entry_Type_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public long Item_ID {
+                get {
+                    try {
+                        return ((long)(this[this.tableitem_journal_line.Item_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Item_ID\' in table \'item_journal_line\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableitem_journal_line.Item_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public long Location_ID {
+                get {
+                    try {
+                        return ((long)(this[this.tableitem_journal_line.Location_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Location_ID\' in table \'item_journal_line\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableitem_journal_line.Location_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public float Quantity {
+                get {
+                    try {
+                        return ((float)(this[this.tableitem_journal_line.QuantityColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Quantity\' in table \'item_journal_line\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableitem_journal_line.QuantityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public long Bin_ID {
+                get {
+                    try {
+                        return ((long)(this[this.tableitem_journal_line.Bin_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Bin_ID\' in table \'item_journal_line\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableitem_journal_line.Bin_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Unit_of_Measure {
+                get {
+                    try {
+                        return ((string)(this[this.tableitem_journal_line.Unit_of_MeasureColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Unit_of_Measure\' in table \'item_journal_line\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableitem_journal_line.Unit_of_MeasureColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public float Price {
+                get {
+                    try {
+                        return ((float)(this[this.tableitem_journal_line.PriceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Price\' in table \'item_journal_line\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableitem_journal_line.PriceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public float Amount {
+                get {
+                    try {
+                        return ((float)(this[this.tableitem_journal_line.AmountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Amount\' in table \'item_journal_line\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableitem_journal_line.AmountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Document_No {
+                get {
+                    try {
+                        return ((string)(this[this.tableitem_journal_line.Document_NoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Document_No\' in table \'item_journal_line\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableitem_journal_line.Document_NoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime Entry_Date {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableitem_journal_line.Entry_DateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Entry_Date\' in table \'item_journal_line\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableitem_journal_line.Entry_DateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public long User_ID {
+                get {
+                    try {
+                        return ((long)(this[this.tableitem_journal_line.User_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'User_ID\' in table \'item_journal_line\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableitem_journal_line.User_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public long Partner_ID {
+                get {
+                    try {
+                        return ((long)(this[this.tableitem_journal_line.Partner_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Partner_ID\' in table \'item_journal_line\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableitem_journal_line.Partner_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public long Partner_Type {
+                get {
+                    try {
+                        return ((long)(this[this.tableitem_journal_line.Partner_TypeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Partner_Type\' in table \'item_journal_line\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableitem_journal_line.Partner_TypeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsItem_Entry_Type_IDNull() {
+                return this.IsNull(this.tableitem_journal_line.Item_Entry_Type_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetItem_Entry_Type_IDNull() {
+                this[this.tableitem_journal_line.Item_Entry_Type_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsItem_IDNull() {
+                return this.IsNull(this.tableitem_journal_line.Item_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetItem_IDNull() {
+                this[this.tableitem_journal_line.Item_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsLocation_IDNull() {
+                return this.IsNull(this.tableitem_journal_line.Location_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetLocation_IDNull() {
+                this[this.tableitem_journal_line.Location_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsQuantityNull() {
+                return this.IsNull(this.tableitem_journal_line.QuantityColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetQuantityNull() {
+                this[this.tableitem_journal_line.QuantityColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsBin_IDNull() {
+                return this.IsNull(this.tableitem_journal_line.Bin_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetBin_IDNull() {
+                this[this.tableitem_journal_line.Bin_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsUnit_of_MeasureNull() {
+                return this.IsNull(this.tableitem_journal_line.Unit_of_MeasureColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetUnit_of_MeasureNull() {
+                this[this.tableitem_journal_line.Unit_of_MeasureColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPriceNull() {
+                return this.IsNull(this.tableitem_journal_line.PriceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPriceNull() {
+                this[this.tableitem_journal_line.PriceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsAmountNull() {
+                return this.IsNull(this.tableitem_journal_line.AmountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAmountNull() {
+                this[this.tableitem_journal_line.AmountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDocument_NoNull() {
+                return this.IsNull(this.tableitem_journal_line.Document_NoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDocument_NoNull() {
+                this[this.tableitem_journal_line.Document_NoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEntry_DateNull() {
+                return this.IsNull(this.tableitem_journal_line.Entry_DateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEntry_DateNull() {
+                this[this.tableitem_journal_line.Entry_DateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsUser_IDNull() {
+                return this.IsNull(this.tableitem_journal_line.User_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetUser_IDNull() {
+                this[this.tableitem_journal_line.User_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPartner_IDNull() {
+                return this.IsNull(this.tableitem_journal_line.Partner_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPartner_IDNull() {
+                this[this.tableitem_journal_line.Partner_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPartner_TypeNull() {
+                return this.IsNull(this.tableitem_journal_line.Partner_TypeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPartner_TypeNull() {
+                this[this.tableitem_journal_line.Partner_TypeColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -6973,6 +8291,74 @@ namespace WMS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public userRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class item_journal_headerRowChangeEvent : global::System.EventArgs {
+            
+            private item_journal_headerRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public item_journal_headerRowChangeEvent(item_journal_headerRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public item_journal_headerRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class item_journal_lineRowChangeEvent : global::System.EventArgs {
+            
+            private item_journal_lineRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public item_journal_lineRowChangeEvent(item_journal_lineRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public item_journal_lineRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -14767,6 +16153,1826 @@ FROM            model INNER JOIN
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class item_journal_headerTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::Devart.Data.Universal.UniDataAdapter _adapter;
+        
+        private global::Devart.Data.Universal.UniConnection _connection;
+        
+        private global::System.Data.Common.DbTransaction _transaction;
+        
+        private global::Devart.Data.Universal.UniCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public item_journal_headerTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::Devart.Data.Universal.UniDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::Devart.Data.Universal.UniConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::Devart.Data.Universal.UniCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.Common.DbTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::Devart.Data.Universal.UniCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::Devart.Data.Universal.UniDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "item_journal_header";
+            tableMapping.ColumnMappings.Add("Item_Journal_Header_ID", "Item_Journal_Header_ID");
+            tableMapping.ColumnMappings.Add("Item_Journal_Header_Name", "Item_Journal_Header_Name");
+            tableMapping.ColumnMappings.Add("User_ID", "User_ID");
+            tableMapping.ColumnMappings.Add("Date", "Date");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::Devart.Data.Universal.UniCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM beroebo_wms`.item_journal_header` WHERE ((Item_Journal_Header_ID` = :Original_Item_Journal_Header_ID) AND ((:IsNull_Item_Journal_Header_Name = 1 AND Item_Journal_Header_Name` IS NULL) OR (Item_Journal_Header_Name` = :Original_Item_Journal_Header_Name)) AND ((:IsNull_User_ID = 1 AND User_ID` IS NULL) OR (User_ID` = :Original_User_ID)) AND ((:IsNull_Date = 1 AND Date` IS NULL) OR (Date` = :Original_Date)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            global::Devart.Data.Universal.UniParameter param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Original_Item_Journal_Header_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
+            param.SourceColumn = "Item_Journal_Header_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "IsNull_Item_Journal_Header_Name";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
+            param.SourceColumn = "Item_Journal_Header_Name";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Original_Item_Journal_Header_Name";
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.VarChar;
+            param.SourceColumn = "Item_Journal_Header_Name";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "IsNull_User_ID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
+            param.SourceColumn = "User_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Original_User_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
+            param.SourceColumn = "User_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "IsNull_Date";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
+            param.SourceColumn = "Date";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Original_Date";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.DateTime;
+            param.SourceColumn = "Date";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            this._adapter.InsertCommand = new global::Devart.Data.Universal.UniCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO beroebo_wms`.item_journal_header` (Item_Journal_Header_ID`, Item_Jour" +
+                "nal_Header_Name`, User_ID`, Date`) VALUES (:Item_Journal_Header_ID, :Item_Journa" +
+                "l_Header_Name, :User_ID, :Date)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Item_Journal_Header_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
+            param.SourceColumn = "Item_Journal_Header_ID";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Item_Journal_Header_Name";
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.VarChar;
+            param.SourceColumn = "Item_Journal_Header_Name";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "User_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
+            param.SourceColumn = "User_ID";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Date";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.DateTime;
+            param.SourceColumn = "Date";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            this._adapter.UpdateCommand = new global::Devart.Data.Universal.UniCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE beroebo_wms`.item_journal_header` SET Item_Journal_Header_ID` = :Item_Journal_Header_ID, Item_Journal_Header_Name` = :Item_Journal_Header_Name, User_ID` = :User_ID, Date` = :Date WHERE ((Item_Journal_Header_ID` = :Original_Item_Journal_Header_ID) AND ((:IsNull_Item_Journal_Header_Name = 1 AND Item_Journal_Header_Name` IS NULL) OR (Item_Journal_Header_Name` = :Original_Item_Journal_Header_Name)) AND ((:IsNull_User_ID = 1 AND User_ID` IS NULL) OR (User_ID` = :Original_User_ID)) AND ((:IsNull_Date = 1 AND Date` IS NULL) OR (Date` = :Original_Date)))";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Item_Journal_Header_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
+            param.SourceColumn = "Item_Journal_Header_ID";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Item_Journal_Header_Name";
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.VarChar;
+            param.SourceColumn = "Item_Journal_Header_Name";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "User_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
+            param.SourceColumn = "User_ID";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Date";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.DateTime;
+            param.SourceColumn = "Date";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Original_Item_Journal_Header_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
+            param.SourceColumn = "Item_Journal_Header_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "IsNull_Item_Journal_Header_Name";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
+            param.SourceColumn = "Item_Journal_Header_Name";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Original_Item_Journal_Header_Name";
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.VarChar;
+            param.SourceColumn = "Item_Journal_Header_Name";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "IsNull_User_ID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
+            param.SourceColumn = "User_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Original_User_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
+            param.SourceColumn = "User_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "IsNull_Date";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
+            param.SourceColumn = "Date";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Original_Date";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.DateTime;
+            param.SourceColumn = "Date";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::Devart.Data.Universal.UniConnection();
+            this._connection.ConnectionString = global::WMS.Properties.Settings.Default.beroebo_wmsConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::Devart.Data.Universal.UniCommand[1];
+            this._commandCollection[0] = new global::Devart.Data.Universal.UniCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT        item_journal_header.*\r\nFROM            item_journal_header";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DataSet1.item_journal_headerDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DataSet1.item_journal_headerDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSet1.item_journal_headerDataTable dataTable = new DataSet1.item_journal_headerDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DataSet1.item_journal_headerDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DataSet1 dataSet) {
+            return this.Adapter.Update(dataSet, "item_journal_header");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(long Original_Item_Journal_Header_ID, string Original_Item_Journal_Header_Name, global::System.Nullable<long> Original_User_ID, global::System.Nullable<global::System.DateTime> Original_Date) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_Item_Journal_Header_ID));
+            if ((Original_Item_Journal_Header_Name == null)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Item_Journal_Header_Name));
+            }
+            if ((Original_User_ID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((long)(Original_User_ID.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Date.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_Date.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(long Item_Journal_Header_ID, string Item_Journal_Header_Name, global::System.Nullable<long> User_ID, global::System.Nullable<global::System.DateTime> Date) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((long)(Item_Journal_Header_ID));
+            if ((Item_Journal_Header_Name == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Item_Journal_Header_Name));
+            }
+            if ((User_ID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((long)(User_ID.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Date.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(Date.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(long Item_Journal_Header_ID, string Item_Journal_Header_Name, global::System.Nullable<long> User_ID, global::System.Nullable<global::System.DateTime> Date, long Original_Item_Journal_Header_ID, string Original_Item_Journal_Header_Name, global::System.Nullable<long> Original_User_ID, global::System.Nullable<global::System.DateTime> Original_Date) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((long)(Item_Journal_Header_ID));
+            if ((Item_Journal_Header_Name == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Item_Journal_Header_Name));
+            }
+            if ((User_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((long)(User_ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Date.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(Date.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((long)(Original_Item_Journal_Header_ID));
+            if ((Original_Item_Journal_Header_Name == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Item_Journal_Header_Name));
+            }
+            if ((Original_User_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((long)(Original_User_ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Date.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_Date.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string Item_Journal_Header_Name, global::System.Nullable<long> User_ID, global::System.Nullable<global::System.DateTime> Date, long Original_Item_Journal_Header_ID, string Original_Item_Journal_Header_Name, global::System.Nullable<long> Original_User_ID, global::System.Nullable<global::System.DateTime> Original_Date) {
+            return this.Update(Original_Item_Journal_Header_ID, Item_Journal_Header_Name, User_ID, Date, Original_Item_Journal_Header_ID, Original_Item_Journal_Header_Name, Original_User_ID, Original_Date);
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class item_journal_lineTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::Devart.Data.Universal.UniDataAdapter _adapter;
+        
+        private global::Devart.Data.Universal.UniConnection _connection;
+        
+        private global::System.Data.Common.DbTransaction _transaction;
+        
+        private global::Devart.Data.Universal.UniCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public item_journal_lineTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::Devart.Data.Universal.UniDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::Devart.Data.Universal.UniConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::Devart.Data.Universal.UniCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.Common.DbTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::Devart.Data.Universal.UniCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::Devart.Data.Universal.UniDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "item_journal_line";
+            tableMapping.ColumnMappings.Add("Item_Journal_Line_ID", "Item_Journal_Line_ID");
+            tableMapping.ColumnMappings.Add("Item_Entry_Type_ID", "Item_Entry_Type_ID");
+            tableMapping.ColumnMappings.Add("Item_ID", "Item_ID");
+            tableMapping.ColumnMappings.Add("Location_ID", "Location_ID");
+            tableMapping.ColumnMappings.Add("Quantity", "Quantity");
+            tableMapping.ColumnMappings.Add("Bin_ID", "Bin_ID");
+            tableMapping.ColumnMappings.Add("Unit_of_Measure", "Unit_of_Measure");
+            tableMapping.ColumnMappings.Add("Price", "Price");
+            tableMapping.ColumnMappings.Add("Amount", "Amount");
+            tableMapping.ColumnMappings.Add("Document_No", "Document_No");
+            tableMapping.ColumnMappings.Add("Entry_Date", "Entry_Date");
+            tableMapping.ColumnMappings.Add("User_ID", "User_ID");
+            tableMapping.ColumnMappings.Add("Partner_ID", "Partner_ID");
+            tableMapping.ColumnMappings.Add("Partner_Type", "Partner_Type");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::Devart.Data.Universal.UniCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM beroebo_wms`.item_journal_line` WHERE ((Item_Journal_Line_ID` = :Original_Item_Journal_Line_ID) AND ((:IsNull_Item_Entry_Type_ID = 1 AND Item_Entry_Type_ID` IS NULL) OR (Item_Entry_Type_ID` = :Original_Item_Entry_Type_ID)) AND ((:IsNull_Item_ID = 1 AND Item_ID` IS NULL) OR (Item_ID` = :Original_Item_ID)) AND ((:IsNull_Location_ID = 1 AND Location_ID` IS NULL) OR (Location_ID` = :Original_Location_ID)) AND ((:IsNull_Quantity = 1 AND Quantity` IS NULL) OR (Quantity` = :Original_Quantity)) AND ((:IsNull_Bin_ID = 1 AND Bin_ID` IS NULL) OR (Bin_ID` = :Original_Bin_ID)) AND ((:IsNull_Unit_of_Measure = 1 AND Unit_of_Measure` IS NULL) OR (Unit_of_Measure` = :Original_Unit_of_Measure)) AND ((:IsNull_Price = 1 AND Price` IS NULL) OR (Price` = :Original_Price)) AND ((:IsNull_Amount = 1 AND Amount` IS NULL) OR (Amount` = :Original_Amount)) AND ((:IsNull_Document_No = 1 AND Document_No` IS NULL) OR (Document_No` = :Original_Document_No)) AND ((:IsNull_Entry_Date = 1 AND Entry_Date` IS NULL) OR (Entry_Date` = :Original_Entry_Date)) AND ((:IsNull_User_ID = 1 AND User_ID` IS NULL) OR (User_ID` = :Original_User_ID)) AND ((:IsNull_Partner_ID = 1 AND Partner_ID` IS NULL) OR (Partner_ID` = :Original_Partner_ID)) AND ((:IsNull_Partner_Type = 1 AND Partner_Type` IS NULL) OR (Partner_Type` = :Original_Partner_Type)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            global::Devart.Data.Universal.UniParameter param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Original_Item_Journal_Line_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
+            param.SourceColumn = "Item_Journal_Line_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "IsNull_Item_Entry_Type_ID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
+            param.SourceColumn = "Item_Entry_Type_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Original_Item_Entry_Type_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
+            param.SourceColumn = "Item_Entry_Type_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "IsNull_Item_ID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
+            param.SourceColumn = "Item_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Original_Item_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
+            param.SourceColumn = "Item_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "IsNull_Location_ID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
+            param.SourceColumn = "Location_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Original_Location_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
+            param.SourceColumn = "Location_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "IsNull_Quantity";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
+            param.SourceColumn = "Quantity";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Original_Quantity";
+            param.DbType = global::System.Data.DbType.Binary;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Single;
+            param.SourceColumn = "Quantity";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "IsNull_Bin_ID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
+            param.SourceColumn = "Bin_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Original_Bin_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
+            param.SourceColumn = "Bin_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "IsNull_Unit_of_Measure";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
+            param.SourceColumn = "Unit_of_Measure";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Original_Unit_of_Measure";
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.VarChar;
+            param.SourceColumn = "Unit_of_Measure";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "IsNull_Price";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
+            param.SourceColumn = "Price";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Original_Price";
+            param.DbType = global::System.Data.DbType.Binary;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Single;
+            param.SourceColumn = "Price";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "IsNull_Amount";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
+            param.SourceColumn = "Amount";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Original_Amount";
+            param.DbType = global::System.Data.DbType.Binary;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Single;
+            param.SourceColumn = "Amount";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "IsNull_Document_No";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
+            param.SourceColumn = "Document_No";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Original_Document_No";
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.VarChar;
+            param.SourceColumn = "Document_No";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "IsNull_Entry_Date";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
+            param.SourceColumn = "Entry_Date";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Original_Entry_Date";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.DateTime;
+            param.SourceColumn = "Entry_Date";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "IsNull_User_ID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
+            param.SourceColumn = "User_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Original_User_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
+            param.SourceColumn = "User_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "IsNull_Partner_ID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
+            param.SourceColumn = "Partner_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Original_Partner_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
+            param.SourceColumn = "Partner_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "IsNull_Partner_Type";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
+            param.SourceColumn = "Partner_Type";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Original_Partner_Type";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
+            param.SourceColumn = "Partner_Type";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            this._adapter.InsertCommand = new global::Devart.Data.Universal.UniCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO beroebo_wms`.item_journal_line` (Item_Journal_Line_ID`, Item_Entry_Type_ID`, Item_ID`, Location_ID`, Quantity`, Bin_ID`, Unit_of_Measure`, Price`, Amount`, Document_No`, Entry_Date`, User_ID`, Partner_ID`, Partner_Type`) VALUES (:Item_Journal_Line_ID, :Item_Entry_Type_ID, :Item_ID, :Location_ID, :Quantity, :Bin_ID, :Unit_of_Measure, :Price, :Amount, :Document_No, :Entry_Date, :User_ID, :Partner_ID, :Partner_Type)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Item_Journal_Line_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
+            param.SourceColumn = "Item_Journal_Line_ID";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Item_Entry_Type_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
+            param.SourceColumn = "Item_Entry_Type_ID";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Item_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
+            param.SourceColumn = "Item_ID";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Location_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
+            param.SourceColumn = "Location_ID";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Quantity";
+            param.DbType = global::System.Data.DbType.Binary;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Single;
+            param.SourceColumn = "Quantity";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Bin_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
+            param.SourceColumn = "Bin_ID";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Unit_of_Measure";
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.VarChar;
+            param.SourceColumn = "Unit_of_Measure";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Price";
+            param.DbType = global::System.Data.DbType.Binary;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Single;
+            param.SourceColumn = "Price";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Amount";
+            param.DbType = global::System.Data.DbType.Binary;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Single;
+            param.SourceColumn = "Amount";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Document_No";
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.VarChar;
+            param.SourceColumn = "Document_No";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Entry_Date";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.DateTime;
+            param.SourceColumn = "Entry_Date";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "User_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
+            param.SourceColumn = "User_ID";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Partner_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
+            param.SourceColumn = "Partner_ID";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Partner_Type";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
+            param.SourceColumn = "Partner_Type";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            this._adapter.UpdateCommand = new global::Devart.Data.Universal.UniCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = "UPDATE beroebo_wms`.item_journal_line` SET Item_Journal_Line_ID` = :Item_Journal_" +
+                "Line_ID, Item_Entry_Type_ID` = :Item_Entry_Type_ID, Item_ID` = :Item_ID, Locatio" +
+                "n_ID` = :Location_ID, Quantity` = :Quantity, Bin_ID` = :Bin_ID, Unit_of_Measure`" +
+                " = :Unit_of_Measure, Price` = :Price, Amount` = :Amount, Document_No` = :Documen" +
+                "t_No, Entry_Date` = :Entry_Date, User_ID` = :User_ID, Partner_ID` = :Partner_ID," +
+                " Partner_Type` = :Partner_Type WHERE ((Item_Journal_Line_ID` = :Original_Item_Jo" +
+                "urnal_Line_ID) AND ((:IsNull_Item_Entry_Type_ID = 1 AND Item_Entry_Type_ID` IS N" +
+                "ULL) OR (Item_Entry_Type_ID` = :Original_Item_Entry_Type_ID)) AND ((:IsNull_Item" +
+                "_ID = 1 AND Item_ID` IS NULL) OR (Item_ID` = :Original_Item_ID)) AND ((:IsNull_L" +
+                "ocation_ID = 1 AND Location_ID` IS NULL) OR (Location_ID` = :Original_Location_I" +
+                "D)) AND ((:IsNull_Quantity = 1 AND Quantity` IS NULL) OR (Quantity` = :Original_" +
+                "Quantity)) AND ((:IsNull_Bin_ID = 1 AND Bin_ID` IS NULL) OR (Bin_ID` = :Original" +
+                "_Bin_ID)) AND ((:IsNull_Unit_of_Measure = 1 AND Unit_of_Measure` IS NULL) OR (Un" +
+                "it_of_Measure` = :Original_Unit_of_Measure)) AND ((:IsNull_Price = 1 AND Price` " +
+                "IS NULL) OR (Price` = :Original_Price)) AND ((:IsNull_Amount = 1 AND Amount` IS " +
+                "NULL) OR (Amount` = :Original_Amount)) AND ((:IsNull_Document_No = 1 AND Documen" +
+                "t_No` IS NULL) OR (Document_No` = :Original_Document_No)) AND ((:IsNull_Entry_Da" +
+                "te = 1 AND Entry_Date` IS NULL) OR (Entry_Date` = :Original_Entry_Date)) AND ((:" +
+                "IsNull_User_ID = 1 AND User_ID` IS NULL) OR (User_ID` = :Original_User_ID)) AND " +
+                "((:IsNull_Partner_ID = 1 AND Partner_ID` IS NULL) OR (Partner_ID` = :Original_Pa" +
+                "rtner_ID)) AND ((:IsNull_Partner_Type = 1 AND Partner_Type` IS NULL) OR (Partner" +
+                "_Type` = :Original_Partner_Type)))";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Item_Journal_Line_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
+            param.SourceColumn = "Item_Journal_Line_ID";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Item_Entry_Type_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
+            param.SourceColumn = "Item_Entry_Type_ID";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Item_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
+            param.SourceColumn = "Item_ID";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Location_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
+            param.SourceColumn = "Location_ID";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Quantity";
+            param.DbType = global::System.Data.DbType.Binary;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Single;
+            param.SourceColumn = "Quantity";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Bin_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
+            param.SourceColumn = "Bin_ID";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Unit_of_Measure";
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.VarChar;
+            param.SourceColumn = "Unit_of_Measure";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Price";
+            param.DbType = global::System.Data.DbType.Binary;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Single;
+            param.SourceColumn = "Price";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Amount";
+            param.DbType = global::System.Data.DbType.Binary;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Single;
+            param.SourceColumn = "Amount";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Document_No";
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.VarChar;
+            param.SourceColumn = "Document_No";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Entry_Date";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.DateTime;
+            param.SourceColumn = "Entry_Date";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "User_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
+            param.SourceColumn = "User_ID";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Partner_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
+            param.SourceColumn = "Partner_ID";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Partner_Type";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
+            param.SourceColumn = "Partner_Type";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Original_Item_Journal_Line_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
+            param.SourceColumn = "Item_Journal_Line_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "IsNull_Item_Entry_Type_ID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
+            param.SourceColumn = "Item_Entry_Type_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Original_Item_Entry_Type_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
+            param.SourceColumn = "Item_Entry_Type_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "IsNull_Item_ID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
+            param.SourceColumn = "Item_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Original_Item_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
+            param.SourceColumn = "Item_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "IsNull_Location_ID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
+            param.SourceColumn = "Location_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Original_Location_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
+            param.SourceColumn = "Location_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "IsNull_Quantity";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
+            param.SourceColumn = "Quantity";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Original_Quantity";
+            param.DbType = global::System.Data.DbType.Binary;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Single;
+            param.SourceColumn = "Quantity";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "IsNull_Bin_ID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
+            param.SourceColumn = "Bin_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Original_Bin_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
+            param.SourceColumn = "Bin_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "IsNull_Unit_of_Measure";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
+            param.SourceColumn = "Unit_of_Measure";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Original_Unit_of_Measure";
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.VarChar;
+            param.SourceColumn = "Unit_of_Measure";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "IsNull_Price";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
+            param.SourceColumn = "Price";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Original_Price";
+            param.DbType = global::System.Data.DbType.Binary;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Single;
+            param.SourceColumn = "Price";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "IsNull_Amount";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
+            param.SourceColumn = "Amount";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Original_Amount";
+            param.DbType = global::System.Data.DbType.Binary;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Single;
+            param.SourceColumn = "Amount";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "IsNull_Document_No";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
+            param.SourceColumn = "Document_No";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Original_Document_No";
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.VarChar;
+            param.SourceColumn = "Document_No";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "IsNull_Entry_Date";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
+            param.SourceColumn = "Entry_Date";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Original_Entry_Date";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.DateTime;
+            param.SourceColumn = "Entry_Date";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "IsNull_User_ID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
+            param.SourceColumn = "User_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Original_User_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
+            param.SourceColumn = "User_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "IsNull_Partner_ID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
+            param.SourceColumn = "Partner_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Original_Partner_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
+            param.SourceColumn = "Partner_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "IsNull_Partner_Type";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.Int;
+            param.SourceColumn = "Partner_Type";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.Universal.UniParameter();
+            param.ParameterName = "Original_Partner_Type";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.UniDbType = global::Devart.Data.Universal.UniDbType.BigInt;
+            param.SourceColumn = "Partner_Type";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::Devart.Data.Universal.UniConnection();
+            this._connection.ConnectionString = global::WMS.Properties.Settings.Default.beroebo_wmsConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::Devart.Data.Universal.UniCommand[1];
+            this._commandCollection[0] = new global::Devart.Data.Universal.UniCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT        item_journal_line.*\r\nFROM            item_journal_line";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DataSet1.item_journal_lineDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DataSet1.item_journal_lineDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSet1.item_journal_lineDataTable dataTable = new DataSet1.item_journal_lineDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DataSet1.item_journal_lineDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DataSet1 dataSet) {
+            return this.Adapter.Update(dataSet, "item_journal_line");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(long Original_Item_Journal_Line_ID, global::System.Nullable<long> Original_Item_Entry_Type_ID, global::System.Nullable<long> Original_Item_ID, global::System.Nullable<long> Original_Location_ID, byte[] Original_Quantity, global::System.Nullable<long> Original_Bin_ID, string Original_Unit_of_Measure, byte[] Original_Price, byte[] Original_Amount, string Original_Document_No, global::System.Nullable<global::System.DateTime> Original_Entry_Date, global::System.Nullable<long> Original_User_ID, global::System.Nullable<long> Original_Partner_ID, global::System.Nullable<long> Original_Partner_Type) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_Item_Journal_Line_ID));
+            if ((Original_Item_Entry_Type_ID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((long)(Original_Item_Entry_Type_ID.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Item_ID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((long)(Original_Item_ID.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Location_ID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((long)(Original_Location_ID.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Quantity == null)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((byte[])(Original_Quantity));
+            }
+            if ((Original_Bin_ID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((long)(Original_Bin_ID.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Unit_of_Measure == null)) {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_Unit_of_Measure));
+            }
+            if ((Original_Price == null)) {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((byte[])(Original_Price));
+            }
+            if ((Original_Amount == null)) {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((byte[])(Original_Amount));
+            }
+            if ((Original_Document_No == null)) {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_Document_No));
+            }
+            if ((Original_Entry_Date.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((System.DateTime)(Original_Entry_Date.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            if ((Original_User_ID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((long)(Original_User_ID.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Partner_ID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[24].Value = ((long)(Original_Partner_ID.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Partner_Type.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[26].Value = ((long)(Original_Partner_Type.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(long Item_Journal_Line_ID, global::System.Nullable<long> Item_Entry_Type_ID, global::System.Nullable<long> Item_ID, global::System.Nullable<long> Location_ID, byte[] Quantity, global::System.Nullable<long> Bin_ID, string Unit_of_Measure, byte[] Price, byte[] Amount, string Document_No, global::System.Nullable<global::System.DateTime> Entry_Date, global::System.Nullable<long> User_ID, global::System.Nullable<long> Partner_ID, global::System.Nullable<long> Partner_Type) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((long)(Item_Journal_Line_ID));
+            if ((Item_Entry_Type_ID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((long)(Item_Entry_Type_ID.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((Item_ID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((long)(Item_ID.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Location_ID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((long)(Location_ID.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((Quantity == null)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((byte[])(Quantity));
+            }
+            if ((Bin_ID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((long)(Bin_ID.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((Unit_of_Measure == null)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Unit_of_Measure));
+            }
+            if ((Price == null)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((byte[])(Price));
+            }
+            if ((Amount == null)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((byte[])(Amount));
+            }
+            if ((Document_No == null)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(Document_No));
+            }
+            if ((Entry_Date.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((System.DateTime)(Entry_Date.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((User_ID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((long)(User_ID.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((Partner_ID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((long)(Partner_ID.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((Partner_Type.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[13].Value = ((long)(Partner_Type.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    long Item_Journal_Line_ID, 
+                    global::System.Nullable<long> Item_Entry_Type_ID, 
+                    global::System.Nullable<long> Item_ID, 
+                    global::System.Nullable<long> Location_ID, 
+                    byte[] Quantity, 
+                    global::System.Nullable<long> Bin_ID, 
+                    string Unit_of_Measure, 
+                    byte[] Price, 
+                    byte[] Amount, 
+                    string Document_No, 
+                    global::System.Nullable<global::System.DateTime> Entry_Date, 
+                    global::System.Nullable<long> User_ID, 
+                    global::System.Nullable<long> Partner_ID, 
+                    global::System.Nullable<long> Partner_Type, 
+                    long Original_Item_Journal_Line_ID, 
+                    global::System.Nullable<long> Original_Item_Entry_Type_ID, 
+                    global::System.Nullable<long> Original_Item_ID, 
+                    global::System.Nullable<long> Original_Location_ID, 
+                    byte[] Original_Quantity, 
+                    global::System.Nullable<long> Original_Bin_ID, 
+                    string Original_Unit_of_Measure, 
+                    byte[] Original_Price, 
+                    byte[] Original_Amount, 
+                    string Original_Document_No, 
+                    global::System.Nullable<global::System.DateTime> Original_Entry_Date, 
+                    global::System.Nullable<long> Original_User_ID, 
+                    global::System.Nullable<long> Original_Partner_ID, 
+                    global::System.Nullable<long> Original_Partner_Type) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((long)(Item_Journal_Line_ID));
+            if ((Item_Entry_Type_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((long)(Item_Entry_Type_ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((Item_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((long)(Item_ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Location_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((long)(Location_ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((Quantity == null)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((byte[])(Quantity));
+            }
+            if ((Bin_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((long)(Bin_ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((Unit_of_Measure == null)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Unit_of_Measure));
+            }
+            if ((Price == null)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((byte[])(Price));
+            }
+            if ((Amount == null)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((byte[])(Amount));
+            }
+            if ((Document_No == null)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Document_No));
+            }
+            if ((Entry_Date.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Entry_Date.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((User_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((long)(User_ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((Partner_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((long)(Partner_ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((Partner_Type.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((long)(Partner_Type.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((long)(Original_Item_Journal_Line_ID));
+            if ((Original_Item_Entry_Type_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((long)(Original_Item_Entry_Type_ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Item_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((long)(Original_Item_ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Location_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((long)(Original_Location_ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Quantity == null)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((byte[])(Original_Quantity));
+            }
+            if ((Original_Bin_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((long)(Original_Bin_ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Unit_of_Measure == null)) {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_Unit_of_Measure));
+            }
+            if ((Original_Price == null)) {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((byte[])(Original_Price));
+            }
+            if ((Original_Amount == null)) {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((byte[])(Original_Amount));
+            }
+            if ((Original_Document_No == null)) {
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_Document_No));
+            }
+            if ((Original_Entry_Date.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((System.DateTime)(Original_Entry_Date.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
+            }
+            if ((Original_User_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((long)(Original_User_ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Partner_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((long)(Original_Partner_ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Partner_Type.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((long)(Original_Partner_Type.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[40].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    global::System.Nullable<long> Item_Entry_Type_ID, 
+                    global::System.Nullable<long> Item_ID, 
+                    global::System.Nullable<long> Location_ID, 
+                    byte[] Quantity, 
+                    global::System.Nullable<long> Bin_ID, 
+                    string Unit_of_Measure, 
+                    byte[] Price, 
+                    byte[] Amount, 
+                    string Document_No, 
+                    global::System.Nullable<global::System.DateTime> Entry_Date, 
+                    global::System.Nullable<long> User_ID, 
+                    global::System.Nullable<long> Partner_ID, 
+                    global::System.Nullable<long> Partner_Type, 
+                    long Original_Item_Journal_Line_ID, 
+                    global::System.Nullable<long> Original_Item_Entry_Type_ID, 
+                    global::System.Nullable<long> Original_Item_ID, 
+                    global::System.Nullable<long> Original_Location_ID, 
+                    byte[] Original_Quantity, 
+                    global::System.Nullable<long> Original_Bin_ID, 
+                    string Original_Unit_of_Measure, 
+                    byte[] Original_Price, 
+                    byte[] Original_Amount, 
+                    string Original_Document_No, 
+                    global::System.Nullable<global::System.DateTime> Original_Entry_Date, 
+                    global::System.Nullable<long> Original_User_ID, 
+                    global::System.Nullable<long> Original_Partner_ID, 
+                    global::System.Nullable<long> Original_Partner_Type) {
+            return this.Update(Original_Item_Journal_Line_ID, Item_Entry_Type_ID, Item_ID, Location_ID, Quantity, Bin_ID, Unit_of_Measure, Price, Amount, Document_No, Entry_Date, User_ID, Partner_ID, Partner_Type, Original_Item_Journal_Line_ID, Original_Item_Entry_Type_ID, Original_Item_ID, Original_Location_ID, Original_Quantity, Original_Bin_ID, Original_Unit_of_Measure, Original_Price, Original_Amount, Original_Document_No, Original_Entry_Date, Original_User_ID, Original_Partner_ID, Original_Partner_Type);
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -14791,6 +17997,10 @@ FROM            model INNER JOIN
         private manufacturerTableAdapter _manufacturerTableAdapter;
         
         private userTableAdapter _userTableAdapter;
+        
+        private item_journal_headerTableAdapter _item_journal_headerTableAdapter;
+        
+        private item_journal_lineTableAdapter _item_journal_lineTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -14907,6 +18117,34 @@ FROM            model INNER JOIN
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public item_journal_headerTableAdapter item_journal_headerTableAdapter {
+            get {
+                return this._item_journal_headerTableAdapter;
+            }
+            set {
+                this._item_journal_headerTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public item_journal_lineTableAdapter item_journal_lineTableAdapter {
+            get {
+                return this._item_journal_lineTableAdapter;
+            }
+            set {
+                this._item_journal_lineTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -14952,6 +18190,14 @@ FROM            model INNER JOIN
                             && (this._userTableAdapter.Connection != null))) {
                     return this._userTableAdapter.Connection;
                 }
+                if (((this._item_journal_headerTableAdapter != null) 
+                            && (this._item_journal_headerTableAdapter.Connection != null))) {
+                    return this._item_journal_headerTableAdapter.Connection;
+                }
+                if (((this._item_journal_lineTableAdapter != null) 
+                            && (this._item_journal_lineTableAdapter.Connection != null))) {
+                    return this._item_journal_lineTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -14984,6 +18230,12 @@ FROM            model INNER JOIN
                     count = (count + 1);
                 }
                 if ((this._userTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._item_journal_headerTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._item_journal_lineTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -15060,6 +18312,24 @@ FROM            model INNER JOIN
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._item_journal_headerTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.item_journal_header.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._item_journal_headerTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._item_journal_lineTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.item_journal_line.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._item_journal_lineTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             return result;
         }
         
@@ -15126,6 +18396,22 @@ FROM            model INNER JOIN
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._item_journal_headerTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.item_journal_header.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._item_journal_headerTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._item_journal_lineTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.item_journal_line.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._item_journal_lineTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -15136,6 +18422,22 @@ FROM            model INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateDeletedRows(DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._item_journal_lineTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.item_journal_line.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._item_journal_lineTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._item_journal_headerTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.item_journal_header.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._item_journal_headerTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._userTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.user.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -15266,6 +18568,16 @@ FROM            model INNER JOIN
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
+            if (((this._item_journal_headerTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._item_journal_headerTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
+            if (((this._item_journal_lineTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._item_journal_lineTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
                 throw new global::System.ApplicationException("TableAdapterManager contains no connection information. Set each TableAdapterMana" +
@@ -15361,6 +18673,24 @@ FROM            model INNER JOIN
                         adaptersWithAcceptChangesDuringUpdate.Add(this._userTableAdapter.Adapter);
                     }
                 }
+                if ((this._item_journal_headerTableAdapter != null)) {
+                    revertConnections.Add(this._item_journal_headerTableAdapter, this._item_journal_headerTableAdapter.Connection);
+                    this._item_journal_headerTableAdapter.Connection = ((global::Devart.Data.Universal.UniConnection)(workConnection));
+                    this._item_journal_headerTableAdapter.Transaction = ((global::System.Data.Common.DbTransaction)(workTransaction));
+                    if (this._item_journal_headerTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._item_journal_headerTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._item_journal_headerTableAdapter.Adapter);
+                    }
+                }
+                if ((this._item_journal_lineTableAdapter != null)) {
+                    revertConnections.Add(this._item_journal_lineTableAdapter, this._item_journal_lineTableAdapter.Connection);
+                    this._item_journal_lineTableAdapter.Connection = ((global::Devart.Data.Universal.UniConnection)(workConnection));
+                    this._item_journal_lineTableAdapter.Transaction = ((global::System.Data.Common.DbTransaction)(workTransaction));
+                    if (this._item_journal_lineTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._item_journal_lineTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._item_journal_lineTableAdapter.Adapter);
+                    }
+                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -15446,6 +18776,14 @@ FROM            model INNER JOIN
                 if ((this._userTableAdapter != null)) {
                     this._userTableAdapter.Connection = ((global::Devart.Data.Universal.UniConnection)(revertConnections[this._userTableAdapter]));
                     this._userTableAdapter.Transaction = null;
+                }
+                if ((this._item_journal_headerTableAdapter != null)) {
+                    this._item_journal_headerTableAdapter.Connection = ((global::Devart.Data.Universal.UniConnection)(revertConnections[this._item_journal_headerTableAdapter]));
+                    this._item_journal_headerTableAdapter.Transaction = null;
+                }
+                if ((this._item_journal_lineTableAdapter != null)) {
+                    this._item_journal_lineTableAdapter.Connection = ((global::Devart.Data.Universal.UniConnection)(revertConnections[this._item_journal_lineTableAdapter]));
+                    this._item_journal_lineTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

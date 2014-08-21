@@ -41,6 +41,8 @@
             this.radPanel2 = new Telerik.WinControls.UI.RadPanel();
             this.radMenu1 = new Telerik.WinControls.UI.RadMenu();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
+            this.radMenuItem1 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuItem6 = new Telerik.WinControls.UI.RadMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
@@ -165,7 +167,8 @@
             this.radMenuItem2,
             this.radMenuItem4,
             this.radMenuItem5,
-            this.radMenuItem9});
+            this.radMenuItem9,
+            this.radMenuItem1});
             this.radMenu1.Location = new System.Drawing.Point(0, 0);
             this.radMenu1.Name = "radMenu1";
             this.radMenu1.Padding = new System.Windows.Forms.Padding(2, 2, 0, 0);
@@ -173,6 +176,25 @@
             this.radMenu1.TabIndex = 2;
             this.radMenu1.Text = "radMenu1";
             this.radMenu1.ThemeName = "TelerikMetro";
+            // 
+            // radMenuItem1
+            // 
+            this.radMenuItem1.AccessibleDescription = "Операции";
+            this.radMenuItem1.AccessibleName = "Операции";
+            this.radMenuItem1.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radMenuItem6});
+            this.radMenuItem1.Name = "radMenuItem1";
+            this.radMenuItem1.Text = "Операции";
+            this.radMenuItem1.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            // 
+            // radMenuItem6
+            // 
+            this.radMenuItem6.AccessibleDescription = "Журнал Артикули";
+            this.radMenuItem6.AccessibleName = "Журнал Артикули";
+            this.radMenuItem6.Name = "radMenuItem6";
+            this.radMenuItem6.Text = "Журнал Артикули";
+            this.radMenuItem6.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.radMenuItem6.Click += new System.EventHandler(this.radMenuItem6_Click);
             // 
             // MainMenu
             // 
@@ -216,5 +238,7 @@
         private Telerik.WinControls.UI.RadPanel radPanel2;
         private Telerik.WinControls.UI.RadMenu radMenu1;
         private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
+        private Telerik.WinControls.UI.RadMenuItem radMenuItem1;
+        private Telerik.WinControls.UI.RadMenuItem radMenuItem6;
     }
 }

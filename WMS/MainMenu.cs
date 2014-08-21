@@ -82,6 +82,11 @@ namespace WMS
             ShowChildForm(new Bin());
         }
 
+        private void radMenuItem6_Click(object sender, EventArgs e)
+        {
+            ShowChildForm(new ItemJournalHeader());
+        }
+
         
     }
 }

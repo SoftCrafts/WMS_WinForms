@@ -117,6 +117,12 @@
     <Compile Include="WarehouseForms\ItemCard.Designer.cs">
       <DependentUpon>ItemCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="WarehouseForms\ItemJournalHeader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WarehouseForms\ItemJournalHeader.Designer.cs">
+      <DependentUpon>ItemJournalHeader.cs</DependentUpon>
+    </Compile>
     <Compile Include="WarehouseForms\Items.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WarehouseForms\ItemCard.resx">
       <DependentUpon>ItemCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WarehouseForms\ItemJournalHeader.resx">
+      <DependentUpon>ItemJournalHeader.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WarehouseForms\Items.resx">
       <DependentUpon>Items.cs</DependentUpon>
