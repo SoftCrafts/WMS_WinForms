@@ -87,6 +87,15 @@ namespace WMS
             ShowChildForm(new ItemJournalHeader());
         }
 
+        private void MainMenu_Load(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(Globals.UserID))
+            {
+                radMenu1.Visible = false;
+                ShowChildForm(new Login());
+            }
+        }
+
         
     }
 }

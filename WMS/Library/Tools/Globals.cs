@@ -11,6 +11,9 @@ namespace WMS
     public class Globals
     {
 
+        public static string UserID;
+        public static string Role;
+
         /// <summary>
         /// пътя към root директорията на сайта
         /// </summary>
