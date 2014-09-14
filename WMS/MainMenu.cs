@@ -16,6 +16,7 @@ namespace WMS
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
+           
             
         }
 
@@ -89,11 +90,21 @@ namespace WMS
 
         private void MainMenu_Load(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(Globals.UserID))
+            if (String.IsNullOrEmpty(Globals.UserName))
             {
                 radMenu1.Visible = false;
                 ShowChildForm(new Login());
             }
+        }
+
+        public void SetLabels()
+        {
+            MessageBox.Show("yo");
+        }
+
+        private void lbl_fullname_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ShowChildForm(new UserCard());
         }
 
         

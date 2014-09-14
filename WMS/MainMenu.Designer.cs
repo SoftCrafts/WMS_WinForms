@@ -39,12 +39,15 @@
             this.radMenuItem9 = new Telerik.WinControls.UI.RadMenuItem();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             this.radPanel2 = new Telerik.WinControls.UI.RadPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_fullname = new System.Windows.Forms.LinkLabel();
             this.radMenu1 = new Telerik.WinControls.UI.RadMenu();
             this.radMenuItem1 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem6 = new Telerik.WinControls.UI.RadMenuItem();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel2)).BeginInit();
+            this.radPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
@@ -145,7 +148,7 @@
             this.radPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(219)))), ((int)(((byte)(255)))));
             this.radPanel1.Location = new System.Drawing.Point(5, 44);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(627, 290);
+            this.radPanel1.Size = new System.Drawing.Size(598, 290);
             this.radPanel1.TabIndex = 3;
             this.radPanel1.ThemeName = "TelerikMetro";
             // 
@@ -154,11 +157,42 @@
             this.radPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.radPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(219)))), ((int)(((byte)(255)))));
-            this.radPanel2.Location = new System.Drawing.Point(638, 44);
+            this.radPanel2.Controls.Add(this.label1);
+            this.radPanel2.Controls.Add(this.lbl_fullname);
+            this.radPanel2.Location = new System.Drawing.Point(609, 44);
+            this.radPanel2.MaximumSize = new System.Drawing.Size(200, 0);
+            this.radPanel2.MinimumSize = new System.Drawing.Size(190, 290);
             this.radPanel2.Name = "radPanel2";
-            this.radPanel2.Size = new System.Drawing.Size(165, 290);
+            // 
+            // 
+            // 
+            this.radPanel2.RootElement.MaxSize = new System.Drawing.Size(200, 0);
+            this.radPanel2.RootElement.MinSize = new System.Drawing.Size(190, 290);
+            this.radPanel2.Size = new System.Drawing.Size(194, 290);
             this.radPanel2.TabIndex = 4;
             this.radPanel2.ThemeName = "TelerikMetro";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.label1.Location = new System.Drawing.Point(3, 4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(39, 15);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Опер:";
+            // 
+            // lbl_fullname
+            // 
+            this.lbl_fullname.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_fullname.AutoSize = true;
+            this.lbl_fullname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.lbl_fullname.Location = new System.Drawing.Point(42, 4);
+            this.lbl_fullname.Name = "lbl_fullname";
+            this.lbl_fullname.Size = new System.Drawing.Size(0, 15);
+            this.lbl_fullname.TabIndex = 0;
+            this.lbl_fullname.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbl_fullname_LinkClicked);
             // 
             // radMenu1
             // 
@@ -217,6 +251,8 @@
             this.Load += new System.EventHandler(this.MainMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel2)).EndInit();
+            this.radPanel2.ResumeLayout(false);
+            this.radPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
@@ -241,5 +277,7 @@
         private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
         private Telerik.WinControls.UI.RadMenuItem radMenuItem1;
         private Telerik.WinControls.UI.RadMenuItem radMenuItem6;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.LinkLabel lbl_fullname;
     }
 }

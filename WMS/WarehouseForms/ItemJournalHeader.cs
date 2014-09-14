@@ -39,7 +39,7 @@ namespace WMS.WarehouseForms
                 DataRow dr = dt.NewRow();
 
                 dr[Item_Journal_Header_Table.Item_Journal_Header_Name] = e.GridViewTemplate.Rows[0].Cells[Item_Journal_Header_Table.Item_Journal_Header_Name].Value;
-                dr[Item_Journal_Header_Table.User_ID] = Globals.UserID;
+                dr[Item_Journal_Header_Table.User_ID] = Globals.UserName;
 
 
 

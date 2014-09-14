@@ -11,7 +11,8 @@ namespace WMS
     public class Globals
     {
 
-        public static string UserID;
+        public static string UserName;
+        public static string FullName;
         public static string Role;
 
         /// <summary>

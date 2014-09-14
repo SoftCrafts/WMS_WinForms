@@ -48,9 +48,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Devart.Data, Version=5.0.818.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
-    <Reference Include="Devart.Data.Universal, Version=3.50.523.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
-    <Reference Include="Devart.Data.Universal.Web, Version=3.50.523.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
+    <Reference Include="Devart.Data, Version=5.0.1017.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
+    <Reference Include="Devart.Data.Universal, Version=3.50.722.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
@@ -87,8 +86,10 @@
     <Compile Include="Library\DB\Tables\Location_table.cs" />
     <Compile Include="Library\DB\Tables\Manufacturer_table.cs" />
     <Compile Include="Library\DB\Tables\Model_table.cs" />
+    <Compile Include="Library\DB\Tables\Users_Table.cs" />
     <Compile Include="Library\DB\WhereClause.cs" />
     <Compile Include="Library\Tools\Build.cs" />
+    <Compile Include="Library\Tools\encr.cs" />
     <Compile Include="Library\Tools\Get.cs" />
     <Compile Include="Library\Tools\Globals.cs" />
     <Compile Include="Library\Tools\NavBar.cs" />
@@ -106,6 +107,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserCard.Designer.cs">
+      <DependentUpon>UserCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="WarehouseForms\Bin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +194,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserCard.resx">
+      <DependentUpon>UserCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WarehouseForms\Bin.resx">
       <DependentUpon>Bin.cs</DependentUpon>
     </EmbeddedResource>

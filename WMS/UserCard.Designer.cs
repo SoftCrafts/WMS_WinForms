@@ -1,6 +1,6 @@
-﻿namespace WMS.WarehouseForms
+﻿namespace WMS
 {
-    partial class BinCard
+    partial class UserCard
     {
         /// <summary>
         /// Required designer variable.
@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
+            this.radTextBox1 = new Telerik.WinControls.UI.RadTextBox();
             this.lbl_Max_Weight = new System.Windows.Forms.Label();
             this.lbl_Height = new System.Windows.Forms.Label();
             this.txt_Max_Weight = new Telerik.WinControls.UI.RadTextBox();
             this.lbl_Width = new System.Windows.Forms.Label();
             this.txt_Height = new Telerik.WinControls.UI.RadTextBox();
             this.txt_Width = new Telerik.WinControls.UI.RadTextBox();
-            this.cmb_Location_ID = new Telerik.WinControls.UI.RadDropDownList();
             this.txt_Description = new Telerik.WinControls.UI.RadTextBox();
             this.txt_Bin_ID = new Telerik.WinControls.UI.RadTextBox();
             this.lbl_Lenght = new System.Windows.Forms.Label();
@@ -48,10 +48,10 @@
             this.btn_Save = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radTextBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Max_Weight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Height)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Width)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmb_Location_ID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Description)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Bin_ID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Lenght)).BeginInit();
@@ -65,13 +65,13 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.radPanel1.BackColor = System.Drawing.Color.White;
+            this.radPanel1.Controls.Add(this.radTextBox1);
             this.radPanel1.Controls.Add(this.lbl_Max_Weight);
             this.radPanel1.Controls.Add(this.lbl_Height);
             this.radPanel1.Controls.Add(this.txt_Max_Weight);
             this.radPanel1.Controls.Add(this.lbl_Width);
             this.radPanel1.Controls.Add(this.txt_Height);
             this.radPanel1.Controls.Add(this.txt_Width);
-            this.radPanel1.Controls.Add(this.cmb_Location_ID);
             this.radPanel1.Controls.Add(this.txt_Description);
             this.radPanel1.Controls.Add(this.txt_Bin_ID);
             this.radPanel1.Controls.Add(this.lbl_Lenght);
@@ -82,7 +82,17 @@
             this.radPanel1.Location = new System.Drawing.Point(12, 87);
             this.radPanel1.Name = "radPanel1";
             this.radPanel1.Size = new System.Drawing.Size(511, 309);
-            this.radPanel1.TabIndex = 26;
+            this.radPanel1.TabIndex = 30;
+            // 
+            // radTextBox1
+            // 
+            this.radTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.radTextBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radTextBox1.Location = new System.Drawing.Point(181, 73);
+            this.radTextBox1.Name = "radTextBox1";
+            this.radTextBox1.Size = new System.Drawing.Size(304, 27);
+            this.radTextBox1.TabIndex = 26;
             // 
             // lbl_Max_Weight
             // 
@@ -104,9 +114,9 @@
             this.lbl_Height.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Height.Location = new System.Drawing.Point(14, 202);
             this.lbl_Height.Name = "lbl_Height";
-            this.lbl_Height.Size = new System.Drawing.Size(79, 21);
+            this.lbl_Height.Size = new System.Drawing.Size(71, 21);
             this.lbl_Height.TabIndex = 24;
-            this.lbl_Height.Text = "Височина";
+            this.lbl_Height.Text = "Телефон";
             // 
             // txt_Max_Weight
             // 
@@ -126,9 +136,9 @@
             this.lbl_Width.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Width.Location = new System.Drawing.Point(14, 169);
             this.lbl_Width.Name = "lbl_Width";
-            this.lbl_Width.Size = new System.Drawing.Size(69, 21);
+            this.lbl_Width.Size = new System.Drawing.Size(48, 21);
             this.lbl_Width.TabIndex = 22;
-            this.lbl_Width.Text = "Ширина";
+            this.lbl_Width.Text = "Email";
             // 
             // txt_Height
             // 
@@ -149,19 +159,6 @@
             this.txt_Width.Name = "txt_Width";
             this.txt_Width.Size = new System.Drawing.Size(304, 27);
             this.txt_Width.TabIndex = 21;
-            // 
-            // cmb_Location_ID
-            // 
-            this.cmb_Location_ID.AllowShowFocusCues = false;
-            this.cmb_Location_ID.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmb_Location_ID.AutoCompleteDisplayMember = null;
-            this.cmb_Location_ID.AutoCompleteValueMember = null;
-            this.cmb_Location_ID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_Location_ID.Location = new System.Drawing.Point(181, 73);
-            this.cmb_Location_ID.Name = "cmb_Location_ID";
-            this.cmb_Location_ID.Size = new System.Drawing.Size(304, 27);
-            this.cmb_Location_ID.TabIndex = 20;
             // 
             // txt_Description
             // 
@@ -192,9 +189,9 @@
             this.lbl_Lenght.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Lenght.Location = new System.Drawing.Point(14, 136);
             this.lbl_Lenght.Name = "lbl_Lenght";
-            this.lbl_Lenght.Size = new System.Drawing.Size(76, 21);
+            this.lbl_Lenght.Size = new System.Drawing.Size(75, 21);
             this.lbl_Lenght.TabIndex = 14;
-            this.lbl_Lenght.Text = "Дължина";
+            this.lbl_Lenght.Text = "Фамилия";
             // 
             // lbl_Location_ID
             // 
@@ -204,9 +201,9 @@
             this.lbl_Location_ID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Location_ID.Location = new System.Drawing.Point(14, 75);
             this.lbl_Location_ID.Name = "lbl_Location_ID";
-            this.lbl_Location_ID.Size = new System.Drawing.Size(53, 21);
+            this.lbl_Location_ID.Size = new System.Drawing.Size(41, 21);
             this.lbl_Location_ID.TabIndex = 15;
-            this.lbl_Location_ID.Text = "Склад";
+            this.lbl_Location_ID.Text = "Име";
             // 
             // lbl_Description
             // 
@@ -216,9 +213,9 @@
             this.lbl_Description.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Description.Location = new System.Drawing.Point(14, 108);
             this.lbl_Description.Name = "lbl_Description";
-            this.lbl_Description.Size = new System.Drawing.Size(41, 21);
+            this.lbl_Description.Size = new System.Drawing.Size(73, 21);
             this.lbl_Description.TabIndex = 13;
-            this.lbl_Description.Text = "Име";
+            this.lbl_Description.Text = "Презиме";
             // 
             // lbl_Bin_ID
             // 
@@ -228,9 +225,9 @@
             this.lbl_Bin_ID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Bin_ID.Location = new System.Drawing.Point(14, 42);
             this.lbl_Bin_ID.Name = "lbl_Bin_ID";
-            this.lbl_Bin_ID.Size = new System.Drawing.Size(147, 21);
+            this.lbl_Bin_ID.Size = new System.Drawing.Size(100, 21);
             this.lbl_Bin_ID.TabIndex = 12;
-            this.lbl_Bin_ID.Text = "Складово Място ID";
+            this.lbl_Bin_ID.Text = "Оператор ID";
             // 
             // txt_Lenght
             // 
@@ -250,9 +247,9 @@
             this.lbl_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Title.Location = new System.Drawing.Point(159, 1);
             this.lbl_Title.Name = "lbl_Title";
-            this.lbl_Title.Size = new System.Drawing.Size(234, 31);
-            this.lbl_Title.TabIndex = 25;
-            this.lbl_Title.Text = "Складове Карта";
+            this.lbl_Title.Size = new System.Drawing.Size(233, 31);
+            this.lbl_Title.TabIndex = 29;
+            this.lbl_Title.Text = "Оператор Карта";
             // 
             // btn_Back
             // 
@@ -260,8 +257,8 @@
             this.btn_Back.Location = new System.Drawing.Point(12, 42);
             this.btn_Back.Name = "btn_Back";
             this.btn_Back.Size = new System.Drawing.Size(84, 24);
-            this.btn_Back.TabIndex = 24;
-            this.btn_Back.Text = "Назад";
+            this.btn_Back.TabIndex = 28;
+            this.btn_Back.Text = "Затвори";
             this.btn_Back.ThemeName = "TelerikMetro";
             this.btn_Back.Click += new System.EventHandler(this.btn_Back_Click);
             // 
@@ -271,32 +268,29 @@
             this.btn_Save.Location = new System.Drawing.Point(12, 12);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(84, 24);
-            this.btn_Save.TabIndex = 23;
+            this.btn_Save.TabIndex = 27;
             this.btn_Save.Text = "Запиши";
             this.btn_Save.ThemeName = "TelerikMetro";
-            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
-            // BinCard
+            // UserCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(547, 409);
-            this.ControlBox = false;
             this.Controls.Add(this.radPanel1);
             this.Controls.Add(this.lbl_Title);
             this.Controls.Add(this.btn_Back);
             this.Controls.Add(this.btn_Save);
-            this.Name = "BinCard";
-            this.Text = "BinCard";
+            this.Name = "UserCard";
+            this.Text = "UserCard";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.BinCard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             this.radPanel1.ResumeLayout(false);
             this.radPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radTextBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Max_Weight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Height)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Width)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmb_Location_ID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Description)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Bin_ID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Lenght)).EndInit();
@@ -310,7 +304,12 @@
         #endregion
 
         private Telerik.WinControls.UI.RadPanel radPanel1;
-        private Telerik.WinControls.UI.RadDropDownList cmb_Location_ID;
+        private System.Windows.Forms.Label lbl_Max_Weight;
+        private System.Windows.Forms.Label lbl_Height;
+        private Telerik.WinControls.UI.RadTextBox txt_Max_Weight;
+        private System.Windows.Forms.Label lbl_Width;
+        private Telerik.WinControls.UI.RadTextBox txt_Height;
+        private Telerik.WinControls.UI.RadTextBox txt_Width;
         private Telerik.WinControls.UI.RadTextBox txt_Description;
         private Telerik.WinControls.UI.RadTextBox txt_Bin_ID;
         private System.Windows.Forms.Label lbl_Lenght;
@@ -321,11 +320,8 @@
         private System.Windows.Forms.Label lbl_Title;
         private Telerik.WinControls.UI.RadButton btn_Back;
         private Telerik.WinControls.UI.RadButton btn_Save;
-        private System.Windows.Forms.Label lbl_Height;
-        private System.Windows.Forms.Label lbl_Width;
-        private Telerik.WinControls.UI.RadTextBox txt_Height;
-        private Telerik.WinControls.UI.RadTextBox txt_Width;
-        private System.Windows.Forms.Label lbl_Max_Weight;
-        private Telerik.WinControls.UI.RadTextBox txt_Max_Weight;
+        private Telerik.WinControls.UI.RadTextBox radTextBox1;
+
+
     }
 }
