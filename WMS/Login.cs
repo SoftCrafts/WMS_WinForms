@@ -26,8 +26,8 @@ namespace WMS
         private void Authentificate()
         {
             WhereClause where = new WhereClause();
-            where.Add(Users_Table.Username, txt_Username.Text);
-            string endPass = encr.Encrypt(txt_Password.Text, txt_Username.Text, "salt", "SHA1", 2, "16CHARSLONG12345", 256); //енкриптва паролата
+            where.Add(Users_Table.Username, cmb_User.SelectedValue.MakeString());
+            string endPass = encr.Encrypt(txt_Password.Text, cmb_User.SelectedValue.MakeString(), "salt", "SHA1", 2, "16CHARSLONG12345", 256); //енкриптва паролата
             where.Add(Users_Table.Password, endPass);
            
             DataTable dt = DbUtil.getDataTableForTableName(Users_Table.db_name, null, 0, where);
@@ -64,6 +64,11 @@ namespace WMS
             {
                 Authentificate();
             }
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            Build.LoadComboBoxes(ref cmb_User, Queries.UserIds_Login);
         }
     }
 }

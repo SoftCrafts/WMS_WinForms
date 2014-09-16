@@ -77,7 +77,7 @@ namespace WMS
         {
             decimal res = decimal.MinValue;
 
-            if (row != null)
+            if (row != null&& row!=String.Empty)
             {
                 if (!decimal.TryParse(row.ToString(), out res))
                 {

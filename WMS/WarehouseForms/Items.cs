@@ -47,5 +47,37 @@ namespace WMS.WarehouseForms
 
             Close();
         }
+
+        private void btn_Delete_Click(object sender, EventArgs e)
+        {
+            if (radGridView1.SelectedRows.Count < 1)
+            {
+                MessageBox.Show("Изберете ред!");
+                return;
+            }
+
+
+            DialogResult dialogResult = MessageBox.Show("Сигурни ли сте,че искате да изтриете този запис?", "Съобщение", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+
+                List<string> list = new List<string>();
+                list.Add(radGridView1.SelectedRows[0].Cells[Item_table.Item_ID].Value.MakeString());
+                WhereClause where = new WhereClause();
+                where.Add(Item_table.Item_ID, list.ToArray());
+                int res = DbUtil.delete(Item_table.db_name, where);
+                if (res != 0)
+                {
+                    MessageBox.Show("Записът беше изтрит!");
+                    this.itemTableAdapter.Fill(this.dataSet1.item);
+                }
+            }
+
+        }
+
+        private void MasterTemplate_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

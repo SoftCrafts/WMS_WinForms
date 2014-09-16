@@ -70,7 +70,6 @@
             this.lbl_No = new Telerik.WinControls.UI.RadLabel();
             this.lbl_Item_Type = new Telerik.WinControls.UI.RadLabel();
             this.lbl_Title = new System.Windows.Forms.Label();
-            this.btn_Delete = new Telerik.WinControls.UI.RadButton();
             this.btn_New = new Telerik.WinControls.UI.RadButton();
             this.btn_Back = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
@@ -115,7 +114,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.lbl_Description)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lbl_No)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lbl_Item_Type)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_Delete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_New)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Back)).BeginInit();
             this.SuspendLayout();
@@ -173,10 +171,10 @@
             this.cmb_Sales_Price_Currency.AutoCompleteDisplayMember = null;
             this.cmb_Sales_Price_Currency.AutoCompleteValueMember = null;
             this.cmb_Sales_Price_Currency.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cmb_Sales_Price_Currency.Location = new System.Drawing.Point(461, 168);
+            this.cmb_Sales_Price_Currency.Location = new System.Drawing.Point(148, 277);
             this.cmb_Sales_Price_Currency.Name = "cmb_Sales_Price_Currency";
-            this.cmb_Sales_Price_Currency.Size = new System.Drawing.Size(125, 27);
-            this.cmb_Sales_Price_Currency.TabIndex = 39;
+            this.cmb_Sales_Price_Currency.Size = new System.Drawing.Size(178, 27);
+            this.cmb_Sales_Price_Currency.TabIndex = 9;
             // 
             // cmb_Purch_Price_Currency
             // 
@@ -184,10 +182,10 @@
             this.cmb_Purch_Price_Currency.AutoCompleteDisplayMember = null;
             this.cmb_Purch_Price_Currency.AutoCompleteValueMember = null;
             this.cmb_Purch_Price_Currency.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cmb_Purch_Price_Currency.Location = new System.Drawing.Point(461, 106);
+            this.cmb_Purch_Price_Currency.Location = new System.Drawing.Point(148, 211);
             this.cmb_Purch_Price_Currency.Name = "cmb_Purch_Price_Currency";
-            this.cmb_Purch_Price_Currency.Size = new System.Drawing.Size(125, 27);
-            this.cmb_Purch_Price_Currency.TabIndex = 38;
+            this.cmb_Purch_Price_Currency.Size = new System.Drawing.Size(178, 27);
+            this.cmb_Purch_Price_Currency.TabIndex = 7;
             // 
             // cmb_Bin
             // 
@@ -195,10 +193,10 @@
             this.cmb_Bin.AutoCompleteDisplayMember = null;
             this.cmb_Bin.AutoCompleteValueMember = null;
             this.cmb_Bin.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cmb_Bin.Location = new System.Drawing.Point(461, 44);
+            this.cmb_Bin.Location = new System.Drawing.Point(510, 46);
             this.cmb_Bin.Name = "cmb_Bin";
-            this.cmb_Bin.Size = new System.Drawing.Size(125, 27);
-            this.cmb_Bin.TabIndex = 37;
+            this.cmb_Bin.Size = new System.Drawing.Size(178, 27);
+            this.cmb_Bin.TabIndex = 11;
             // 
             // cmb_Location
             // 
@@ -206,10 +204,11 @@
             this.cmb_Location.AutoCompleteDisplayMember = null;
             this.cmb_Location.AutoCompleteValueMember = null;
             this.cmb_Location.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cmb_Location.Location = new System.Drawing.Point(461, 13);
+            this.cmb_Location.Location = new System.Drawing.Point(510, 13);
             this.cmb_Location.Name = "cmb_Location";
-            this.cmb_Location.Size = new System.Drawing.Size(125, 27);
-            this.cmb_Location.TabIndex = 36;
+            this.cmb_Location.Size = new System.Drawing.Size(178, 27);
+            this.cmb_Location.TabIndex = 10;
+            this.cmb_Location.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.cmb_Location_SelectedIndexChanged);
             // 
             // cmb_UoM
             // 
@@ -217,10 +216,10 @@
             this.cmb_UoM.AutoCompleteDisplayMember = null;
             this.cmb_UoM.AutoCompleteValueMember = null;
             this.cmb_UoM.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cmb_UoM.Location = new System.Drawing.Point(99, 168);
+            this.cmb_UoM.Location = new System.Drawing.Point(510, 79);
             this.cmb_UoM.Name = "cmb_UoM";
-            this.cmb_UoM.Size = new System.Drawing.Size(125, 27);
-            this.cmb_UoM.TabIndex = 35;
+            this.cmb_UoM.Size = new System.Drawing.Size(178, 27);
+            this.cmb_UoM.TabIndex = 12;
             // 
             // cmb_Model
             // 
@@ -228,10 +227,10 @@
             this.cmb_Model.AutoCompleteDisplayMember = null;
             this.cmb_Model.AutoCompleteValueMember = null;
             this.cmb_Model.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cmb_Model.Location = new System.Drawing.Point(99, 137);
+            this.cmb_Model.Location = new System.Drawing.Point(148, 145);
             this.cmb_Model.Name = "cmb_Model";
-            this.cmb_Model.Size = new System.Drawing.Size(125, 27);
-            this.cmb_Model.TabIndex = 34;
+            this.cmb_Model.Size = new System.Drawing.Size(178, 27);
+            this.cmb_Model.TabIndex = 5;
             // 
             // cmb_Manufacturer
             // 
@@ -239,10 +238,11 @@
             this.cmb_Manufacturer.AutoCompleteDisplayMember = null;
             this.cmb_Manufacturer.AutoCompleteValueMember = null;
             this.cmb_Manufacturer.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cmb_Manufacturer.Location = new System.Drawing.Point(99, 106);
+            this.cmb_Manufacturer.Location = new System.Drawing.Point(148, 112);
             this.cmb_Manufacturer.Name = "cmb_Manufacturer";
-            this.cmb_Manufacturer.Size = new System.Drawing.Size(125, 27);
-            this.cmb_Manufacturer.TabIndex = 33;
+            this.cmb_Manufacturer.Size = new System.Drawing.Size(178, 27);
+            this.cmb_Manufacturer.TabIndex = 4;
+            this.cmb_Manufacturer.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.cmb_Manufacturer_SelectedIndexChanged);
             // 
             // cmb_Item_Type
             // 
@@ -250,99 +250,107 @@
             this.cmb_Item_Type.AutoCompleteDisplayMember = null;
             this.cmb_Item_Type.AutoCompleteValueMember = null;
             this.cmb_Item_Type.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cmb_Item_Type.Location = new System.Drawing.Point(99, 13);
+            this.cmb_Item_Type.Location = new System.Drawing.Point(148, 13);
             this.cmb_Item_Type.Name = "cmb_Item_Type";
-            this.cmb_Item_Type.Size = new System.Drawing.Size(125, 27);
-            this.cmb_Item_Type.TabIndex = 32;
+            this.cmb_Item_Type.Size = new System.Drawing.Size(178, 27);
+            this.cmb_Item_Type.TabIndex = 1;
             // 
             // txt_Modified_on
             // 
             this.txt_Modified_on.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txt_Modified_on.Location = new System.Drawing.Point(461, 292);
+            this.txt_Modified_on.Location = new System.Drawing.Point(809, 353);
             this.txt_Modified_on.Name = "txt_Modified_on";
-            this.txt_Modified_on.Size = new System.Drawing.Size(100, 27);
-            this.txt_Modified_on.TabIndex = 31;
+            this.txt_Modified_on.Size = new System.Drawing.Size(118, 27);
+            this.txt_Modified_on.TabIndex = 58;
+            this.txt_Modified_on.Visible = false;
             // 
             // txt_Sales_Price
             // 
             this.txt_Sales_Price.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txt_Sales_Price.Location = new System.Drawing.Point(461, 137);
+            this.txt_Sales_Price.Location = new System.Drawing.Point(148, 244);
             this.txt_Sales_Price.Name = "txt_Sales_Price";
-            this.txt_Sales_Price.Size = new System.Drawing.Size(100, 27);
-            this.txt_Sales_Price.TabIndex = 23;
+            this.txt_Sales_Price.Size = new System.Drawing.Size(178, 27);
+            this.txt_Sales_Price.TabIndex = 8;
             // 
             // txt_Modified_by
             // 
             this.txt_Modified_by.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txt_Modified_by.Location = new System.Drawing.Point(461, 261);
+            this.txt_Modified_by.Location = new System.Drawing.Point(580, 356);
             this.txt_Modified_by.Name = "txt_Modified_by";
-            this.txt_Modified_by.Size = new System.Drawing.Size(100, 27);
-            this.txt_Modified_by.TabIndex = 30;
+            this.txt_Modified_by.Size = new System.Drawing.Size(118, 27);
+            this.txt_Modified_by.TabIndex = 156;
+            this.txt_Modified_by.Visible = false;
             // 
             // txt_Inserted_on
             // 
             this.txt_Inserted_on.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txt_Inserted_on.Location = new System.Drawing.Point(461, 230);
+            this.txt_Inserted_on.Location = new System.Drawing.Point(347, 356);
             this.txt_Inserted_on.Name = "txt_Inserted_on";
-            this.txt_Inserted_on.Size = new System.Drawing.Size(100, 27);
-            this.txt_Inserted_on.TabIndex = 29;
+            this.txt_Inserted_on.Size = new System.Drawing.Size(116, 27);
+            this.txt_Inserted_on.TabIndex = 155;
+            this.txt_Inserted_on.Visible = false;
             // 
             // txt_Inserted_by
             // 
             this.txt_Inserted_by.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txt_Inserted_by.Location = new System.Drawing.Point(461, 199);
+            this.txt_Inserted_by.Location = new System.Drawing.Point(110, 356);
             this.txt_Inserted_by.Name = "txt_Inserted_by";
-            this.txt_Inserted_by.Size = new System.Drawing.Size(100, 27);
-            this.txt_Inserted_by.TabIndex = 28;
+            this.txt_Inserted_by.Size = new System.Drawing.Size(116, 27);
+            this.txt_Inserted_by.TabIndex = 150;
+            this.txt_Inserted_by.Visible = false;
             // 
             // txt_Purch_Price
             // 
             this.txt_Purch_Price.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txt_Purch_Price.Location = new System.Drawing.Point(461, 75);
+            this.txt_Purch_Price.Location = new System.Drawing.Point(148, 178);
             this.txt_Purch_Price.Name = "txt_Purch_Price";
-            this.txt_Purch_Price.Size = new System.Drawing.Size(100, 27);
-            this.txt_Purch_Price.TabIndex = 25;
+            this.txt_Purch_Price.Size = new System.Drawing.Size(178, 27);
+            this.txt_Purch_Price.TabIndex = 6;
             // 
             // lbl_Modified_on
             // 
             this.lbl_Modified_on.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lbl_Modified_on.Location = new System.Drawing.Point(376, 294);
+            this.lbl_Modified_on.Location = new System.Drawing.Point(704, 353);
             this.lbl_Modified_on.Name = "lbl_Modified_on";
             this.lbl_Modified_on.Size = new System.Drawing.Size(109, 25);
             this.lbl_Modified_on.TabIndex = 19;
             this.lbl_Modified_on.Text = "Променен на";
+            this.lbl_Modified_on.Visible = false;
             // 
             // lbl_Modified_by
             // 
             this.lbl_Modified_by.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lbl_Modified_by.Location = new System.Drawing.Point(376, 263);
+            this.lbl_Modified_by.Location = new System.Drawing.Point(475, 358);
             this.lbl_Modified_by.Name = "lbl_Modified_by";
             this.lbl_Modified_by.Size = new System.Drawing.Size(108, 25);
             this.lbl_Modified_by.TabIndex = 18;
             this.lbl_Modified_by.Text = "Променен от";
+            this.lbl_Modified_by.Visible = false;
             // 
             // lbl_Inserted_on
             // 
             this.lbl_Inserted_on.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lbl_Inserted_on.Location = new System.Drawing.Point(376, 232);
+            this.lbl_Inserted_on.Location = new System.Drawing.Point(240, 358);
             this.lbl_Inserted_on.Name = "lbl_Inserted_on";
             this.lbl_Inserted_on.Size = new System.Drawing.Size(102, 25);
             this.lbl_Inserted_on.TabIndex = 17;
             this.lbl_Inserted_on.Text = "Създаден на";
+            this.lbl_Inserted_on.Visible = false;
             // 
             // lbl_Inserted_by
             // 
             this.lbl_Inserted_by.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lbl_Inserted_by.Location = new System.Drawing.Point(376, 201);
+            this.lbl_Inserted_by.Location = new System.Drawing.Point(3, 356);
             this.lbl_Inserted_by.Name = "lbl_Inserted_by";
             this.lbl_Inserted_by.Size = new System.Drawing.Size(101, 25);
             this.lbl_Inserted_by.TabIndex = 16;
             this.lbl_Inserted_by.Text = "Създаден от";
+            this.lbl_Inserted_by.Visible = false;
             // 
             // lbl_Sales_Price_Currency
             // 
             this.lbl_Sales_Price_Currency.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lbl_Sales_Price_Currency.Location = new System.Drawing.Point(376, 170);
+            this.lbl_Sales_Price_Currency.Location = new System.Drawing.Point(14, 277);
             this.lbl_Sales_Price_Currency.Name = "lbl_Sales_Price_Currency";
             this.lbl_Sales_Price_Currency.Size = new System.Drawing.Size(57, 25);
             this.lbl_Sales_Price_Currency.TabIndex = 15;
@@ -351,7 +359,7 @@
             // lbl_Sales_Price
             // 
             this.lbl_Sales_Price.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lbl_Sales_Price.Location = new System.Drawing.Point(376, 139);
+            this.lbl_Sales_Price.Location = new System.Drawing.Point(14, 244);
             this.lbl_Sales_Price.Name = "lbl_Sales_Price";
             this.lbl_Sales_Price.Size = new System.Drawing.Size(127, 25);
             this.lbl_Sales_Price.TabIndex = 14;
@@ -360,7 +368,7 @@
             // lbl_Purch_Price_Currency
             // 
             this.lbl_Purch_Price_Currency.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lbl_Purch_Price_Currency.Location = new System.Drawing.Point(376, 108);
+            this.lbl_Purch_Price_Currency.Location = new System.Drawing.Point(14, 211);
             this.lbl_Purch_Price_Currency.Name = "lbl_Purch_Price_Currency";
             this.lbl_Purch_Price_Currency.Size = new System.Drawing.Size(57, 25);
             this.lbl_Purch_Price_Currency.TabIndex = 13;
@@ -369,7 +377,7 @@
             // lbl_Purch_Price
             // 
             this.lbl_Purch_Price.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lbl_Purch_Price.Location = new System.Drawing.Point(376, 77);
+            this.lbl_Purch_Price.Location = new System.Drawing.Point(14, 178);
             this.lbl_Purch_Price.Name = "lbl_Purch_Price";
             this.lbl_Purch_Price.Size = new System.Drawing.Size(114, 25);
             this.lbl_Purch_Price.TabIndex = 21;
@@ -378,7 +386,7 @@
             // lbl_Bin_ID
             // 
             this.lbl_Bin_ID.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lbl_Bin_ID.Location = new System.Drawing.Point(376, 46);
+            this.lbl_Bin_ID.Location = new System.Drawing.Point(379, 46);
             this.lbl_Bin_ID.Name = "lbl_Bin_ID";
             this.lbl_Bin_ID.Size = new System.Drawing.Size(87, 25);
             this.lbl_Bin_ID.TabIndex = 20;
@@ -387,7 +395,7 @@
             // lbl_Location_ID
             // 
             this.lbl_Location_ID.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lbl_Location_ID.Location = new System.Drawing.Point(376, 15);
+            this.lbl_Location_ID.Location = new System.Drawing.Point(379, 13);
             this.lbl_Location_ID.Name = "lbl_Location_ID";
             this.lbl_Location_ID.Size = new System.Drawing.Size(52, 25);
             this.lbl_Location_ID.TabIndex = 12;
@@ -396,55 +404,57 @@
             // txt_Weight
             // 
             this.txt_Weight.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txt_Weight.Location = new System.Drawing.Point(99, 292);
+            this.txt_Weight.Location = new System.Drawing.Point(510, 211);
             this.txt_Weight.Name = "txt_Weight";
-            this.txt_Weight.Size = new System.Drawing.Size(100, 27);
-            this.txt_Weight.TabIndex = 11;
+            this.txt_Weight.Size = new System.Drawing.Size(178, 27);
+            this.txt_Weight.TabIndex = 16;
             // 
             // txt_Height
             // 
             this.txt_Height.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txt_Height.Location = new System.Drawing.Point(99, 261);
+            this.txt_Height.Location = new System.Drawing.Point(510, 178);
             this.txt_Height.Name = "txt_Height";
-            this.txt_Height.Size = new System.Drawing.Size(100, 27);
-            this.txt_Height.TabIndex = 10;
+            this.txt_Height.Size = new System.Drawing.Size(178, 27);
+            this.txt_Height.TabIndex = 15;
             // 
             // txt_Width
             // 
             this.txt_Width.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txt_Width.Location = new System.Drawing.Point(99, 230);
+            this.txt_Width.Location = new System.Drawing.Point(510, 145);
             this.txt_Width.Name = "txt_Width";
-            this.txt_Width.Size = new System.Drawing.Size(100, 27);
-            this.txt_Width.TabIndex = 9;
+            this.txt_Width.Size = new System.Drawing.Size(178, 27);
+            this.txt_Width.TabIndex = 14;
             // 
             // txt_Length
             // 
             this.txt_Length.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txt_Length.Location = new System.Drawing.Point(99, 199);
+            this.txt_Length.Location = new System.Drawing.Point(510, 112);
             this.txt_Length.Name = "txt_Length";
-            this.txt_Length.Size = new System.Drawing.Size(100, 27);
-            this.txt_Length.TabIndex = 8;
+            this.txt_Length.Size = new System.Drawing.Size(178, 27);
+            this.txt_Length.TabIndex = 13;
             // 
             // txt_Description
             // 
             this.txt_Description.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txt_Description.Location = new System.Drawing.Point(99, 75);
+            this.txt_Description.Location = new System.Drawing.Point(148, 79);
             this.txt_Description.Name = "txt_Description";
-            this.txt_Description.Size = new System.Drawing.Size(100, 27);
-            this.txt_Description.TabIndex = 5;
+            this.txt_Description.Size = new System.Drawing.Size(178, 27);
+            this.txt_Description.TabIndex = 3;
             // 
             // txt_No
             // 
+            this.txt_No.Enabled = false;
             this.txt_No.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txt_No.Location = new System.Drawing.Point(99, 44);
+            this.txt_No.Location = new System.Drawing.Point(148, 46);
             this.txt_No.Name = "txt_No";
-            this.txt_No.Size = new System.Drawing.Size(100, 27);
-            this.txt_No.TabIndex = 4;
+            this.txt_No.ReadOnly = true;
+            this.txt_No.Size = new System.Drawing.Size(178, 27);
+            this.txt_No.TabIndex = 2;
             // 
             // lbl_Weight
             // 
             this.lbl_Weight.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lbl_Weight.Location = new System.Drawing.Point(14, 294);
+            this.lbl_Weight.Location = new System.Drawing.Point(379, 211);
             this.lbl_Weight.Name = "lbl_Weight";
             this.lbl_Weight.Size = new System.Drawing.Size(50, 25);
             this.lbl_Weight.TabIndex = 1;
@@ -453,7 +463,7 @@
             // lbl_Height
             // 
             this.lbl_Height.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lbl_Height.Location = new System.Drawing.Point(14, 263);
+            this.lbl_Height.Location = new System.Drawing.Point(379, 178);
             this.lbl_Height.Name = "lbl_Height";
             this.lbl_Height.Size = new System.Drawing.Size(81, 25);
             this.lbl_Height.TabIndex = 1;
@@ -462,7 +472,7 @@
             // lbl_Width
             // 
             this.lbl_Width.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lbl_Width.Location = new System.Drawing.Point(14, 232);
+            this.lbl_Width.Location = new System.Drawing.Point(379, 145);
             this.lbl_Width.Name = "lbl_Width";
             this.lbl_Width.Size = new System.Drawing.Size(89, 25);
             this.lbl_Width.TabIndex = 1;
@@ -471,7 +481,7 @@
             // lbl_Length
             // 
             this.lbl_Length.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lbl_Length.Location = new System.Drawing.Point(14, 201);
+            this.lbl_Length.Location = new System.Drawing.Point(379, 112);
             this.lbl_Length.Name = "lbl_Length";
             this.lbl_Length.Size = new System.Drawing.Size(77, 25);
             this.lbl_Length.TabIndex = 1;
@@ -480,7 +490,7 @@
             // lbl_UoM
             // 
             this.lbl_UoM.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lbl_UoM.Location = new System.Drawing.Point(14, 170);
+            this.lbl_UoM.Location = new System.Drawing.Point(379, 79);
             this.lbl_UoM.Name = "lbl_UoM";
             this.lbl_UoM.Size = new System.Drawing.Size(47, 25);
             this.lbl_UoM.TabIndex = 1;
@@ -525,7 +535,7 @@
             // lbl_Item_Type
             // 
             this.lbl_Item_Type.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lbl_Item_Type.Location = new System.Drawing.Point(14, 15);
+            this.lbl_Item_Type.Location = new System.Drawing.Point(14, 13);
             this.lbl_Item_Type.Name = "lbl_Item_Type";
             this.lbl_Item_Type.Size = new System.Drawing.Size(36, 25);
             this.lbl_Item_Type.TabIndex = 0;
@@ -539,19 +549,9 @@
             this.lbl_Title.Font = new System.Drawing.Font("Segoe UI Semibold", 20F, System.Drawing.FontStyle.Bold);
             this.lbl_Title.Location = new System.Drawing.Point(394, 9);
             this.lbl_Title.Name = "lbl_Title";
-            this.lbl_Title.Size = new System.Drawing.Size(202, 37);
+            this.lbl_Title.Size = new System.Drawing.Size(201, 37);
             this.lbl_Title.TabIndex = 29;
             this.lbl_Title.Text = "Карта Артикул";
-            // 
-            // btn_Delete
-            // 
-            this.btn_Delete.Font = new System.Drawing.Font("Segoe UI Semibold", 12F);
-            this.btn_Delete.Location = new System.Drawing.Point(244, 65);
-            this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Size = new System.Drawing.Size(110, 22);
-            this.btn_Delete.TabIndex = 32;
-            this.btn_Delete.Text = "Изтриване";
-            this.btn_Delete.ThemeName = "TelerikMetro";
             // 
             // btn_New
             // 
@@ -559,9 +559,10 @@
             this.btn_New.Location = new System.Drawing.Point(128, 65);
             this.btn_New.Name = "btn_New";
             this.btn_New.Size = new System.Drawing.Size(110, 22);
-            this.btn_New.TabIndex = 31;
-            this.btn_New.Text = "Нов";
+            this.btn_New.TabIndex = 0;
+            this.btn_New.Text = "Запис";
             this.btn_New.ThemeName = "TelerikMetro";
+            this.btn_New.Click += new System.EventHandler(this.btn_New_Click);
             // 
             // btn_Back
             // 
@@ -569,9 +570,10 @@
             this.btn_Back.Location = new System.Drawing.Point(12, 65);
             this.btn_Back.Name = "btn_Back";
             this.btn_Back.Size = new System.Drawing.Size(110, 22);
-            this.btn_Back.TabIndex = 30;
+            this.btn_Back.TabIndex = 100;
             this.btn_Back.Text = "Назад";
             this.btn_Back.ThemeName = "TelerikMetro";
+            this.btn_Back.Click += new System.EventHandler(this.btn_Back_Click_1);
             // 
             // ItemCard
             // 
@@ -579,7 +581,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(934, 491);
-            this.Controls.Add(this.btn_Delete);
             this.Controls.Add(this.btn_New);
             this.Controls.Add(this.btn_Back);
             this.Controls.Add(this.lbl_Title);
@@ -631,7 +632,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.lbl_Description)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lbl_No)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lbl_Item_Type)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_Delete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_New)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Back)).EndInit();
             this.ResumeLayout(false);
@@ -675,7 +675,6 @@
         private Telerik.WinControls.UI.RadLabel lbl_Purch_Price;
         private Telerik.WinControls.UI.RadLabel lbl_Bin_ID;
         private Telerik.WinControls.UI.RadLabel lbl_Location_ID;
-        private Telerik.WinControls.UI.RadButton btn_Delete;
         private Telerik.WinControls.UI.RadButton btn_New;
         private Telerik.WinControls.UI.RadButton btn_Back;
         private Telerik.WinControls.UI.RadDropDownList cmb_Sales_Price_Currency;

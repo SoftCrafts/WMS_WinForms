@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txt_Username = new Telerik.WinControls.UI.RadTextBox();
             this.txt_Password = new Telerik.WinControls.UI.RadTextBox();
             this.lbl_Username = new Telerik.WinControls.UI.RadLabel();
             this.lbl_Password = new Telerik.WinControls.UI.RadLabel();
@@ -37,7 +36,7 @@
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_Username)).BeginInit();
+            this.cmb_User = new Telerik.WinControls.UI.RadDropDownList();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Password)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lbl_Username)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lbl_Password)).BeginInit();
@@ -46,22 +45,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmb_User)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txt_Username
-            // 
-            this.txt_Username.AutoSize = false;
-            this.txt_Username.ForeColor = System.Drawing.Color.DarkRed;
-            this.txt_Username.Location = new System.Drawing.Point(117, 76);
-            this.txt_Username.Name = "txt_Username";
-            this.txt_Username.Size = new System.Drawing.Size(167, 22);
-            this.txt_Username.TabIndex = 0;
-            this.txt_Username.ThemeName = "TelerikMetro";
-            this.txt_Username.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OnEnterPress);
             // 
             // txt_Password
             // 
             this.txt_Password.AutoSize = false;
+            this.txt_Password.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txt_Password.ForeColor = System.Drawing.Color.DarkRed;
             this.txt_Password.Location = new System.Drawing.Point(117, 102);
             this.txt_Password.Name = "txt_Password";
@@ -127,8 +117,8 @@
             // radPanel1
             // 
             this.radPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(219)))), ((int)(((byte)(255)))));
+            this.radPanel1.Controls.Add(this.cmb_User);
             this.radPanel1.Controls.Add(this.radLabel2);
-            this.radPanel1.Controls.Add(this.txt_Username);
             this.radPanel1.Controls.Add(this.txt_Password);
             this.radPanel1.Controls.Add(this.btn_Login);
             this.radPanel1.Controls.Add(this.lbl_Username);
@@ -138,6 +128,17 @@
             this.radPanel1.Size = new System.Drawing.Size(348, 195);
             this.radPanel1.TabIndex = 0;
             this.radPanel1.ThemeName = "TelerikMetro";
+            // 
+            // cmb_User
+            // 
+            this.cmb_User.AllowShowFocusCues = false;
+            this.cmb_User.AutoCompleteDisplayMember = null;
+            this.cmb_User.AutoCompleteValueMember = null;
+            this.cmb_User.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.cmb_User.Location = new System.Drawing.Point(117, 76);
+            this.cmb_User.Name = "cmb_User";
+            this.cmb_User.Size = new System.Drawing.Size(167, 23);
+            this.cmb_User.TabIndex = 5;
             // 
             // Login
             // 
@@ -149,7 +150,7 @@
             this.Controls.Add(this.radPanel1);
             this.Name = "Login";
             this.Text = "Вход";
-            ((System.ComponentModel.ISupportInitialize)(this.txt_Username)).EndInit();
+            this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txt_Password)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lbl_Username)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lbl_Password)).EndInit();
@@ -158,13 +159,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             this.radPanel1.ResumeLayout(false);
+            this.radPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmb_User)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Telerik.WinControls.UI.RadTextBox txt_Username;
         private Telerik.WinControls.UI.RadTextBox txt_Password;
         private Telerik.WinControls.UI.RadLabel lbl_Username;
         private Telerik.WinControls.UI.RadLabel lbl_Password;
@@ -173,5 +175,6 @@
         private Telerik.WinControls.UI.RadLabel radLabel1;
         private Telerik.WinControls.UI.RadLabel radLabel2;
         private Telerik.WinControls.UI.RadPanel radPanel1;
+        private Telerik.WinControls.UI.RadDropDownList cmb_User;
     }
 }
