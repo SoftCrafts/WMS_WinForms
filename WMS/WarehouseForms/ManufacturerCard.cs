@@ -139,7 +139,7 @@ namespace WMS.WarehouseForms
                     Save();
                     MessageBox.Show("Записът беше запаметен!");
 
-                    NavBar.Navigate(new Manufacturers(), this.Parent);
+                    NavBar.Navigate(new Manufacturers(), this.Parent.Parent.Parent.Parent, this);
                     this.Close();
                     
                 }
@@ -147,13 +147,13 @@ namespace WMS.WarehouseForms
                 {                    
                     MessageBox.Show("Записът не беше запаметен!");
 
-                    NavBar.Navigate(new Manufacturers(), this.Parent);
+                    NavBar.Navigate(new Manufacturers(), this.Parent.Parent.Parent.Parent, this);
                     this.Close();
                 }
             }
             else
             {
-                NavBar.Navigate(new Manufacturers(), this.Parent);
+                NavBar.Navigate(new Manufacturers(), this.Parent.Parent.Parent.Parent, this);
                 this.Close();
             }            
         }

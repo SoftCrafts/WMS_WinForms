@@ -36,7 +36,7 @@ namespace WMS.WarehouseForms
 
             mc.Location_ID = radGridView1.SelectedRows[0].Cells[Location_table.Location_ID].Value.MakeString();
 
-            NavBar.Navigate(mc, Globals.GetParent(this.Parent));
+            NavBar.Navigate(mc, Globals.GetParent(this.Parent.Parent),this);
             Close();
 
         }
@@ -46,7 +46,7 @@ namespace WMS.WarehouseForms
 
             LocationCard mc = new LocationCard();
             mc.Location_ID = "-1";
-            NavBar.Navigate(mc, Globals.GetParent(this.Parent));
+            NavBar.Navigate(mc, Globals.GetParent(this.Parent.Parent),this);
 
             Close();
 

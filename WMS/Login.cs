@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Telerik.WinControls.UI;
+using Telerik.WinControls.UI.Docking;
 
 namespace WMS
 {
@@ -39,15 +40,18 @@ namespace WMS
                 
 
                // lbl_name.Text = Globals.FullName;
-              
-              
 
-                Form parent = (Form)this.Parent.Parent;
+
+
+                Form parent = (Form)this.Parent.Parent.Parent.Parent.Parent;
                 RadMenu menu = (RadMenu)parent.Controls["RadMenu1"];
-                RadPanel sidepanel = (RadPanel)parent.Controls["radPanel2"];
-                LinkLabel lbl_fullname = (LinkLabel)sidepanel.Controls["lbl_fullname"];
-                lbl_fullname.Text = Globals.FullName;
+                RadDock radDock1 = (RadDock)parent.Controls["RadDock1"];
+                radDock1.CloseWindow(radDock1.DockWindows[0]);
+                //RadPanel sidepanel = (RadPanel)parent.Controls["radPanel2"];
+                //LinkLabel lbl_fullname = (LinkLabel)sidepanel.Controls["lbl_fullname"];
+                //lbl_fullname.Text = Globals.FullName;
                 menu.Visible = true;
+                
                 this.Close();
             }
             else
@@ -68,7 +72,10 @@ namespace WMS
 
         private void Login_Load(object sender, EventArgs e)
         {
+          //  UseWaitCursor = true;
+
             Build.LoadComboBoxes(ref cmb_User, Queries.UserIds_Login);
+            UseWaitCursor = false;
         }
     }
 }

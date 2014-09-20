@@ -36,7 +36,7 @@ namespace WMS.WarehouseForms
 
             mc.Bin_ID = radGridView1.SelectedRows[0].Cells[Bin_table.Bin_ID].Value.MakeString();
 
-            NavBar.Navigate(mc, Globals.GetParent(this.Parent));
+            NavBar.Navigate(mc, Globals.GetParent(this.Parent.Parent),this);
             Close();
 
         }
@@ -46,7 +46,7 @@ namespace WMS.WarehouseForms
 
             BinCard mc = new BinCard();
             mc.Bin_ID = "-1";
-            NavBar.Navigate(mc, Globals.GetParent(this.Parent));
+            NavBar.Navigate(mc, Globals.GetParent(this.Parent.Parent), this);
 
             Close();
 

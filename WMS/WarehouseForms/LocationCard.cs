@@ -89,7 +89,7 @@ namespace WMS.WarehouseForms
 
         private void btn_Back_Click(object sender, EventArgs e)
         {
-            NavBar.Navigate(new Location(), this.Parent);
+            NavBar.Navigate(new Location(), this.Parent.Parent.Parent.Parent, this);
             this.Close();
 
         }
@@ -97,7 +97,7 @@ namespace WMS.WarehouseForms
         private void btn_Save_Click(object sender, EventArgs e)
         {
             Save();
-            NavBar.Navigate(new Location(), this.Parent);
+            NavBar.Navigate(new Location(), this.Parent.Parent.Parent.Parent, this);
 
             this.Close();
         }

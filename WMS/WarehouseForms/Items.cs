@@ -35,7 +35,7 @@ namespace WMS.WarehouseForms
 
             ic.Item_ID = radGridView1.SelectedRows[0].Cells[Item_table.Item_ID].Value.MakeString();
 
-            NavBar.Navigate(ic, Globals.GetParent(this.Parent));
+            NavBar.Navigate(ic, Globals.GetParent(this.Parent.Parent),this);
             Close();
         }
 
@@ -43,7 +43,7 @@ namespace WMS.WarehouseForms
         {
             ItemCard ic = new ItemCard();
             ic.Item_ID = "-1";
-            NavBar.Navigate(ic, Globals.GetParent(this.Parent));
+            NavBar.Navigate(ic, Globals.GetParent(this.Parent.Parent),this);
 
             Close();
         }

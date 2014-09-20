@@ -135,7 +135,7 @@ namespace WMS.WarehouseForms
 
         private void btn_Back_Click_1(object sender, EventArgs e)
         {
-            NavBar.Navigate(new Items(), this.Parent);
+            NavBar.Navigate(new Items(), this.Parent.Parent.Parent.Parent, this);
             this.Close();
         }
 

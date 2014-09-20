@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Web;
+using System.Windows.Forms;
 
 
 namespace WMS
@@ -151,6 +152,7 @@ namespace WMS
                     }
                     catch (Exception ex)
                     {
+                         MessageBox.Show(ex.Message);
                         conn.Rollback();
                         //Log.writeError(ex);
                         if ("Concurrency violation: the UpdateCommand affected 0 of the expected 1 records." != ex.Message)
@@ -215,6 +217,7 @@ namespace WMS
                     }
                     catch (Exception ex)
                     {
+                         MessageBox.Show(ex.Message);
                         conn.Rollback();
                         //Log.writeError(ex);
                         if ("Concurrency violation: the UpdateCommand affected 0 of the expected 1 records." != ex.Message)
@@ -265,6 +268,7 @@ namespace WMS
                     }
                     catch (Exception ex)
                     {
+                         MessageBox.Show(ex.Message);
                         //Log.writeError(ex);
                         return 0;
                     }
@@ -503,6 +507,7 @@ namespace WMS
                     }
                     catch (Exception ex)
                     {
+                         MessageBox.Show(ex.Message);
                         //Log.writeError(ex);
                     }
                     finally
@@ -549,16 +554,24 @@ namespace WMS
                     }
                     catch (Exception ex)
                     {
+
+                         MessageBox.Show(ex.Message);
                         //Log.writeError(ex);
                     }
                 }
             }
             if (schemaDS.Tables.Count == 0)
             {
+
                 // throw new Exception("check");
+                return null;
+            }
+            else
+            {
+                return schemaDS.Tables[0];
             }
 
-            return schemaDS.Tables[0];
+           
         }
         /// <summary>
         /// execute stored procedure
@@ -594,6 +607,7 @@ namespace WMS
                     }
                     catch (Exception ex)
                     {
+                        MessageBox.Show(ex.Message);
                         //Log.writeError(ex);
                     }
                 }

@@ -45,7 +45,7 @@ namespace WMS.WarehouseForms
 
             mc.Model_ID = radGridView1.SelectedRows[0].Cells[Model_table.Model_ID].Value.MakeString();
 
-            NavBar.Navigate(mc, Globals.GetParent(this.Parent));
+            NavBar.Navigate(mc, Globals.GetParent(this.Parent.Parent),this);
             Close();
 
         }
@@ -55,7 +55,7 @@ namespace WMS.WarehouseForms
 
             ModelCard mc = new ModelCard();
             mc.Model_ID = "-1";
-            NavBar.Navigate(mc, Globals.GetParent(this.Parent));
+            NavBar.Navigate(mc, Globals.GetParent(this.Parent.Parent),this);
 
             Close();
 

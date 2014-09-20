@@ -36,19 +36,18 @@
             this.radMenuItem7 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem8 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem5 = new Telerik.WinControls.UI.RadMenuItem();
+            this.ItemListReport = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem9 = new Telerik.WinControls.UI.RadMenuItem();
-            this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
-            this.radPanel2 = new Telerik.WinControls.UI.RadPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbl_fullname = new System.Windows.Forms.LinkLabel();
             this.radMenu1 = new Telerik.WinControls.UI.RadMenu();
             this.radMenuItem1 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem6 = new Telerik.WinControls.UI.RadMenuItem();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
-            ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radPanel2)).BeginInit();
-            this.radPanel2.SuspendLayout();
+            this.radDock1 = new Telerik.WinControls.UI.Docking.RadDock();
+            this.documentContainer1 = new Telerik.WinControls.UI.Docking.DocumentContainer();
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radDock1)).BeginInit();
+            this.radDock1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.documentContainer1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -128,9 +127,20 @@
             // 
             this.radMenuItem5.AccessibleDescription = "Справки";
             this.radMenuItem5.AccessibleName = "Справки";
+            this.radMenuItem5.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.ItemListReport});
             this.radMenuItem5.Name = "radMenuItem5";
             this.radMenuItem5.Text = "Справки";
             this.radMenuItem5.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            // 
+            // ItemListReport
+            // 
+            this.ItemListReport.AccessibleDescription = "Списък Артикули";
+            this.ItemListReport.AccessibleName = "Списък Артикули";
+            this.ItemListReport.Name = "ItemListReport";
+            this.ItemListReport.Text = "Списък Артикули";
+            this.ItemListReport.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.ItemListReport.Click += new System.EventHandler(this.ItemListReport_Click);
             // 
             // radMenuItem9
             // 
@@ -139,60 +149,6 @@
             this.radMenuItem9.Name = "radMenuItem9";
             this.radMenuItem9.Text = "Настройки";
             this.radMenuItem9.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            // 
-            // radPanel1
-            // 
-            this.radPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.radPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(219)))), ((int)(((byte)(255)))));
-            this.radPanel1.Location = new System.Drawing.Point(5, 44);
-            this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(598, 290);
-            this.radPanel1.TabIndex = 3;
-            this.radPanel1.ThemeName = "TelerikMetro";
-            // 
-            // radPanel2
-            // 
-            this.radPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.radPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(219)))), ((int)(((byte)(255)))));
-            this.radPanel2.Controls.Add(this.label1);
-            this.radPanel2.Controls.Add(this.lbl_fullname);
-            this.radPanel2.Location = new System.Drawing.Point(609, 44);
-            this.radPanel2.MaximumSize = new System.Drawing.Size(200, 0);
-            this.radPanel2.MinimumSize = new System.Drawing.Size(190, 290);
-            this.radPanel2.Name = "radPanel2";
-            // 
-            // 
-            // 
-            this.radPanel2.RootElement.MaxSize = new System.Drawing.Size(200, 0);
-            this.radPanel2.RootElement.MinSize = new System.Drawing.Size(190, 290);
-            this.radPanel2.Size = new System.Drawing.Size(194, 290);
-            this.radPanel2.TabIndex = 4;
-            this.radPanel2.ThemeName = "TelerikMetro";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(3, 4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 15);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Опер:";
-            // 
-            // lbl_fullname
-            // 
-            this.lbl_fullname.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_fullname.AutoSize = true;
-            this.lbl_fullname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.lbl_fullname.Location = new System.Drawing.Point(42, 4);
-            this.lbl_fullname.Name = "lbl_fullname";
-            this.lbl_fullname.Size = new System.Drawing.Size(0, 15);
-            this.lbl_fullname.TabIndex = 0;
-            this.lbl_fullname.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbl_fullname_LinkClicked);
             // 
             // radMenu1
             // 
@@ -230,13 +186,42 @@
             this.radMenuItem6.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.radMenuItem6.Click += new System.EventHandler(this.radMenuItem6_Click);
             // 
+            // radDock1
+            // 
+            this.radDock1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.radDock1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.radDock1.Controls.Add(this.documentContainer1);
+            this.radDock1.IsCleanUpTarget = true;
+            this.radDock1.Location = new System.Drawing.Point(5, 44);
+            this.radDock1.MainDocumentContainer = this.documentContainer1;
+            this.radDock1.Name = "radDock1";
+            // 
+            // 
+            // 
+            this.radDock1.RootElement.MinSize = new System.Drawing.Size(0, 0);
+            this.radDock1.Size = new System.Drawing.Size(789, 302);
+            this.radDock1.TabIndex = 5;
+            this.radDock1.TabStop = false;
+            this.radDock1.Text = "radDock1";
+            this.radDock1.ToolWindowInsertOrder = Telerik.WinControls.UI.Docking.DockWindowInsertOrder.ToBack;
+            // 
+            // documentContainer1
+            // 
+            this.documentContainer1.Name = "documentContainer1";
+            // 
+            // 
+            // 
+            this.documentContainer1.RootElement.MinSize = new System.Drawing.Size(0, 0);
+            this.documentContainer1.SizeInfo.SizeMode = Telerik.WinControls.UI.Docking.SplitPanelSizeMode.Fill;
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(803, 355);
-            this.Controls.Add(this.radPanel2);
-            this.Controls.Add(this.radPanel1);
+            this.Controls.Add(this.radDock1);
             this.Controls.Add(this.radMenu1);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "MainMenu";
@@ -249,11 +234,10 @@
             this.Text = "WMS";
             this.ThemeName = "ControlDefault";
             this.Load += new System.EventHandler(this.MainMenu_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radPanel2)).EndInit();
-            this.radPanel2.ResumeLayout(false);
-            this.radPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radDock1)).EndInit();
+            this.radDock1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.documentContainer1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -271,13 +255,12 @@
         private Telerik.WinControls.UI.RadMenuItem menu_Items;
         private Telerik.WinControls.UI.RadMenuItem radMenuItem7;
         private Telerik.WinControls.UI.RadMenuItem radMenuItem8;
-        private Telerik.WinControls.UI.RadPanel radPanel1;
-        private Telerik.WinControls.UI.RadPanel radPanel2;
         private Telerik.WinControls.UI.RadMenu radMenu1;
         private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
         private Telerik.WinControls.UI.RadMenuItem radMenuItem1;
         private Telerik.WinControls.UI.RadMenuItem radMenuItem6;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.LinkLabel lbl_fullname;
+        private Telerik.WinControls.UI.RadMenuItem ItemListReport;
+        private Telerik.WinControls.UI.Docking.RadDock radDock1;
+        private Telerik.WinControls.UI.Docking.DocumentContainer documentContainer1;
     }
 }

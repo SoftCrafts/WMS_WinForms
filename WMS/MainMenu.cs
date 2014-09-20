@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
+using Telerik.WinControls.UI;
+using Telerik.WinControls.UI.Docking;
 using WMS.WarehouseForms;
 
 namespace WMS
@@ -42,23 +44,24 @@ namespace WMS
        /// <param name="form"></param>
         private void ShowChildForm(Form form)
         {
-            foreach (Form frm in radPanel1.Controls)
-            {
-
-                if (frm!=null)
-                {
-                    
-                }
-                    frm.Close();
-             
-            }
+          
 
            
             form.TopLevel = false;
             form.Dock = DockStyle.Fill;
             form.Parent = this;
             form.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            radPanel1.Controls.Add(form);
+            //radPanel1.Controls.Add(form);
+        
+            foreach (HostWindow item in radDock1.GetWindows<HostWindow>())
+            {
+                if (item.Text == form.Text )
+                {
+                    item.Close();
+                }
+            }
+            this.radDock1.DockControl(form, DockPosition.Fill,DockType.Document);
+        
             form.Show();
           
         }
@@ -68,8 +71,8 @@ namespace WMS
         {
             base.OnPaintBackground(e);
 
-            e.Graphics.DrawRectangle(Pens.GreenYellow, Globals.CreateBorderRect(radPanel1));
-            e.Graphics.DrawRectangle(Pens.GreenYellow, Globals.CreateBorderRect(radPanel2));
+            e.Graphics.DrawRectangle(Pens.GreenYellow, Globals.CreateBorderRect(radDock1));
+         //   e.Graphics.DrawRectangle(Pens.GreenYellow, Globals.CreateBorderRect(radPanel2));
 
         }
 
@@ -85,11 +88,13 @@ namespace WMS
 
         private void radMenuItem6_Click(object sender, EventArgs e)
         {
-            ShowChildForm(new ItemJournalHeader());
+            ShowChildForm(new ItemOperations());
         }
 
         private void MainMenu_Load(object sender, EventArgs e)
         {
+
+         
             if (String.IsNullOrEmpty(Globals.UserName))
             {
                 radMenu1.Visible = false;
@@ -99,12 +104,30 @@ namespace WMS
 
         public void SetLabels()
         {
-            MessageBox.Show("yo");
+
         }
 
         private void lbl_fullname_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             ShowChildForm(new UserCard());
+        }
+
+      
+        private void radPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void radCalendar1_SelectionChanged(object sender, EventArgs e)
+        {
+
+        }
+
+      
+
+        private void ItemListReport_Click(object sender, EventArgs e)
+        {
+            ShowChildForm(new ReportViewer_FORM());
         }
 
         
