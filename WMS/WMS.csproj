@@ -407,16 +407,17 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DLLs\Devart.Data.dll" />
-    <Content Include="DLLs\Devart.Data.Universal.dll" />
-    <Content Include="DLLs\Devart.Data.Universal.MySql.dll" />
-    <Content Include="DLLs\Devart.Data.Universal.xml" />
-    <Content Include="DLLs\Devart.Data.xml" />
+    <Content Include="DLLs\Devart.Data.Universal.Design.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DLLs\Devart.Data.Universal.Vs.dll" />
+    <Content Include="DLLs\Telerik.Reporting.dll" />
+    <Content Include="DLLs\Telerik.ReportViewer.WinForms.dll" />
+    <Content Include="DLLs\Telerik.WinControls.ChartView.dll" />
     <Content Include="DLLs\Telerik.WinControls.dll" />
     <Content Include="DLLs\Telerik.WinControls.GridView.dll" />
-    <Content Include="DLLs\Telerik.WinControls.GridView.xml" />
+    <Content Include="DLLs\Telerik.WinControls.PivotGrid.dll" />
+    <Content Include="DLLs\Telerik.WinControls.RadDock.dll" />
     <Content Include="DLLs\Telerik.WinControls.Themes.Aqua.dll" />
     <Content Include="DLLs\Telerik.WinControls.Themes.Breeze.dll" />
     <Content Include="DLLs\Telerik.WinControls.Themes.Desert.dll" />
@@ -424,8 +425,6 @@
     <Content Include="DLLs\Telerik.WinControls.Themes.TelerikMetroBlue.dll" />
     <Content Include="DLLs\Telerik.WinControls.Themes.Windows8.dll" />
     <Content Include="DLLs\Telerik.WinControls.UI.dll" />
-    <Content Include="DLLs\Telerik.WinControls.UI.xml" />
-    <Content Include="DLLs\Telerik.WinControls.xml" />
     <Content Include="DLLs\TelerikCommon.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
