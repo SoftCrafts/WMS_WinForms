@@ -191,16 +191,23 @@
             this.radDock1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.radDock1.AutoDetectMdiChildren = true;
+            this.radDock1.AutoHideAnimation = Telerik.WinControls.UI.Docking.AutoHideAnimateMode.Both;
             this.radDock1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.radDock1.Controls.Add(this.documentContainer1);
+            this.radDock1.EnableCollapsing = true;
+            this.radDock1.EnableFloatingWindowTheming = false;
             this.radDock1.IsCleanUpTarget = true;
             this.radDock1.Location = new System.Drawing.Point(5, 44);
             this.radDock1.MainDocumentContainer = this.documentContainer1;
             this.radDock1.Name = "radDock1";
+            this.radDock1.QuickNavigatorSettings.DisplayPosition = Telerik.WinControls.UI.Docking.QuickNavigatorDisplayPosition.CenterScreen;
             // 
             // 
             // 
             this.radDock1.RootElement.MinSize = new System.Drawing.Size(0, 0);
+            this.radDock1.ShowDocumentCloseButton = true;
+            this.radDock1.SingleScreen = true;
             this.radDock1.Size = new System.Drawing.Size(789, 302);
             this.radDock1.TabIndex = 5;
             this.radDock1.TabStop = false;

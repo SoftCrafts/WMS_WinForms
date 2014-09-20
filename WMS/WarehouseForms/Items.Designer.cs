@@ -343,7 +343,7 @@
             this.Controls.Add(this.btn_New);
             this.Controls.Add(this.btn_Card);
             this.Name = "Items";
-            this.Text = "Items";
+            this.Text = "Артикули";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Items_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();

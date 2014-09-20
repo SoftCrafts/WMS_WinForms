@@ -210,7 +210,7 @@
             this.Controls.Add(this.btn_Back);
             this.Controls.Add(this.btn_Save);
             this.Name = "ModelCard";
-            this.Text = "Модел Карта";
+            this.Text = "Модели Карта";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ModelCard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btn_Save)).EndInit();

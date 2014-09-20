@@ -35,18 +35,18 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.btn_Card = new Telerik.WinControls.UI.RadButton();
             this.radGridView2 = new Telerik.WinControls.UI.RadGridView();
+            this.manufacturerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new WMS.DataSet1();
             this.btn_New = new Telerik.WinControls.UI.RadButton();
             this.btn_Delete = new Telerik.WinControls.UI.RadButton();
-            this.dataSet1 = new WMS.DataSet1();
-            this.manufacturerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.manufacturerTableAdapter = new WMS.DataSet1TableAdapters.manufacturerTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Card)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView2.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.manufacturerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_New)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Delete)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.manufacturerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Card
@@ -103,6 +103,16 @@
             this.radGridView2.TabIndex = 11;
             this.radGridView2.Text = "radGridView2";
             // 
+            // manufacturerBindingSource
+            // 
+            this.manufacturerBindingSource.DataMember = "manufacturer";
+            this.manufacturerBindingSource.DataSource = this.dataSet1;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // btn_New
             // 
             this.btn_New.Location = new System.Drawing.Point(102, 12);
@@ -119,16 +129,6 @@
             this.btn_Delete.TabIndex = 14;
             this.btn_Delete.Text = "Изтриване";
             // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // manufacturerBindingSource
-            // 
-            this.manufacturerBindingSource.DataMember = "manufacturer";
-            this.manufacturerBindingSource.DataSource = this.dataSet1;
-            // 
             // manufacturerTableAdapter
             // 
             this.manufacturerTableAdapter.ClearBeforeFill = true;
@@ -143,15 +143,15 @@
             this.Controls.Add(this.btn_Card);
             this.Controls.Add(this.radGridView2);
             this.Name = "Manufacturers";
-            this.Text = "Manufacturers";
+            this.Text = "Марки";
             this.Load += new System.EventHandler(this.Manufacturers_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.btn_Card)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView2.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.manufacturerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_New)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Delete)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.manufacturerBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -248,11 +248,11 @@
             this.lbl_Title.AutoSize = true;
             this.lbl_Title.BackColor = System.Drawing.Color.White;
             this.lbl_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Title.Location = new System.Drawing.Point(159, 1);
+            this.lbl_Title.Location = new System.Drawing.Point(187, 3);
             this.lbl_Title.Name = "lbl_Title";
-            this.lbl_Title.Size = new System.Drawing.Size(234, 31);
+            this.lbl_Title.Size = new System.Drawing.Size(220, 31);
             this.lbl_Title.TabIndex = 25;
-            this.lbl_Title.Text = "Складове Карта";
+            this.lbl_Title.Text = "Рафтове Карта";
             // 
             // btn_Back
             // 
@@ -287,7 +287,7 @@
             this.Controls.Add(this.btn_Back);
             this.Controls.Add(this.btn_Save);
             this.Name = "BinCard";
-            this.Text = "BinCard";
+            this.Text = "Рафтове Карта";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.BinCard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();

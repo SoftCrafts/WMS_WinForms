@@ -61,7 +61,7 @@ namespace WMS
             {
                 if (!long.TryParse(row.ToString(), out res))
                 {
-                    MessageBox.Show("MakeLong exception!");
+                  //  MessageBox.Show("MakeLong exception!");
                 }
 
             }

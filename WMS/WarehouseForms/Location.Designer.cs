@@ -37,22 +37,22 @@
             Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
+            this.locationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new WMS.DataSet1();
             this.lbl_Title = new System.Windows.Forms.Label();
             this.btn_Delete = new Telerik.WinControls.UI.RadButton();
             this.btn_New = new Telerik.WinControls.UI.RadButton();
             this.btn_Card = new Telerik.WinControls.UI.RadButton();
-            this.dataSet1 = new WMS.DataSet1();
-            this.locationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.locationTableAdapter = new WMS.DataSet1TableAdapters.locationTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.locationBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Delete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_New)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Card)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.locationBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // radPanel1
@@ -143,17 +143,27 @@
             this.radGridView1.Text = "radGridView1";
             this.radGridView1.ThemeName = "TelerikMetro";
             // 
+            // locationBindingSource
+            // 
+            this.locationBindingSource.DataMember = "location";
+            this.locationBindingSource.DataSource = this.dataSet1;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // lbl_Title
             // 
             this.lbl_Title.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_Title.AutoSize = true;
             this.lbl_Title.BackColor = System.Drawing.Color.White;
             this.lbl_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Title.Location = new System.Drawing.Point(188, 0);
+            this.lbl_Title.Location = new System.Drawing.Point(281, 9);
             this.lbl_Title.Name = "lbl_Title";
-            this.lbl_Title.Size = new System.Drawing.Size(255, 31);
+            this.lbl_Title.Size = new System.Drawing.Size(146, 31);
             this.lbl_Title.TabIndex = 23;
-            this.lbl_Title.Text = "Списък Складове";
+            this.lbl_Title.Text = "Складове";
             // 
             // btn_Delete
             // 
@@ -188,16 +198,6 @@
             this.btn_Card.ThemeName = "TelerikMetro";
             this.btn_Card.Click += new System.EventHandler(this.btn_Card_Click);
             // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // locationBindingSource
-            // 
-            this.locationBindingSource.DataMember = "location";
-            this.locationBindingSource.DataSource = this.dataSet1;
-            // 
             // locationTableAdapter
             // 
             this.locationTableAdapter.ClearBeforeFill = true;
@@ -216,18 +216,18 @@
             this.Controls.Add(this.btn_Card);
             this.Name = "Location";
             this.ShowIcon = false;
-            this.Text = "Location";
+            this.Text = "Складове";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Location_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             this.radPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.locationBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Delete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_New)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Card)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.locationBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

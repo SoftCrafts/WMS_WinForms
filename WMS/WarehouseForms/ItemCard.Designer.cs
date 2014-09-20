@@ -549,9 +549,9 @@
             this.lbl_Title.Font = new System.Drawing.Font("Segoe UI Semibold", 20F, System.Drawing.FontStyle.Bold);
             this.lbl_Title.Location = new System.Drawing.Point(394, 9);
             this.lbl_Title.Name = "lbl_Title";
-            this.lbl_Title.Size = new System.Drawing.Size(201, 37);
+            this.lbl_Title.Size = new System.Drawing.Size(208, 37);
             this.lbl_Title.TabIndex = 29;
-            this.lbl_Title.Text = "Карта Артикул";
+            this.lbl_Title.Text = "Артикул Карта ";
             // 
             // btn_New
             // 
@@ -586,7 +586,7 @@
             this.Controls.Add(this.lbl_Title);
             this.Controls.Add(this.radPanel1);
             this.Name = "ItemCard";
-            this.Text = "ItemCard";
+            this.Text = "Артикул Карта ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ItemCard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();

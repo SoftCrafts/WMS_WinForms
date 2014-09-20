@@ -144,7 +144,7 @@
             this.Controls.Add(this.btn_New);
             this.Controls.Add(this.btn_Back);
             this.Name = "ManufacturerCard";
-            this.Text = "ManufacturerCard";
+            this.Text = "Марки Карта";
             this.Load += new System.EventHandler(this.LoadData);
             ((System.ComponentModel.ISupportInitialize)(this.lbl_Name)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Name)).EndInit();

@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
+            this.chk_Req_Bin = new System.Windows.Forms.CheckBox();
+            this.cmb_Responsible_Person = new Telerik.WinControls.UI.RadDropDownList();
+            this.lbl_Req_Bin = new System.Windows.Forms.Label();
+            this.txt_Name = new Telerik.WinControls.UI.RadTextBox();
             this.txt_Location_ID = new Telerik.WinControls.UI.RadTextBox();
             this.lbl_Address = new System.Windows.Forms.Label();
             this.lbl_Responsible_Person = new System.Windows.Forms.Label();
@@ -38,18 +42,14 @@
             this.lbl_Title = new System.Windows.Forms.Label();
             this.btn_Back = new Telerik.WinControls.UI.RadButton();
             this.btn_Save = new Telerik.WinControls.UI.RadButton();
-            this.txt_Name = new Telerik.WinControls.UI.RadTextBox();
-            this.lbl_Req_Bin = new System.Windows.Forms.Label();
-            this.cmb_Responsible_Person = new Telerik.WinControls.UI.RadDropDownList();
-            this.chk_Req_Bin = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmb_Responsible_Person)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Name)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Location_ID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Address)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Back)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Save)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_Name)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmb_Responsible_Person)).BeginInit();
             this.SuspendLayout();
             // 
             // radPanel1
@@ -72,6 +72,50 @@
             this.radPanel1.Name = "radPanel1";
             this.radPanel1.Size = new System.Drawing.Size(494, 257);
             this.radPanel1.TabIndex = 22;
+            // 
+            // chk_Req_Bin
+            // 
+            this.chk_Req_Bin.AutoSize = true;
+            this.chk_Req_Bin.Location = new System.Drawing.Point(181, 170);
+            this.chk_Req_Bin.Name = "chk_Req_Bin";
+            this.chk_Req_Bin.Size = new System.Drawing.Size(15, 14);
+            this.chk_Req_Bin.TabIndex = 21;
+            this.chk_Req_Bin.UseVisualStyleBackColor = true;
+            // 
+            // cmb_Responsible_Person
+            // 
+            this.cmb_Responsible_Person.AllowShowFocusCues = false;
+            this.cmb_Responsible_Person.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmb_Responsible_Person.AutoCompleteDisplayMember = null;
+            this.cmb_Responsible_Person.AutoCompleteValueMember = null;
+            this.cmb_Responsible_Person.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_Responsible_Person.Location = new System.Drawing.Point(181, 134);
+            this.cmb_Responsible_Person.Name = "cmb_Responsible_Person";
+            this.cmb_Responsible_Person.Size = new System.Drawing.Size(287, 27);
+            this.cmb_Responsible_Person.TabIndex = 20;
+            // 
+            // lbl_Req_Bin
+            // 
+            this.lbl_Req_Bin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_Req_Bin.AutoSize = true;
+            this.lbl_Req_Bin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Req_Bin.Location = new System.Drawing.Point(14, 167);
+            this.lbl_Req_Bin.Name = "lbl_Req_Bin";
+            this.lbl_Req_Bin.Size = new System.Drawing.Size(150, 21);
+            this.lbl_Req_Bin.TabIndex = 18;
+            this.lbl_Req_Bin.Text = "Дата Производство";
+            // 
+            // txt_Name
+            // 
+            this.txt_Name.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_Name.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Name.Location = new System.Drawing.Point(181, 71);
+            this.txt_Name.Name = "txt_Name";
+            this.txt_Name.Size = new System.Drawing.Size(287, 27);
+            this.txt_Name.TabIndex = 11;
             // 
             // txt_Location_ID
             // 
@@ -150,9 +194,9 @@
             this.lbl_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Title.Location = new System.Drawing.Point(151, 1);
             this.lbl_Title.Name = "lbl_Title";
-            this.lbl_Title.Size = new System.Drawing.Size(206, 31);
+            this.lbl_Title.Size = new System.Drawing.Size(234, 31);
             this.lbl_Title.TabIndex = 21;
-            this.lbl_Title.Text = "Модели Карта";
+            this.lbl_Title.Text = "Складове Карта";
             // 
             // btn_Back
             // 
@@ -176,50 +220,6 @@
             this.btn_Save.ThemeName = "TelerikMetro";
             this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
-            // txt_Name
-            // 
-            this.txt_Name.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_Name.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Name.Location = new System.Drawing.Point(181, 71);
-            this.txt_Name.Name = "txt_Name";
-            this.txt_Name.Size = new System.Drawing.Size(287, 27);
-            this.txt_Name.TabIndex = 11;
-            // 
-            // lbl_Req_Bin
-            // 
-            this.lbl_Req_Bin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_Req_Bin.AutoSize = true;
-            this.lbl_Req_Bin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Req_Bin.Location = new System.Drawing.Point(14, 167);
-            this.lbl_Req_Bin.Name = "lbl_Req_Bin";
-            this.lbl_Req_Bin.Size = new System.Drawing.Size(150, 21);
-            this.lbl_Req_Bin.TabIndex = 18;
-            this.lbl_Req_Bin.Text = "Дата Производство";
-            // 
-            // cmb_Responsible_Person
-            // 
-            this.cmb_Responsible_Person.AllowShowFocusCues = false;
-            this.cmb_Responsible_Person.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmb_Responsible_Person.AutoCompleteDisplayMember = null;
-            this.cmb_Responsible_Person.AutoCompleteValueMember = null;
-            this.cmb_Responsible_Person.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_Responsible_Person.Location = new System.Drawing.Point(181, 134);
-            this.cmb_Responsible_Person.Name = "cmb_Responsible_Person";
-            this.cmb_Responsible_Person.Size = new System.Drawing.Size(287, 27);
-            this.cmb_Responsible_Person.TabIndex = 20;
-            // 
-            // chk_Req_Bin
-            // 
-            this.chk_Req_Bin.AutoSize = true;
-            this.chk_Req_Bin.Location = new System.Drawing.Point(181, 170);
-            this.chk_Req_Bin.Name = "chk_Req_Bin";
-            this.chk_Req_Bin.Size = new System.Drawing.Size(15, 14);
-            this.chk_Req_Bin.TabIndex = 21;
-            this.chk_Req_Bin.UseVisualStyleBackColor = true;
-            // 
             // LocationCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -232,18 +232,18 @@
             this.Controls.Add(this.btn_Save);
             this.Name = "LocationCard";
             this.ShowIcon = false;
-            this.Text = "LocationCard";
+            this.Text = "Складове Карта";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.LocationCard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             this.radPanel1.ResumeLayout(false);
             this.radPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmb_Responsible_Person)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Name)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Location_ID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Address)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Back)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Save)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_Name)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmb_Responsible_Person)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

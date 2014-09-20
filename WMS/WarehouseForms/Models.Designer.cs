@@ -203,11 +203,11 @@
             this.lbl_Title.AutoSize = true;
             this.lbl_Title.BackColor = System.Drawing.Color.White;
             this.lbl_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Title.Location = new System.Drawing.Point(193, 3);
+            this.lbl_Title.Location = new System.Drawing.Point(233, 3);
             this.lbl_Title.Name = "lbl_Title";
-            this.lbl_Title.Size = new System.Drawing.Size(227, 31);
+            this.lbl_Title.Size = new System.Drawing.Size(118, 31);
             this.lbl_Title.TabIndex = 18;
-            this.lbl_Title.Text = "Модели Списък";
+            this.lbl_Title.Text = "Модели";
             // 
             // radPanel1
             // 
@@ -239,7 +239,7 @@
             this.Controls.Add(this.btn_New);
             this.Controls.Add(this.btn_Card);
             this.Name = "Models";
-            this.Text = "Models";
+            this.Text = "Модели";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Models_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).EndInit();
