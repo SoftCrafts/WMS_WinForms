@@ -20,7 +20,7 @@ namespace WMS.WarehouseForms
         private void ItemJournalHeader_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dataSet1.item_journal_header' table. You can move, or remove it, as needed.
-            this.item_journal_headerTableAdapter.Fill(this.dataSet1.item_journal_header);
+         //   this.item_journal_headerTableAdapter.Fill(this.dataSet1.item_journal_header);
 
         }
 

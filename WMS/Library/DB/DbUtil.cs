@@ -1,4 +1,4 @@
-﻿using Devart.Data.Universal;
+﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -125,9 +125,9 @@ namespace WMS
             string sqlStatement = createSqlStatement(tableName, null, 1, null);
             string sqlStLastInsertID = "SELECT LAST_INSERT_ID()";
 
-            using (var conn = new UniConnection(ConnectionString))
+            using (var conn = new MySqlConnection(ConnectionString))
             {
-                using (var command = new UniCommand(sqlStatement, conn))
+                using (var command = new MySqlCommand(sqlStatement, conn))
                 {
                     //try to execute
                     try
@@ -136,9 +136,9 @@ namespace WMS
                         command.Transaction = conn.BeginTransaction();
 
                         //fill dataset and take its first datatable
-                        using (var adapter = new UniDataAdapter(command))
+                        using (var adapter = new MySqlDataAdapter(command))
                         {
-                            UniCommandBuilder bld = new UniCommandBuilder(adapter);
+                            MySqlCommandBuilder bld = new MySqlCommandBuilder(adapter);
 
                             adapter.UpdateCommand = bld.GetUpdateCommand();
                             adapter.InsertCommand = bld.GetInsertCommand();
@@ -147,13 +147,13 @@ namespace WMS
                             result = adapter.Update(dtable);
 
                         }
-                        conn.Commit();
+                       // conn.Commit();
 
                     }
                     catch (Exception ex)
                     {
                          MessageBox.Show(ex.Message);
-                        conn.Rollback();
+                       // conn.Rollback();
                         //Log.writeError(ex);
                         if ("Concurrency violation: the UpdateCommand affected 0 of the expected 1 records." != ex.Message)
                         {
@@ -179,9 +179,9 @@ namespace WMS
             string sqlStatement = createSqlStatement(tableName, null, 1, null);
             string sqlStLastInsertID = "SELECT LAST_INSERT_ID()";
 
-            using (var conn = new UniConnection(ConnectionString))
+            using (var conn = new MySqlConnection(ConnectionString))
             {
-                using (var command = new UniCommand(sqlStatement, conn))
+                using (var command = new MySqlCommand(sqlStatement, conn))
                 {
                     //try to execute
                     try
@@ -190,9 +190,9 @@ namespace WMS
                         command.Transaction = conn.BeginTransaction();
 
                         //fill dataset and take its first datatable
-                        using (var adapter = new UniDataAdapter(command))
+                        using (var adapter = new MySqlDataAdapter(command))
                         {
-                            UniCommandBuilder bld = new UniCommandBuilder(adapter);
+                            MySqlCommandBuilder bld = new MySqlCommandBuilder(adapter);
                             adapter.UpdateCommand = bld.GetUpdateCommand();
                             adapter.InsertCommand = bld.GetInsertCommand();
                             result = adapter.Update(dtable);
@@ -200,7 +200,7 @@ namespace WMS
                         }
 
                         //Взима ID-то на въведеният запис
-                        using (var commandLAST_ID = new UniCommand(sqlStLastInsertID, conn))
+                        using (var commandLAST_ID = new MySqlCommand(sqlStLastInsertID, conn))
                         {
 
 
@@ -212,13 +212,13 @@ namespace WMS
 
                         }
 
-                        conn.Commit();
+                      //  conn.Commit();
 
                     }
                     catch (Exception ex)
                     {
                          MessageBox.Show(ex.Message);
-                        conn.Rollback();
+                       // conn.Rollback();
                         //Log.writeError(ex);
                         if ("Concurrency violation: the UpdateCommand affected 0 of the expected 1 records." != ex.Message)
                         {
@@ -245,17 +245,17 @@ namespace WMS
             string sqlStatement = "SELECT * FROM " + tableName;
             string sqlStLastInsertID = "SELECT LAST_INSERT_ID()";
 
-            using (var conn = new UniConnection(ConnectionString))
+            using (var conn = new MySqlConnection(ConnectionString))
             {
-                using (var command = new UniCommand(sqlStatement, conn))
+                using (var command = new MySqlCommand(sqlStatement, conn))
                 {
                     //try to execute
                     try
                     {
                         conn.Open();
-                        using (var adapter = new UniDataAdapter(command))
+                        using (var adapter = new MySqlDataAdapter(command))
                         {
-                            UniCommandBuilder bld = new UniCommandBuilder(adapter);
+                            MySqlCommandBuilder bld = new MySqlCommandBuilder(adapter);
 
                             adapter.UpdateCommand = bld.GetUpdateCommand();
                             adapter.InsertCommand = bld.GetInsertCommand();
@@ -320,9 +320,9 @@ namespace WMS
         public static int execute(String commandText, WhereClause whereClause = null)
         {
             int processedCount = 0;
-            using (var conn = new UniConnection(ConnectionString))
+            using (var conn = new MySqlConnection(ConnectionString))
             {
-                using (var command = new UniCommand(commandText, conn))
+                using (var command = new MySqlCommand(commandText, conn))
                 {
                     //try to execute
                     try
@@ -480,9 +480,9 @@ namespace WMS
         {
             DataTable resultDT = new DataTable();
 
-            using (var conn = new UniConnection(ConnectionString))
+            using (var conn = new MySqlConnection(ConnectionString))
             {
-                using (var command = new UniCommand(commandText.ToString(), conn))
+                using (var command = new MySqlCommand(commandText.ToString(), conn))
                 {
                     //try to execute
                     try
@@ -494,7 +494,7 @@ namespace WMS
                         conn.Open();
 
                         //fill dataset and take its first datatable
-                        using (UniDataAdapter adapter = new UniDataAdapter(command))
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
                         {
                             DataSet ds = new DataSet();
                             adapter.Fill(ds, "DbUtilTable");
@@ -535,9 +535,9 @@ namespace WMS
             String statement = "SELECT * FROM " + TableName;
 
 
-            using (var conn = new UniConnection(ConnectionString))
+            using (var conn = new MySqlConnection(ConnectionString))
             {
-                using (var command = new UniCommand(statement.ToString(), conn))
+                using (var command = new MySqlCommand(statement.ToString(), conn))
                 {
                     //try to execute
                     try
@@ -546,7 +546,7 @@ namespace WMS
 
                         conn.Open();
                         //fill dataset and take its first datatable
-                        using (UniDataAdapter adapter = new UniDataAdapter(command))
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
                         {
                             adapter.Fill(schemaDS, 0, 1, TableName);
 
@@ -582,9 +582,9 @@ namespace WMS
         public static DataTable execStoredProc(String stProcName, WhereClause whereClause = null)
         {
             DataTable resultDT = new DataTable();
-            using (var conn = new UniConnection(ConnectionString))
+            using (var conn = new MySqlConnection(ConnectionString))
             {
-                using (var command = new UniCommand())
+                using (var command = new MySqlCommand())
                 {
                     //try to execute
                     try
@@ -599,7 +599,7 @@ namespace WMS
 
                         conn.Open();
 
-                        UniDataReader reader = command.ExecuteReader();
+                        MySqlDataReader reader = command.ExecuteReader();
                         if (reader.HasRows)
                         {
                             resultDT.Load(reader);
@@ -644,13 +644,13 @@ namespace WMS
         /// </summary>
         /// <param name="whereClause"></param>
         /// <returns></returns>
-        private static List<UniParameter> p_createParamList(WhereClause whereClause)
+        private static List<MySqlParameter> p_createParamList(WhereClause whereClause)
         {
-            List<UniParameter> paramCol = null;
+            List<MySqlParameter> paramCol = null;
             //add all parameters to current command
             if (whereClause != null)
             {
-                paramCol = new List<UniParameter>();
+                paramCol = new List<MySqlParameter>();
                 for (int i = 0; i < whereClause.Count; i++)
                 {
 
@@ -665,7 +665,7 @@ namespace WMS
                         for (int j = 0; j < columns.Length; j++)
                         {
                             //add parameters to command in format IN (:COLUMNNAME1,:COLUMNAME2....)
-                            UniParameter parameter = new UniParameter(String.Format("{0}{1}", Key, j), columns[j]);
+                            MySqlParameter parameter = new MySqlParameter(String.Format("{0}{1}", Key, j), columns[j]);
                             paramCol.Add(parameter);
                         }
 
@@ -674,7 +674,7 @@ namespace WMS
                     else
                     {
 
-                        UniParameter parameter = new UniParameter(Key, Value.inValue);
+                        MySqlParameter parameter = new MySqlParameter(Key, Value.inValue);
                         paramCol.Add(parameter);
                     }
                     //  Log.Trace(String.Format("{0}. {1} = {2}", i, Key, Value)); IFD DD

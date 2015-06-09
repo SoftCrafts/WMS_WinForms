@@ -20,7 +20,7 @@ namespace WMS.WarehouseForms
         private void Items_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dataSet1.item' table. You can move, or remove it, as needed.
-            this.itemTableAdapter.Fill(this.dataSet1.item);
+          //  this.itemTableAdapter.Fill(this.dataSet1.item);
 
         }
 
@@ -69,7 +69,7 @@ namespace WMS.WarehouseForms
                 if (res != 0)
                 {
                     MessageBox.Show("Записът беше изтрит!");
-                    this.itemTableAdapter.Fill(this.dataSet1.item);
+                 //   this.itemTableAdapter.Fill(this.dataSet1.item);
                 }
             }
 
@@ -78,6 +78,18 @@ namespace WMS.WarehouseForms
         private void MasterTemplate_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void MasterTemplate_CommandCellClick(object sender, EventArgs e)
+        {
+           
+            ReportViewer_FORM barcode_report = new ReportViewer_FORM();
+            barcode_report.repName = "Item_Barcode";
+            Dictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters.Add(Item_table.Item_ID, radGridView1.SelectedRows[0].Cells[Item_table.Item_ID].Value.MakeString());
+            barcode_report.rep_parameters = parameters;
+            barcode_report.Text = "Справка - Баркод Артикул";
+            NavBar.Navigate(barcode_report, Globals.GetParent(this.Parent.Parent), this,true);
         }
     }
 }

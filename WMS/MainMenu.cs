@@ -127,7 +127,10 @@ namespace WMS
 
         private void ItemListReport_Click(object sender, EventArgs e)
         {
-            ShowChildForm(new ReportViewer_FORM());
+            ReportViewer_FORM rep_view = new ReportViewer_FORM();
+            rep_view.repName = "Item_List";
+            rep_view.Text = "Справка - Списък Артикули";
+            ShowChildForm(rep_view);
         }
 
         

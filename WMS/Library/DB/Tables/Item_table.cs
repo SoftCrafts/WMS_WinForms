@@ -38,5 +38,7 @@ namespace WMS
         public const string Width = "Width";
         public const string Height = "Height";
         public const string Weight = "Weight";
+        public const string Barcode = "Barcode";
+        
     }
 }

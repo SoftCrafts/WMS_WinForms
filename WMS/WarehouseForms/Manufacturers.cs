@@ -19,7 +19,7 @@ namespace WMS.WarehouseForms
         private void Manufacturers_Load(object sender, EventArgs e)
         {
 
-            this.manufacturerTableAdapter.Fill(this.dataSet1.manufacturer);
+          //  this.manufacturerTableAdapter.Fill(this.dataSet1.manufacturer);
             // TODO: This line of code loads data into the 'dataSet1.Model' table. You can move, or remove it, as needed.
         }
 
@@ -41,7 +41,7 @@ namespace WMS.WarehouseForms
         private void Manufacturers_Load_1(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dataSet1.manufacturer' table. You can move, or remove it, as needed.
-            this.manufacturerTableAdapter.Fill(this.dataSet1.manufacturer);
+          //  this.manufacturerTableAdapter.Fill(this.dataSet1.manufacturer);
           
         }
     }

@@ -40,18 +40,18 @@
             Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn3 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
             this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
             this.modelBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet1 = new WMS.DataSet1();
+           // this.dataSet1 = new WMS.DataSet1();
             this.btn_Delete = new Telerik.WinControls.UI.RadButton();
             this.btn_New = new Telerik.WinControls.UI.RadButton();
             this.btn_Card = new Telerik.WinControls.UI.RadButton();
             this.lbl_Title = new System.Windows.Forms.Label();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
-            this.modelTableAdapter = new WMS.DataSet1TableAdapters.modelTableAdapter();
+        //    this.modelTableAdapter = new WMS.DataSet1TableAdapters.modelTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.modelBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+          //  ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Delete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_New)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Card)).BeginInit();
@@ -157,12 +157,12 @@
             // modelBindingSource
             // 
             this.modelBindingSource.DataMember = "model";
-            this.modelBindingSource.DataSource = this.dataSet1;
+           // this.modelBindingSource.DataSource = this.dataSet1;
             // 
             // dataSet1
             // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+          //  this.dataSet1.DataSetName = "DataSet1";
+          //  this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btn_Delete
             // 
@@ -224,7 +224,7 @@
             // 
             // modelTableAdapter
             // 
-            this.modelTableAdapter.ClearBeforeFill = true;
+          //  this.modelTableAdapter.ClearBeforeFill = true;
             // 
             // Models
             // 
@@ -245,7 +245,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.modelBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+          //  ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Delete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_New)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Card)).EndInit();
@@ -266,8 +266,8 @@
         private System.Windows.Forms.Label lbl_Title;
         private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
         private Telerik.WinControls.UI.RadPanel radPanel1;
-        private DataSet1 dataSet1;
+      //  private DataSet1 dataSet1;
         private System.Windows.Forms.BindingSource modelBindingSource;
-        private DataSet1TableAdapters.modelTableAdapter modelTableAdapter;
+       // private DataSet1TableAdapters.modelTableAdapter modelTableAdapter;
     }
 }

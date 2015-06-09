@@ -38,18 +38,18 @@
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
             this.locationBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet1 = new WMS.DataSet1();
+         //   this.dataSet1 = new WMS.DataSet1();
             this.lbl_Title = new System.Windows.Forms.Label();
             this.btn_Delete = new Telerik.WinControls.UI.RadButton();
             this.btn_New = new Telerik.WinControls.UI.RadButton();
             this.btn_Card = new Telerik.WinControls.UI.RadButton();
-            this.locationTableAdapter = new WMS.DataSet1TableAdapters.locationTableAdapter();
+           // this.locationTableAdapter = new WMS.DataSet1TableAdapters.locationTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.locationBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+           // ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Delete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_New)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Card)).BeginInit();
@@ -146,12 +146,12 @@
             // locationBindingSource
             // 
             this.locationBindingSource.DataMember = "location";
-            this.locationBindingSource.DataSource = this.dataSet1;
+          //  this.locationBindingSource.DataSource = this.dataSet1;
             // 
             // dataSet1
             // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+         //   this.dataSet1.DataSetName = "DataSet1";
+          //  this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lbl_Title
             // 
@@ -200,7 +200,7 @@
             // 
             // locationTableAdapter
             // 
-            this.locationTableAdapter.ClearBeforeFill = true;
+         //   this.locationTableAdapter.ClearBeforeFill = true;
             // 
             // Location
             // 
@@ -224,7 +224,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.locationBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+           // ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Delete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_New)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Card)).EndInit();
@@ -241,9 +241,9 @@
         private Telerik.WinControls.UI.RadButton btn_Delete;
         private Telerik.WinControls.UI.RadButton btn_New;
         private Telerik.WinControls.UI.RadButton btn_Card;
-        private DataSet1 dataSet1;
+      //  private DataSet1 dataSet1;
         private System.Windows.Forms.BindingSource locationBindingSource;
-        private DataSet1TableAdapters.locationTableAdapter locationTableAdapter;
+       // private DataSet1TableAdapters.locationTableAdapter locationTableAdapter;
 
     }
 }

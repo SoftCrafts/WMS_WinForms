@@ -58,6 +58,7 @@
             this.txt_Password.PasswordChar = '●';
             this.txt_Password.Size = new System.Drawing.Size(167, 22);
             this.txt_Password.TabIndex = 1;
+            this.txt_Password.Text = "54sd439h";
             this.txt_Password.ThemeName = "TelerikMetro";
             this.txt_Password.UseSystemPasswordChar = true;
             this.txt_Password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OnEnterPress);

@@ -36,18 +36,18 @@
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
             this.itemjournalheaderBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet1 = new WMS.DataSet1();
+          //  this.dataSet1 = new WMS.DataSet1();
             this.lbl_Title = new System.Windows.Forms.Label();
             this.btn_Delete = new Telerik.WinControls.UI.RadButton();
             this.btn_New = new Telerik.WinControls.UI.RadButton();
             this.btn_Card = new Telerik.WinControls.UI.RadButton();
-            this.item_journal_headerTableAdapter = new WMS.DataSet1TableAdapters.item_journal_headerTableAdapter();
+           // this.item_journal_headerTableAdapter = new WMS.DataSet1TableAdapters.item_journal_headerTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemjournalheaderBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+          //  ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Delete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_New)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Card)).BeginInit();
@@ -128,12 +128,12 @@
             // itemjournalheaderBindingSource
             // 
             this.itemjournalheaderBindingSource.DataMember = "item_journal_header";
-            this.itemjournalheaderBindingSource.DataSource = this.dataSet1;
+          //  this.itemjournalheaderBindingSource.DataSource = this.dataSet1;
             // 
             // dataSet1
             // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+          //  this.dataSet1.DataSetName = "DataSet1";
+          //  this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lbl_Title
             // 
@@ -179,7 +179,7 @@
             // 
             // item_journal_headerTableAdapter
             // 
-            this.item_journal_headerTableAdapter.ClearBeforeFill = true;
+       //     this.item_journal_headerTableAdapter.ClearBeforeFill = true;
             // 
             // ItemJournalHeader
             // 
@@ -202,7 +202,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemjournalheaderBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+          //  ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Delete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_New)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Card)).EndInit();
@@ -219,8 +219,8 @@
         private Telerik.WinControls.UI.RadButton btn_Delete;
         private Telerik.WinControls.UI.RadButton btn_New;
         private Telerik.WinControls.UI.RadButton btn_Card;
-        private DataSet1 dataSet1;
+      //  private DataSet1 dataSet1;
         private System.Windows.Forms.BindingSource itemjournalheaderBindingSource;
-        private DataSet1TableAdapters.item_journal_headerTableAdapter item_journal_headerTableAdapter;
+      //  private DataSet1TableAdapters.item_journal_headerTableAdapter item_journal_headerTableAdapter;
     }
 }

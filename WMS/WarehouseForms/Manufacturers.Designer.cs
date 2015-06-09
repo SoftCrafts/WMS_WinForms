@@ -36,15 +36,15 @@
             this.btn_Card = new Telerik.WinControls.UI.RadButton();
             this.radGridView2 = new Telerik.WinControls.UI.RadGridView();
             this.manufacturerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet1 = new WMS.DataSet1();
+            //this.dataSet1 = new WMS.DataSet1();
             this.btn_New = new Telerik.WinControls.UI.RadButton();
             this.btn_Delete = new Telerik.WinControls.UI.RadButton();
-            this.manufacturerTableAdapter = new WMS.DataSet1TableAdapters.manufacturerTableAdapter();
+          //  this.manufacturerTableAdapter = new WMS.DataSet1TableAdapters.manufacturerTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Card)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView2.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.manufacturerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+         //   ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_New)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Delete)).BeginInit();
             this.SuspendLayout();
@@ -106,12 +106,12 @@
             // manufacturerBindingSource
             // 
             this.manufacturerBindingSource.DataMember = "manufacturer";
-            this.manufacturerBindingSource.DataSource = this.dataSet1;
+           // this.manufacturerBindingSource.DataSource = this.dataSet1;
             // 
             // dataSet1
             // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+           // this.dataSet1.DataSetName = "DataSet1";
+           // this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btn_New
             // 
@@ -131,7 +131,7 @@
             // 
             // manufacturerTableAdapter
             // 
-            this.manufacturerTableAdapter.ClearBeforeFill = true;
+          //  this.manufacturerTableAdapter.ClearBeforeFill = true;
             // 
             // Manufacturers
             // 
@@ -149,7 +149,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGridView2.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.manufacturerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+          //  ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_New)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Delete)).EndInit();
             this.ResumeLayout(false);
@@ -162,9 +162,9 @@
         private Telerik.WinControls.UI.RadGridView radGridView2;
         private Telerik.WinControls.UI.RadButton btn_New;
         private Telerik.WinControls.UI.RadButton btn_Delete;
-        private DataSet1 dataSet1;
+    //    private DataSet1 dataSet1;
         private System.Windows.Forms.BindingSource manufacturerBindingSource;
-        private DataSet1TableAdapters.manufacturerTableAdapter manufacturerTableAdapter;
+      //  private DataSet1TableAdapters.manufacturerTableAdapter manufacturerTableAdapter;
 
 
 

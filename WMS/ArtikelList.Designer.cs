@@ -30,36 +30,36 @@
             Telerik.Reporting.Drawing.StyleRule styleRule4 = new Telerik.Reporting.Drawing.StyleRule();
             Telerik.Reporting.Drawing.DescendantSelector descendantSelector2 = new Telerik.Reporting.Drawing.DescendantSelector();
             this.textBox1 = new Telerik.Reporting.TextBox();
+            this.textBox4 = new Telerik.Reporting.TextBox();
+            this.textBox20 = new Telerik.Reporting.TextBox();
+            this.textBox21 = new Telerik.Reporting.TextBox();
+            this.textBox40 = new Telerik.Reporting.TextBox();
             this.textBox5 = new Telerik.Reporting.TextBox();
+            this.textBox9 = new Telerik.Reporting.TextBox();
+            this.textBox6 = new Telerik.Reporting.TextBox();
+            this.textBox11 = new Telerik.Reporting.TextBox();
             this.textBox13 = new Telerik.Reporting.TextBox();
             this.textBox17 = new Telerik.Reporting.TextBox();
+            this.textBox10 = new Telerik.Reporting.TextBox();
             this.detailSection1 = new Telerik.Reporting.DetailSection();
             this.table1 = new Telerik.Reporting.Table();
             this.textBox19 = new Telerik.Reporting.TextBox();
             this.textBox23 = new Telerik.Reporting.TextBox();
             this.textBox31 = new Telerik.Reporting.TextBox();
             this.textBox35 = new Telerik.Reporting.TextBox();
+            this.textBox41 = new Telerik.Reporting.TextBox();
+            this.textBox2 = new Telerik.Reporting.TextBox();
+            this.textBox3 = new Telerik.Reporting.TextBox();
+            this.textBox22 = new Telerik.Reporting.TextBox();
+            this.textBox8 = new Telerik.Reporting.TextBox();
+            this.textBox7 = new Telerik.Reporting.TextBox();
+            this.textBox12 = new Telerik.Reporting.TextBox();
+            this.textBox14 = new Telerik.Reporting.TextBox();
             this.sqlDataSource1 = new Telerik.Reporting.SqlDataSource();
             this.textBox37 = new Telerik.Reporting.TextBox();
             this.pageHeaderSection1 = new Telerik.Reporting.PageHeaderSection();
             this.textBox38 = new Telerik.Reporting.TextBox();
             this.pageFooterSection1 = new Telerik.Reporting.PageFooterSection();
-            this.textBox41 = new Telerik.Reporting.TextBox();
-            this.textBox40 = new Telerik.Reporting.TextBox();
-            this.textBox4 = new Telerik.Reporting.TextBox();
-            this.textBox2 = new Telerik.Reporting.TextBox();
-            this.textBox20 = new Telerik.Reporting.TextBox();
-            this.textBox3 = new Telerik.Reporting.TextBox();
-            this.textBox21 = new Telerik.Reporting.TextBox();
-            this.textBox22 = new Telerik.Reporting.TextBox();
-            this.textBox8 = new Telerik.Reporting.TextBox();
-            this.textBox9 = new Telerik.Reporting.TextBox();
-            this.textBox6 = new Telerik.Reporting.TextBox();
-            this.textBox7 = new Telerik.Reporting.TextBox();
-            this.textBox12 = new Telerik.Reporting.TextBox();
-            this.textBox11 = new Telerik.Reporting.TextBox();
-            this.textBox10 = new Telerik.Reporting.TextBox();
-            this.textBox14 = new Telerik.Reporting.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // textBox1
@@ -69,12 +69,61 @@
             this.textBox1.StyleName = "Office.TableHeader";
             this.textBox1.Value = "Тип Артикул";
             // 
+            // textBox4
+            // 
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(1.0395842790603638D), Telerik.Reporting.Drawing.Unit.Inch(0.20000000298023224D));
+            this.textBox4.StyleName = "Office.TableHeader";
+            this.textBox4.Value = "Марка";
+            // 
+            // textBox20
+            // 
+            this.textBox20.Name = "textBox20";
+            this.textBox20.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(1.0187510251998901D), Telerik.Reporting.Drawing.Unit.Inch(0.20000000298023224D));
+            this.textBox20.StyleName = "Office.TableHeader";
+            this.textBox20.Value = "Модел";
+            // 
+            // textBox21
+            // 
+            this.textBox21.Name = "textBox21";
+            this.textBox21.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(1.1750009059906006D), Telerik.Reporting.Drawing.Unit.Inch(0.20000000298023224D));
+            this.textBox21.StyleName = "Office.TableHeader";
+            this.textBox21.Value = "Описание";
+            // 
+            // textBox40
+            // 
+            this.textBox40.Name = "textBox40";
+            this.textBox40.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(0.73958355188369751D), Telerik.Reporting.Drawing.Unit.Inch(0.20000000298023224D));
+            this.textBox40.StyleName = "Office.TableHeader";
+            this.textBox40.Value = "Склад";
+            // 
             // textBox5
             // 
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(0.69583332538604736D), Telerik.Reporting.Drawing.Unit.Inch(0.20000000298023224D));
             this.textBox5.StyleName = "Office.TableHeader";
             this.textBox5.Value = "Рафт";
+            // 
+            // textBox9
+            // 
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(0.904167115688324D), Telerik.Reporting.Drawing.Unit.Inch(0.20000000298023224D));
+            this.textBox9.StyleName = "Office.TableHeader";
+            this.textBox9.Value = "Покупна Цена";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(0.36250022053718567D), Telerik.Reporting.Drawing.Unit.Inch(0.20000000298023224D));
+            this.textBox6.StyleName = "Office.TableHeader";
+            this.textBox6.Value = "Вал.";
+            // 
+            // textBox11
+            // 
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(2.5820832252502441D), Telerik.Reporting.Drawing.Unit.Inch(0.20000000298023224D));
+            this.textBox11.StyleName = "Office.TableHeader";
+            this.textBox11.Value = "Продажна Цена";
             // 
             // textBox13
             // 
@@ -90,6 +139,13 @@
             this.textBox17.StyleName = "Office.TableHeader";
             this.textBox17.Value = "Кг.";
             // 
+            // textBox10
+            // 
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(1.1533356904983521D), Telerik.Reporting.Drawing.Unit.Inch(0.20000000298023224D));
+            this.textBox10.StyleName = "Office.TableHeader";
+            this.textBox10.Value = "Бр.Ед.";
+            // 
             // detailSection1
             // 
             this.detailSection1.Height = Telerik.Reporting.Drawing.Unit.Inch(4.1000003814697266D);
@@ -102,9 +158,9 @@
             this.table1.Body.Columns.Add(new Telerik.Reporting.TableBodyColumn(Telerik.Reporting.Drawing.Unit.Inch(0.78958344459533691D)));
             this.table1.Body.Columns.Add(new Telerik.Reporting.TableBodyColumn(Telerik.Reporting.Drawing.Unit.Inch(1.039584755897522D)));
             this.table1.Body.Columns.Add(new Telerik.Reporting.TableBodyColumn(Telerik.Reporting.Drawing.Unit.Inch(1.0187516212463379D)));
-            this.table1.Body.Columns.Add(new Telerik.Reporting.TableBodyColumn(Telerik.Reporting.Drawing.Unit.Inch(1.1750004291534424D)));
+            this.table1.Body.Columns.Add(new Telerik.Reporting.TableBodyColumn(Telerik.Reporting.Drawing.Unit.Inch(1.1750005483627319D)));
             this.table1.Body.Columns.Add(new Telerik.Reporting.TableBodyColumn(Telerik.Reporting.Drawing.Unit.Inch(0.73958414793014526D)));
-            this.table1.Body.Columns.Add(new Telerik.Reporting.TableBodyColumn(Telerik.Reporting.Drawing.Unit.Inch(0.69583427906036377D)));
+            this.table1.Body.Columns.Add(new Telerik.Reporting.TableBodyColumn(Telerik.Reporting.Drawing.Unit.Inch(0.69583433866500854D)));
             this.table1.Body.Columns.Add(new Telerik.Reporting.TableBodyColumn(Telerik.Reporting.Drawing.Unit.Inch(0.90416693687438965D)));
             this.table1.Body.Columns.Add(new Telerik.Reporting.TableBodyColumn(Telerik.Reporting.Drawing.Unit.Inch(0.36250036954879761D)));
             this.table1.Body.Columns.Add(new Telerik.Reporting.TableBodyColumn(Telerik.Reporting.Drawing.Unit.Inch(1.0165680646896362D)));
@@ -157,26 +213,26 @@
             this.textBox23,
             this.textBox31,
             this.textBox35,
-            this.textBox1,
-            this.textBox5,
-            this.textBox13,
-            this.textBox17,
             this.textBox41,
-            this.textBox40,
-            this.textBox4,
             this.textBox2,
-            this.textBox20,
             this.textBox3,
-            this.textBox21,
             this.textBox22,
             this.textBox8,
-            this.textBox9,
-            this.textBox6,
             this.textBox7,
             this.textBox12,
+            this.textBox14,
+            this.textBox1,
+            this.textBox4,
+            this.textBox20,
+            this.textBox21,
+            this.textBox40,
+            this.textBox5,
+            this.textBox9,
+            this.textBox6,
             this.textBox11,
-            this.textBox10,
-            this.textBox14});
+            this.textBox13,
+            this.textBox17,
+            this.textBox10});
             this.table1.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(0D), Telerik.Reporting.Drawing.Unit.Inch(0D));
             this.table1.Name = "table1";
             tableGroup13.Groupings.Add(new Telerik.Reporting.Grouping(null));
@@ -213,6 +269,62 @@
             this.textBox35.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(0.2895832359790802D), Telerik.Reporting.Drawing.Unit.Inch(0.31458336114883423D));
             this.textBox35.StyleName = "Office.TableBody";
             this.textBox35.Value = "=Fields.Weight";
+            // 
+            // textBox41
+            // 
+            this.textBox41.Name = "textBox41";
+            this.textBox41.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(0.73958414793014526D), Telerik.Reporting.Drawing.Unit.Inch(0.31458336114883423D));
+            this.textBox41.StyleName = "Office.TableBody";
+            this.textBox41.Value = "=Fields.LOCATION_NAME";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(1.039584755897522D), Telerik.Reporting.Drawing.Unit.Inch(0.31458336114883423D));
+            this.textBox2.StyleName = "Office.TableBody";
+            this.textBox2.Value = "=Fields.MANUFACTURER_NAME";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(1.0187516212463379D), Telerik.Reporting.Drawing.Unit.Inch(0.31458336114883423D));
+            this.textBox3.StyleName = "Office.TableBody";
+            this.textBox3.Value = "=Fields.MODEL_NAME";
+            // 
+            // textBox22
+            // 
+            this.textBox22.Name = "textBox22";
+            this.textBox22.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(1.1750004291534424D), Telerik.Reporting.Drawing.Unit.Inch(0.31458336114883423D));
+            this.textBox22.StyleName = "Office.TableBody";
+            this.textBox22.Value = "=Fields.Description";
+            // 
+            // textBox8
+            // 
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(0.90416693687438965D), Telerik.Reporting.Drawing.Unit.Inch(0.31458336114883423D));
+            this.textBox8.StyleName = "Office.TableBody";
+            this.textBox8.Value = "=Fields.Purchase_Price";
+            // 
+            // textBox7
+            // 
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(0.36250036954879761D), Telerik.Reporting.Drawing.Unit.Inch(0.31458336114883423D));
+            this.textBox7.StyleName = "Office.TableBody";
+            this.textBox7.Value = "=Fields.PURCH_CURR_CODE_NAME";
+            // 
+            // textBox12
+            // 
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(2.5820827484130859D), Telerik.Reporting.Drawing.Unit.Inch(0.31458336114883423D));
+            this.textBox12.StyleName = "Office.TableBody";
+            this.textBox12.Value = "=Fields.Sales_Price";
+            // 
+            // textBox14
+            // 
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(1.1533358097076416D), Telerik.Reporting.Drawing.Unit.Inch(0.31458336114883423D));
+            this.textBox14.StyleName = "Office.TableBody";
+            this.textBox14.Value = "= Fields.UOM_NAME";
             // 
             // sqlDataSource1
             // 
@@ -252,119 +364,7 @@
             this.textBox38});
             this.pageFooterSection1.Name = "pageFooterSection1";
             // 
-            // textBox41
-            // 
-            this.textBox41.Name = "textBox41";
-            this.textBox41.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(0.73958414793014526D), Telerik.Reporting.Drawing.Unit.Inch(0.31458336114883423D));
-            this.textBox41.StyleName = "Office.TableBody";
-            this.textBox41.Value = "=Fields.LOCATION_NAME";
-            // 
-            // textBox40
-            // 
-            this.textBox40.Name = "textBox40";
-            this.textBox40.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(0.73958355188369751D), Telerik.Reporting.Drawing.Unit.Inch(0.20000000298023224D));
-            this.textBox40.StyleName = "Office.TableHeader";
-            this.textBox40.Value = "Склад";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(1.0395842790603638D), Telerik.Reporting.Drawing.Unit.Inch(0.20000000298023224D));
-            this.textBox4.StyleName = "Office.TableHeader";
-            this.textBox4.Value = "Марка";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(1.039584755897522D), Telerik.Reporting.Drawing.Unit.Inch(0.31458336114883423D));
-            this.textBox2.StyleName = "Office.TableBody";
-            this.textBox2.Value = "=Fields.MANUFACTURER_NAME";
-            // 
-            // textBox20
-            // 
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(1.0187510251998901D), Telerik.Reporting.Drawing.Unit.Inch(0.20000000298023224D));
-            this.textBox20.StyleName = "Office.TableHeader";
-            this.textBox20.Value = "Модел";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(1.0187516212463379D), Telerik.Reporting.Drawing.Unit.Inch(0.31458336114883423D));
-            this.textBox3.StyleName = "Office.TableBody";
-            this.textBox3.Value = "=Fields.MODEL_NAME";
-            // 
-            // textBox21
-            // 
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(1.1750009059906006D), Telerik.Reporting.Drawing.Unit.Inch(0.20000000298023224D));
-            this.textBox21.StyleName = "Office.TableHeader";
-            this.textBox21.Value = "Описание";
-            // 
-            // textBox22
-            // 
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(1.1750004291534424D), Telerik.Reporting.Drawing.Unit.Inch(0.31458336114883423D));
-            this.textBox22.StyleName = "Office.TableBody";
-            this.textBox22.Value = "=Fields.Description";
-            // 
-            // textBox8
-            // 
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(0.90416693687438965D), Telerik.Reporting.Drawing.Unit.Inch(0.31458336114883423D));
-            this.textBox8.StyleName = "Office.TableBody";
-            this.textBox8.Value = "=Fields.Purchase_Price";
-            // 
-            // textBox9
-            // 
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(0.904167115688324D), Telerik.Reporting.Drawing.Unit.Inch(0.20000000298023224D));
-            this.textBox9.StyleName = "Office.TableHeader";
-            this.textBox9.Value = "Покупна Цена";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(0.36250022053718567D), Telerik.Reporting.Drawing.Unit.Inch(0.20000000298023224D));
-            this.textBox6.StyleName = "Office.TableHeader";
-            this.textBox6.Value = "Вал.";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(0.36250036954879761D), Telerik.Reporting.Drawing.Unit.Inch(0.31458336114883423D));
-            this.textBox7.StyleName = "Office.TableBody";
-            this.textBox7.Value = "=Fields.PURCH_CURR_CODE_NAME";
-            // 
-            // textBox12
-            // 
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(2.5820827484130859D), Telerik.Reporting.Drawing.Unit.Inch(0.31458336114883423D));
-            this.textBox12.StyleName = "Office.TableBody";
-            this.textBox12.Value = "=Fields.Sales_Price";
-            // 
-            // textBox11
-            // 
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(2.5820832252502441D), Telerik.Reporting.Drawing.Unit.Inch(0.20000000298023224D));
-            this.textBox11.StyleName = "Office.TableHeader";
-            this.textBox11.Value = "Продажна Цена";
-            // 
-            // textBox10
-            // 
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(1.1533356904983521D), Telerik.Reporting.Drawing.Unit.Inch(0.20000000298023224D));
-            this.textBox10.StyleName = "Office.TableHeader";
-            this.textBox10.Value = "Бр.Ед.";
-            // 
-            // textBox14
-            // 
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(1.1533358097076416D), Telerik.Reporting.Drawing.Unit.Inch(0.31458336114883423D));
-            this.textBox14.StyleName = "Office.TableBody";
-            this.textBox14.Value = "= Fields.UOM_NAME";
-            // 
-            // Report1
+            // ArtikelList
             // 
             this.Items.AddRange(new Telerik.Reporting.ReportItemBase[] {
             this.detailSection1,

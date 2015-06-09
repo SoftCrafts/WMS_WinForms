@@ -70,7 +70,7 @@
             this.radMenuItem7,
             this.radMenuItem8});
             this.radMenuItem4.Name = "radMenuItem4";
-            this.radMenuItem4.Text = "Склад";
+            this.radMenuItem4.Text = "Номенклатури";
             this.radMenuItem4.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
             // menu_Manufacturers
@@ -196,7 +196,6 @@
             this.radDock1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.radDock1.Controls.Add(this.documentContainer1);
             this.radDock1.EnableCollapsing = true;
-            this.radDock1.EnableFloatingWindowTheming = false;
             this.radDock1.IsCleanUpTarget = true;
             this.radDock1.Location = new System.Drawing.Point(5, 44);
             this.radDock1.MainDocumentContainer = this.documentContainer1;

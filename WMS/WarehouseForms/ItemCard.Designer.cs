@@ -72,6 +72,8 @@
             this.lbl_Title = new System.Windows.Forms.Label();
             this.btn_New = new Telerik.WinControls.UI.RadButton();
             this.btn_Back = new Telerik.WinControls.UI.RadButton();
+            this.txt_Barcode = new Telerik.WinControls.UI.RadTextBox();
+            this.lbl_Barcode = new Telerik.WinControls.UI.RadLabel();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmb_Sales_Price_Currency)).BeginInit();
@@ -116,11 +118,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.lbl_Item_Type)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_New)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Back)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Barcode)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lbl_Barcode)).BeginInit();
             this.SuspendLayout();
             // 
             // radPanel1
             // 
+            this.radPanel1.Controls.Add(this.txt_Barcode);
             this.radPanel1.Controls.Add(this.cmb_Sales_Price_Currency);
+            this.radPanel1.Controls.Add(this.lbl_Barcode);
             this.radPanel1.Controls.Add(this.cmb_Purch_Price_Currency);
             this.radPanel1.Controls.Add(this.cmb_Bin);
             this.radPanel1.Controls.Add(this.cmb_Location);
@@ -164,6 +170,7 @@
             this.radPanel1.Name = "radPanel1";
             this.radPanel1.Size = new System.Drawing.Size(910, 386);
             this.radPanel1.TabIndex = 0;
+            this.radPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.radPanel1_Paint);
             // 
             // cmb_Sales_Price_Currency
             // 
@@ -193,7 +200,7 @@
             this.cmb_Bin.AutoCompleteDisplayMember = null;
             this.cmb_Bin.AutoCompleteValueMember = null;
             this.cmb_Bin.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cmb_Bin.Location = new System.Drawing.Point(510, 46);
+            this.cmb_Bin.Location = new System.Drawing.Point(510, 79);
             this.cmb_Bin.Name = "cmb_Bin";
             this.cmb_Bin.Size = new System.Drawing.Size(178, 27);
             this.cmb_Bin.TabIndex = 11;
@@ -204,7 +211,7 @@
             this.cmb_Location.AutoCompleteDisplayMember = null;
             this.cmb_Location.AutoCompleteValueMember = null;
             this.cmb_Location.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cmb_Location.Location = new System.Drawing.Point(510, 13);
+            this.cmb_Location.Location = new System.Drawing.Point(510, 46);
             this.cmb_Location.Name = "cmb_Location";
             this.cmb_Location.Size = new System.Drawing.Size(178, 27);
             this.cmb_Location.TabIndex = 10;
@@ -216,7 +223,7 @@
             this.cmb_UoM.AutoCompleteDisplayMember = null;
             this.cmb_UoM.AutoCompleteValueMember = null;
             this.cmb_UoM.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cmb_UoM.Location = new System.Drawing.Point(510, 79);
+            this.cmb_UoM.Location = new System.Drawing.Point(510, 112);
             this.cmb_UoM.Name = "cmb_UoM";
             this.cmb_UoM.Size = new System.Drawing.Size(178, 27);
             this.cmb_UoM.TabIndex = 12;
@@ -386,7 +393,7 @@
             // lbl_Bin_ID
             // 
             this.lbl_Bin_ID.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lbl_Bin_ID.Location = new System.Drawing.Point(379, 46);
+            this.lbl_Bin_ID.Location = new System.Drawing.Point(379, 79);
             this.lbl_Bin_ID.Name = "lbl_Bin_ID";
             this.lbl_Bin_ID.Size = new System.Drawing.Size(87, 25);
             this.lbl_Bin_ID.TabIndex = 20;
@@ -395,7 +402,7 @@
             // lbl_Location_ID
             // 
             this.lbl_Location_ID.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lbl_Location_ID.Location = new System.Drawing.Point(379, 13);
+            this.lbl_Location_ID.Location = new System.Drawing.Point(379, 46);
             this.lbl_Location_ID.Name = "lbl_Location_ID";
             this.lbl_Location_ID.Size = new System.Drawing.Size(52, 25);
             this.lbl_Location_ID.TabIndex = 12;
@@ -404,7 +411,7 @@
             // txt_Weight
             // 
             this.txt_Weight.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txt_Weight.Location = new System.Drawing.Point(510, 211);
+            this.txt_Weight.Location = new System.Drawing.Point(510, 244);
             this.txt_Weight.Name = "txt_Weight";
             this.txt_Weight.Size = new System.Drawing.Size(178, 27);
             this.txt_Weight.TabIndex = 16;
@@ -412,7 +419,7 @@
             // txt_Height
             // 
             this.txt_Height.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txt_Height.Location = new System.Drawing.Point(510, 178);
+            this.txt_Height.Location = new System.Drawing.Point(510, 211);
             this.txt_Height.Name = "txt_Height";
             this.txt_Height.Size = new System.Drawing.Size(178, 27);
             this.txt_Height.TabIndex = 15;
@@ -420,7 +427,7 @@
             // txt_Width
             // 
             this.txt_Width.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txt_Width.Location = new System.Drawing.Point(510, 145);
+            this.txt_Width.Location = new System.Drawing.Point(510, 178);
             this.txt_Width.Name = "txt_Width";
             this.txt_Width.Size = new System.Drawing.Size(178, 27);
             this.txt_Width.TabIndex = 14;
@@ -428,7 +435,7 @@
             // txt_Length
             // 
             this.txt_Length.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txt_Length.Location = new System.Drawing.Point(510, 112);
+            this.txt_Length.Location = new System.Drawing.Point(510, 145);
             this.txt_Length.Name = "txt_Length";
             this.txt_Length.Size = new System.Drawing.Size(178, 27);
             this.txt_Length.TabIndex = 13;
@@ -454,7 +461,7 @@
             // lbl_Weight
             // 
             this.lbl_Weight.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lbl_Weight.Location = new System.Drawing.Point(379, 211);
+            this.lbl_Weight.Location = new System.Drawing.Point(379, 244);
             this.lbl_Weight.Name = "lbl_Weight";
             this.lbl_Weight.Size = new System.Drawing.Size(50, 25);
             this.lbl_Weight.TabIndex = 1;
@@ -463,7 +470,7 @@
             // lbl_Height
             // 
             this.lbl_Height.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lbl_Height.Location = new System.Drawing.Point(379, 178);
+            this.lbl_Height.Location = new System.Drawing.Point(379, 211);
             this.lbl_Height.Name = "lbl_Height";
             this.lbl_Height.Size = new System.Drawing.Size(81, 25);
             this.lbl_Height.TabIndex = 1;
@@ -472,7 +479,7 @@
             // lbl_Width
             // 
             this.lbl_Width.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lbl_Width.Location = new System.Drawing.Point(379, 145);
+            this.lbl_Width.Location = new System.Drawing.Point(379, 178);
             this.lbl_Width.Name = "lbl_Width";
             this.lbl_Width.Size = new System.Drawing.Size(89, 25);
             this.lbl_Width.TabIndex = 1;
@@ -481,7 +488,7 @@
             // lbl_Length
             // 
             this.lbl_Length.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lbl_Length.Location = new System.Drawing.Point(379, 112);
+            this.lbl_Length.Location = new System.Drawing.Point(379, 145);
             this.lbl_Length.Name = "lbl_Length";
             this.lbl_Length.Size = new System.Drawing.Size(77, 25);
             this.lbl_Length.TabIndex = 1;
@@ -490,7 +497,7 @@
             // lbl_UoM
             // 
             this.lbl_UoM.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lbl_UoM.Location = new System.Drawing.Point(379, 79);
+            this.lbl_UoM.Location = new System.Drawing.Point(379, 112);
             this.lbl_UoM.Name = "lbl_UoM";
             this.lbl_UoM.Size = new System.Drawing.Size(47, 25);
             this.lbl_UoM.TabIndex = 1;
@@ -575,6 +582,23 @@
             this.btn_Back.ThemeName = "TelerikMetro";
             this.btn_Back.Click += new System.EventHandler(this.btn_Back_Click_1);
             // 
+            // txt_Barcode
+            // 
+            this.txt_Barcode.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txt_Barcode.Location = new System.Drawing.Point(510, 13);
+            this.txt_Barcode.Name = "txt_Barcode";
+            this.txt_Barcode.Size = new System.Drawing.Size(178, 27);
+            this.txt_Barcode.TabIndex = 4;
+            // 
+            // lbl_Barcode
+            // 
+            this.lbl_Barcode.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.lbl_Barcode.Location = new System.Drawing.Point(379, 13);
+            this.lbl_Barcode.Name = "lbl_Barcode";
+            this.lbl_Barcode.Size = new System.Drawing.Size(62, 25);
+            this.lbl_Barcode.TabIndex = 3;
+            this.lbl_Barcode.Text = "Баркод";
+            // 
             // ItemCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -634,6 +658,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.lbl_Item_Type)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_New)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Back)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Barcode)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lbl_Barcode)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -685,5 +711,7 @@
         private Telerik.WinControls.UI.RadDropDownList cmb_Model;
         private Telerik.WinControls.UI.RadDropDownList cmb_Manufacturer;
         private Telerik.WinControls.UI.RadDropDownList cmb_Item_Type;
+        private Telerik.WinControls.UI.RadTextBox txt_Barcode;
+        private Telerik.WinControls.UI.RadLabel lbl_Barcode;
     }
 }

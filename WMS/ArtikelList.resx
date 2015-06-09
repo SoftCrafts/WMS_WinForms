@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="sqlDataSource1.SelectCommand" xml:space="preserve">
-    <value>SELECT        manufacturer.Name AS MANUFACTURER_NAME, item.Item_ID, item.Item_Type, item.`No`, item.Description, item.Unit_of_Measure, item.Manufacturer_ID, item.Model_ID, item.Purchase_Price, 
+    <value>SELECT        manufacturer.Name AS MANUFACTURER_NAME, item.Item_ID, item.Item_Type, item.Description, item.Unit_of_Measure, item.Manufacturer_ID, item.Model_ID, item.Purchase_Price, 
                          item.Purchase_Price_Currency_Code, item.Sales_Price, item.Sales_Price_Currency_Code, item.Location_ID, item.Bin_ID, item.Inserted_by, item.Inserted_on, item.Modified_by, item.Modified_on, item.Length, 
                          item.Width, item.Height, item.Weight, location.Name AS LOCATION_NAME, bin.Description AS BIN_NAME, unit_of_measure.Description AS UOM_NAME, currency.Description AS SALES_CURR_CODE_NAME, 
                          currency_1.Description AS PURCH_CURR_CODE_NAME, model.Name AS MODEL_NAME, item_type.Description AS ItemType_NAME

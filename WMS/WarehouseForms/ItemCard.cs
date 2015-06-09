@@ -84,6 +84,7 @@ namespace WMS.WarehouseForms
                     txt_Height.Text = dr[Item_table.Height].MakeString();
                     txt_Weight.Text = dr[Item_table.Weight].MakeString();
                     txt_Width.Text = dr[Item_table.Width].MakeString();
+                    txt_Barcode.Text = dr[Item_table.Barcode].MakeString();
                    
 
                     if (cmb_Item_Type.Items.Count > 0)
@@ -200,7 +201,8 @@ namespace WMS.WarehouseForms
                 row[Item_table.Width] = txt_Width.Text.MakeDecimal();
                 row[Item_table.Weight] = txt_Weight.Text.MakeDecimal();
                 row[Item_table.Length] = txt_Length.Text.MakeDecimal();
-                row[Item_table.Height] = txt_Height.Text.MakeDecimal(); 
+                row[Item_table.Height] = txt_Height.Text.MakeDecimal();
+                row[Item_table.Barcode] = txt_Barcode.Text;
            
             }
             else
@@ -221,12 +223,18 @@ namespace WMS.WarehouseForms
                 row[Item_table.Width] = txt_Width.Text.MakeDecimal();
                 row[Item_table.Weight] = txt_Weight.Text.MakeDecimal(); 
                 row[Item_table.Length] = txt_Length.Text.MakeDecimal(); 
-                row[Item_table.Height] = txt_Height.Text.MakeDecimal(); 
+                row[Item_table.Height] = txt_Height.Text.MakeDecimal();
+                row[Item_table.Barcode] = txt_Barcode.Text;
 
                 dt.Rows.Add(row);
             }
 
             int result = DbUtil.saveChanges(Item_table.db_name, dt);
+        }
+
+        private void radPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
        
