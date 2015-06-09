@@ -44,6 +44,7 @@
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             this.radDock1 = new Telerik.WinControls.UI.Docking.RadDock();
             this.documentContainer1 = new Telerik.WinControls.UI.Docking.DocumentContainer();
+            this.radMenuItem10 = new Telerik.WinControls.UI.RadMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDock1)).BeginInit();
             this.radDock1.SuspendLayout();
@@ -55,9 +56,10 @@
             // 
             this.radMenuItem2.AccessibleDescription = "Продажби";
             this.radMenuItem2.AccessibleName = "Продажби";
+            this.radMenuItem2.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radMenuItem10});
             this.radMenuItem2.Name = "radMenuItem2";
-            this.radMenuItem2.Text = "Продажби";
-            this.radMenuItem2.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.radMenuItem2.Text = "Ресторант";
             // 
             // radMenuItem4
             // 
@@ -71,7 +73,6 @@
             this.radMenuItem8});
             this.radMenuItem4.Name = "radMenuItem4";
             this.radMenuItem4.Text = "Номенклатури";
-            this.radMenuItem4.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
             // menu_Manufacturers
             // 
@@ -80,7 +81,6 @@
             this.menu_Manufacturers.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menu_Manufacturers.Name = "menu_Manufacturers";
             this.menu_Manufacturers.Text = "Марки";
-            this.menu_Manufacturers.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.menu_Manufacturers.Click += new System.EventHandler(this.menu_Manufacturers_Click);
             // 
             // radMenuItem3
@@ -90,7 +90,6 @@
             this.radMenuItem3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radMenuItem3.Name = "radMenuItem3";
             this.radMenuItem3.Text = "Модели";
-            this.radMenuItem3.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.radMenuItem3.Click += new System.EventHandler(this.radMenuItem3_Click);
             // 
             // menu_Items
@@ -100,7 +99,6 @@
             this.menu_Items.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menu_Items.Name = "menu_Items";
             this.menu_Items.Text = "Артикули";
-            this.menu_Items.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.menu_Items.Click += new System.EventHandler(this.menu_Items_Click);
             // 
             // radMenuItem7
@@ -110,7 +108,6 @@
             this.radMenuItem7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radMenuItem7.Name = "radMenuItem7";
             this.radMenuItem7.Text = "Складове";
-            this.radMenuItem7.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.radMenuItem7.Click += new System.EventHandler(this.radMenuItem7_Click);
             // 
             // radMenuItem8
@@ -120,7 +117,6 @@
             this.radMenuItem8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radMenuItem8.Name = "radMenuItem8";
             this.radMenuItem8.Text = "Складови Места";
-            this.radMenuItem8.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.radMenuItem8.Click += new System.EventHandler(this.radMenuItem8_Click);
             // 
             // radMenuItem5
@@ -131,7 +127,6 @@
             this.ItemListReport});
             this.radMenuItem5.Name = "radMenuItem5";
             this.radMenuItem5.Text = "Справки";
-            this.radMenuItem5.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
             // ItemListReport
             // 
@@ -139,7 +134,6 @@
             this.ItemListReport.AccessibleName = "Списък Артикули";
             this.ItemListReport.Name = "ItemListReport";
             this.ItemListReport.Text = "Списък Артикули";
-            this.ItemListReport.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.ItemListReport.Click += new System.EventHandler(this.ItemListReport_Click);
             // 
             // radMenuItem9
@@ -148,7 +142,6 @@
             this.radMenuItem9.AccessibleName = "Настройки";
             this.radMenuItem9.Name = "radMenuItem9";
             this.radMenuItem9.Text = "Настройки";
-            this.radMenuItem9.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
             // radMenu1
             // 
@@ -175,7 +168,6 @@
             this.radMenuItem6});
             this.radMenuItem1.Name = "radMenuItem1";
             this.radMenuItem1.Text = "Операции";
-            this.radMenuItem1.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
             // radMenuItem6
             // 
@@ -183,7 +175,6 @@
             this.radMenuItem6.AccessibleName = "Журнал Артикули";
             this.radMenuItem6.Name = "radMenuItem6";
             this.radMenuItem6.Text = "Журнал Артикули";
-            this.radMenuItem6.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.radMenuItem6.Click += new System.EventHandler(this.radMenuItem6_Click);
             // 
             // radDock1
@@ -222,6 +213,14 @@
             this.documentContainer1.RootElement.MinSize = new System.Drawing.Size(0, 0);
             this.documentContainer1.SizeInfo.SizeMode = Telerik.WinControls.UI.Docking.SplitPanelSizeMode.Fill;
             // 
+            // radMenuItem10
+            // 
+            this.radMenuItem10.AccessibleDescription = "Артикули";
+            this.radMenuItem10.AccessibleName = "Артикули";
+            this.radMenuItem10.Name = "radMenuItem10";
+            this.radMenuItem10.Text = "Артикули";
+            this.radMenuItem10.Click += new System.EventHandler(this.radMenuItem10_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -237,7 +236,7 @@
             this.RootElement.ApplyShapeToControl = true;
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "WMS";
+            this.Text = "Smart Bistro";
             this.ThemeName = "ControlDefault";
             this.Load += new System.EventHandler(this.MainMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).EndInit();
@@ -268,5 +267,6 @@
         private Telerik.WinControls.UI.RadMenuItem ItemListReport;
         private Telerik.WinControls.UI.Docking.RadDock radDock1;
         private Telerik.WinControls.UI.Docking.DocumentContainer documentContainer1;
+        private Telerik.WinControls.UI.RadMenuItem radMenuItem10;
     }
 }

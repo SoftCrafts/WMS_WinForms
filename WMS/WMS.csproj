@@ -66,14 +66,6 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Telerik.Reporting, Version=8.1.14.804, Culture=neutral, PublicKeyToken=a9d7983dfcc261be">
-      <Private>True</Private>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-    </Reference>
-    <Reference Include="Telerik.ReportViewer.WinForms, Version=8.1.14.804, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-    </Reference>
     <Reference Include="Telerik.WinControls, Version=2015.1.331.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <HintPath>..\lib\RCWF\2015.1.331.40\Telerik.WinControls.dll</HintPath>
       <Private>True</Private>
@@ -130,10 +122,19 @@
       <HintPath>..\lib\RCWF\2015.1.331.40\TelerikData.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Telerik.Reporting, Version=9.0.15.324, Culture=neutral, PublicKeyToken=a9d7983dfcc261be">
+      <Private>True</Private>
+      <SpecificVersion>True</SpecificVersion>
+    </Reference>
+    <Reference Include="Telerik.ReportViewer.WinForms, Version=9.0.15.324, Culture=neutral, PublicKeyToken=a9d7983dfcc261be">
+      <Private>True</Private>
+      <SpecificVersion>True</SpecificVersion>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Library\DB\DbUtil.cs" />
     <Compile Include="Library\DB\Queries.cs" />
+    <Compile Include="Library\DB\Queries_Lists.cs" />
     <Compile Include="Library\DB\Tables\Bin_table.cs" />
     <Compile Include="Library\DB\Tables\Item_Journal_Header_Table.cs" />
     <Compile Include="Library\DB\Tables\Item_table.cs" />
@@ -178,6 +179,18 @@
     </Compile>
     <Compile Include="ReportViewer_FORM.Designer.cs">
       <DependentUpon>ReportViewer_FORM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RestourantForms\ProductCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RestourantForms\ProductCard.Designer.cs">
+      <DependentUpon>ProductCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RestourantForms\ProductsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RestourantForms\ProductsList.Designer.cs">
+      <DependentUpon>ProductsList.cs</DependentUpon>
     </Compile>
     <Compile Include="UserCard.cs">
       <SubType>Form</SubType>
@@ -281,6 +294,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReportViewer_FORM.resx">
       <DependentUpon>ReportViewer_FORM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RestourantForms\ProductCard.resx">
+      <DependentUpon>ProductCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RestourantForms\ProductsList.resx">
+      <DependentUpon>ProductsList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserCard.resx">
       <DependentUpon>UserCard.cs</DependentUpon>

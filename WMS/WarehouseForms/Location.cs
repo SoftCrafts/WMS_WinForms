@@ -22,6 +22,8 @@ namespace WMS.WarehouseForms
             // TODO: This line of code loads data into the 'dataSet11.location' table. You can move, or remove it, as needed.
             //this.locationTableAdapter.Fill(this.dataSet1.location);
 
+            DataTable dt = DbUtil.getDataTableForTableName(Location_table.db_name, null, 0);
+            locationBindingSource.DataSource = dt;
 
         }
 

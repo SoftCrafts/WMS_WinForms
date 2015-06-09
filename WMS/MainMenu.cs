@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
 using Telerik.WinControls.UI.Docking;
+using WMS.RestourantForms;
 using WMS.WarehouseForms;
 
 namespace WMS
@@ -128,9 +129,14 @@ namespace WMS
         private void ItemListReport_Click(object sender, EventArgs e)
         {
             ReportViewer_FORM rep_view = new ReportViewer_FORM();
-            rep_view.repName = "Item_List";
+            rep_view.repName = "ItemBarcode";
             rep_view.Text = "Справка - Списък Артикули";
             ShowChildForm(rep_view);
+        }
+
+        private void radMenuItem10_Click(object sender, EventArgs e)
+        {
+            ShowChildForm(new ProductsList());
         }
 
         

@@ -21,7 +21,9 @@ namespace WMS.WarehouseForms
         {
             // TODO: This line of code loads data into the 'dataSet1.bin' table. You can move, or remove it, as needed.
            // this.binTableAdapter.Fill(this.dataSet1.bin);
-         
+            DataTable dt = DbUtil.getDataTableForTableName(Bin_table.db_name, null, 0);
+            binBindingSource.DataSource = dt;
+
 
         }
 
@@ -91,6 +93,11 @@ namespace WMS.WarehouseForms
 
             e.Graphics.DrawRectangle(Pens.GreenYellow, Globals.CreateBorderRect(radPanel1));
             e.Graphics.DrawRectangle(Pens.GreenYellow, Globals.CreateBorderRect(lbl_Title));
+
+        }
+
+        private void binBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
 
         }
     }

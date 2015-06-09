@@ -21,7 +21,8 @@ namespace WMS.WarehouseForms
         {
             // TODO: This line of code loads data into the 'dataSet1.item' table. You can move, or remove it, as needed.
           //  this.itemTableAdapter.Fill(this.dataSet1.item);
-
+            DataTable dt = DbUtil.getDataTableForTableName(Item_table.db_name, null, 0);
+            itemBindingSource.DataSource = dt;
         }
 
         private void btn_Card_Click(object sender, EventArgs e)

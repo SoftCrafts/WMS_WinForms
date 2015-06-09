@@ -38,15 +38,15 @@ namespace WMS
                         reportViewer1.RefreshReport();
                         break;
                     }
-                case "Item_Barcode":
+                case "ItemBarcode":
                     {
                         Telerik.Reporting.InstanceReportSource reportSource = new
     Telerik.Reporting.InstanceReportSource();
                         reportSource.ReportDocument = new ItemBarcode();
-                        foreach (var row in rep_parameters)
-                        {
-                            reportSource.Parameters.Add(new Telerik.Reporting.Parameter(row.Key,row.Value));
-                        }
+                        //foreach (var row in rep_parameters)
+                        //{
+                        //    reportSource.Parameters.Add(new Telerik.Reporting.Parameter(row.Key,row.Value));
+                        //}
                        
 
                         reportViewer1.ReportSource = reportSource;

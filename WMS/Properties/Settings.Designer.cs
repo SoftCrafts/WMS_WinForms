@@ -58,11 +58,20 @@ namespace WMS.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("provider=MySQL;User Id=beroe_WMS;Password=ffN5r1#9;Host=91.215.216.74;Database=be" +
-            "roebo_wms;Unicode=True;Persist Security Info=True;")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=localhost;Port=3306;Database=SmartBistro;Uid=root; Pwd=54sd439h;")]
         public string beroebo_wmsConnectionString {
             get {
                 return ((string)(this["beroebo_wmsConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=localhost;Port=3306;Database=SmartBistro;Uid=root; Pwd=54sd439h;")]
+        public string SmartBistro {
+            get {
+                return ((string)(this["SmartBistro"]));
             }
         }
     }

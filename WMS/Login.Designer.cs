@@ -132,7 +132,6 @@
             // 
             // cmb_User
             // 
-            this.cmb_User.AllowShowFocusCues = false;
             this.cmb_User.AutoCompleteDisplayMember = null;
             this.cmb_User.AutoCompleteValueMember = null;
             this.cmb_User.Font = new System.Drawing.Font("Segoe UI", 9.75F);
@@ -150,6 +149,7 @@
             this.Controls.Add(this.radLabel1);
             this.Controls.Add(this.radPanel1);
             this.Name = "Login";
+            this.ShowIcon = false;
             this.Text = "Вход";
             this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txt_Password)).EndInit();

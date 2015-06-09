@@ -26,8 +26,10 @@ namespace WMS.WarehouseForms
         {
             // TODO: This line of code loads data into the 'dataSet1.model' table. You can move, or remove it, as needed.
          //   this.modelTableAdapter.Fill(this.dataSet1.model);
-            
-          
+                  DataTable dt = DbUtil.getDataTableForTableName(Model_table.db_name,null,0);
+
+           // radGridView2.DataSource = dt;
+                  modelBindingSource.DataSource = dt;
 
             
         }
@@ -100,6 +102,11 @@ namespace WMS.WarehouseForms
             e.Graphics.DrawRectangle(Pens.GreenYellow, Globals.CreateBorderRect(radPanel1));
             e.Graphics.DrawRectangle(Pens.GreenYellow, Globals.CreateBorderRect(lbl_Title));
            
+        }
+
+        private void modelBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

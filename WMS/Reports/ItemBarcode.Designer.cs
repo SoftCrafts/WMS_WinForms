@@ -9,8 +9,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Telerik.Reporting.Barcodes.Code128Encoder code128Encoder1 = new Telerik.Reporting.Barcodes.Code128Encoder();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemBarcode));
-            Telerik.Reporting.ReportParameter reportParameter1 = new Telerik.Reporting.ReportParameter();
             Telerik.Reporting.Drawing.StyleRule styleRule1 = new Telerik.Reporting.Drawing.StyleRule();
             this.detail = new Telerik.Reporting.DetailSection();
             this.descriptionDataTextBox = new Telerik.Reporting.TextBox();
@@ -45,7 +45,7 @@
             this.descriptionDataTextBox.Name = "descriptionDataTextBox";
             this.descriptionDataTextBox.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(1.6979167461395264D), Telerik.Reporting.Drawing.Unit.Inch(0.20000004768371582D));
             this.descriptionDataTextBox.Style.Font.Size = Telerik.Reporting.Drawing.Unit.Point(8D);
-            this.descriptionDataTextBox.Value = "=Fields.Description";
+            this.descriptionDataTextBox.Value = "= Fields.Description";
             // 
             // mANUFACTURER_NAMEDataTextBox
             // 
@@ -69,11 +69,11 @@
             // 
             // barcode1
             // 
+            this.barcode1.Encoder = code128Encoder1;
             this.barcode1.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(0.097916759550571442D), Telerik.Reporting.Drawing.Unit.Inch(1.1000000238418579D));
             this.barcode1.Name = "barcode1";
             this.barcode1.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(2.5D), Telerik.Reporting.Drawing.Unit.Inch(0.80000007152557373D));
-            this.barcode1.Symbology = Telerik.Reporting.Barcode.SymbologyType.Code128;
-            this.barcode1.Value = "=Fields.Barcode";
+            this.barcode1.Value = "= Fields.Barcode";
             // 
             // textBox1
             // 
@@ -107,23 +107,19 @@
             // 
             // sqlDataSource1
             // 
-            this.sqlDataSource1.ConnectionString = "WMS.Properties.Settings.beroebo_wmsConnectionString";
+            this.sqlDataSource1.ConnectionString = "WMS.Properties.Settings.SmartBistro";
             this.sqlDataSource1.Name = "sqlDataSource1";
             this.sqlDataSource1.SelectCommand = resources.GetString("sqlDataSource1.SelectCommand");
             // 
             // ItemBarcode
             // 
             this.DataSource = this.sqlDataSource1;
-            this.Filters.Add(new Telerik.Reporting.Filter("=Fields.Item_ID", Telerik.Reporting.FilterOperator.Equal, "=Parameters.Item_ID.Value"));
+            this.Filters.Add(new Telerik.Reporting.Filter("= Fields.Item_ID", Telerik.Reporting.FilterOperator.GreaterThan, "0"));
             this.Items.AddRange(new Telerik.Reporting.ReportItemBase[] {
             this.detail});
             this.Name = "ItemBarcode";
             this.PageSettings.Margins = new Telerik.Reporting.Drawing.MarginsU(Telerik.Reporting.Drawing.Unit.Inch(1D), Telerik.Reporting.Drawing.Unit.Inch(1D), Telerik.Reporting.Drawing.Unit.Inch(1D), Telerik.Reporting.Drawing.Unit.Inch(1D));
             this.PageSettings.PaperKind = System.Drawing.Printing.PaperKind.Letter;
-            reportParameter1.Name = "Item_ID";
-            reportParameter1.Text = "Артикул Номер";
-            reportParameter1.Value = "";
-            this.ReportParameters.Add(reportParameter1);
             styleRule1.Selectors.AddRange(new Telerik.Reporting.Drawing.ISelector[] {
             new Telerik.Reporting.Drawing.TypeSelector(typeof(Telerik.Reporting.TextItemBase)),
             new Telerik.Reporting.Drawing.TypeSelector(typeof(Telerik.Reporting.HtmlTextBox))});
@@ -131,7 +127,7 @@
             styleRule1.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(2D);
             this.StyleSheet.AddRange(new Telerik.Reporting.Drawing.StyleRule[] {
             styleRule1});
-            this.Width = Telerik.Reporting.Drawing.Unit.Inch(2.7000000476837158D);
+            this.Width = Telerik.Reporting.Drawing.Unit.Inch(2.9000000953674316D);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
